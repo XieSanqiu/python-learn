@@ -1,0 +1,21 @@
+Python命名规范：
+
+module_name,  模块
+
+package_name,  包
+
+ClassName,  类
+
+method_name,  方法
+
+ExceptionName,   异常
+
+function_name,  函数
+
+GLOBAL_VAR_NAME, 常量
+
+instance_var_name,  实例
+
+function_parameter_name,   参数
+
+local_var_name,  本地变量
