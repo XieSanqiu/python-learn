@@ -1,0 +1,45 @@
+进程活动信息包括
+
+主机Ip
+进程名
+进程id    主机IP+进程名+进程id唯一确定一个进程
+进程启动时间    进程启动时间 唯一确定一次活动  通过检查启动时间判断是否是一次新的活动
+最后更新时间（进程结束时间）    每次跟新，最后一次更新就是进程结束时间
+所属用户
+进程启动参数
+
+CPU信息
+max_cpu    最大cpu使用率
+min_cpu    最小cpu使用率
+avg_cpu    平均cpu使用率
+
+
+内存信息
+max_memory    最大memory使用率
+min_memory    最小memory使用率
+avg_memory    平均memory使用率
+
+网络信息
+sockets    进程活动期间的网络连接集合
+
+IO信息
+read_count    读取操作数
+write_count    写操作数
+read_byte    读字节数
+write_byte    写字节数
+
+文件信息
+files    打开文件集合
+
+线程信息
+threads    最大使用线程数
+
+terminal    不为空则为交互进程
+
+
+进程活动信息收集步骤：
+1、获取进程信息
+    如果mongodb中有该进程
+        更新进程活动信息
+    如果没有
+        直接加入
