@@ -7,7 +7,7 @@ from elasticsearch import Elasticsearch
 # 建立连接
 es = Elasticsearch(hosts="211.65.197.70", port=9200)
 
-def common_query(index, query_statement):
+def common_query(index, query_statement, all):
     # 查询结果，包括其他字段，scroll游标查询，5m游标查询的过期时间
     query = es.search(index=index, scroll='5m', body=query_statement)
 
@@ -23,27 +23,28 @@ def common_query(index, query_statement):
     # 定义一个list变量results用来存储数据结果,在代码中,可以另其为空list,即results=[],也可以先将返回结果
     # 的第一页存尽进来, 即results = query['hits']['hits']
     # 对于所有二级果数据写个分页加载到内存变量的循环
-    for i in range(0, int(total / 100) + 1):
-        # scroll参数必须制定否则会报错
-        query_scroll = es.scroll(scroll_id=scroll_id, scroll="5m")['hits']['hits']
-        results += query_scroll
+    if all:
+        for i in range(0, int(total / 100) + 1):
+            # scroll参数必须制定否则会报错
+            query_scroll = es.scroll(scroll_id=scroll_id, scroll="5m")['hits']['hits']
+            results += query_scroll
     return results
 
 ''' 
 只根据 索引 查询进程信息 索引=IP+pinfo+date
 '''
-def query_by_index(index):
+def query_by_index(index, size = 100, all = True):
     # 查询语句
     query = {
-        "size": 100
+        "size": size
     }
-    return common_query(index, query)
+    return common_query(index, query, all)
 
 
 '''
 根据 索引+进程名 查询进程信息 索引=IP+pinfo+date
 '''
-def query_by_index_process(index, proc_name):
+def query_by_index_process(index, proc_name, size = 100, all = True):
     # 查询语句
     query = {
         "query":{
@@ -51,15 +52,15 @@ def query_by_index_process(index, proc_name):
                 "proc_name": proc_name
             }
         },
-        "size": 100
+        "size": size
     }
-    return common_query(index, query)
+    return common_query(index, query, all)
 
 
 '''
 根据 索引+进程名+时间戳 查询进程信息，并根据时间戳从小到大排序 索引=IP+pinfo+date
 '''
-def query_by_index_process_timestamp(index, proc_name, timestamp):
+def query_by_index_process_timestamp(index, proc_name, timestamp, size = 100, all = True):
     # 查询语句
     query = {
         "query": {
@@ -75,15 +76,15 @@ def query_by_index_process_timestamp(index, proc_name, timestamp):
                 }
             }
         ],
-        "size": 1
+        "size": size
     }
-    return common_query(index, query)
+    return common_query(index, query, all)
 
 
 if __name__ == '__main__':
     # query_by_index('211.65.197.175-pinfo-2020.10.07')
     # results = query_by_index_process('211.65.197.175-pinfo-2020.10.07', 'init')
-    results = query_by_index_process_timestamp('211.65.197.175-pinfo-2020.10.07', 'java', '1598515942')
+    results = query_by_index_process_timestamp('211.65.197.175-pinfo-2020.10.17', 'java', '1598515942', 1, False)
 
     for line in results:
         print(line)
