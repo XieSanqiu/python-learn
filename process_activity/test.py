@@ -9,12 +9,12 @@ my_collection = my_client['pinfo']['activity']
 
 
 # Mongodb 查询数据
-# my_query = {"host_ip":"211.65.197.175", "proc_name": "apache2"}
-# results = my_collection.find(my_query)
-# for res in results:
-#     print(res)
+my_query = {"host_ip":"211.65.197.175", "proc_name": "sshd", "proc_pid":23252, "start_time":"1602814549.21", "proc_param":"-None"}
+results = my_collection.find(my_query)
+for res in results:
+    print(res)
 
 # 清空集合
-x = my_collection.delete_many({})
-print(x.deleted_count)
+# x = my_collection.delete_many({})
+# print(x.deleted_count)
 

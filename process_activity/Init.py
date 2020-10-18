@@ -5,7 +5,6 @@
 '''
 import pymongo
 from common.GetProcessInfo import query_by_index as es_query
-import math
 
 my_client = pymongo.MongoClient("mongodb://211.65.197.70:27017/")
 
@@ -69,7 +68,8 @@ def es_2_mg(es_one):
     mongo_one['user_name'] = es_one['_source']['user_name']
     if 'proc_param' in es_one['_source']:
         mongo_one['proc_param'] = es_one['_source']['proc_param'] #进程启动参数
-
+    else:
+        mongo_one['proc_param'] = '-None'  # es中没有进程启动参数，我们给他赋值
 
     mongo_one['max_cpu'] = es_one['_source']['cpu_percent']
     mongo_one['avg_cpu'] = es_one['_source']['cpu_percent']

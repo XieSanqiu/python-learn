@@ -1,0 +1,6 @@
+1、es查询中有些进程的 proc_param 参数为空，在es中没有记录，导致 es_2_mg() 出错
+自己修改代码后碰到这种情况就不给 mg_one 赋 proc_param值了，但是 rem 的 key 却有
+这个值，这个值是上一条 es_one 中 proc_param 的值，这个就导致 rem key 有 proc_param
+但是 value 却没有，写入到 mongodb 中也是没有这个值，但是下次查询的时候却又带上了 proc_param
+所以每次查询出来的都是空，则就又插入一条。之于插入多条是因为上一个 es_one 中的 proc_param 是
+不一样的，所以导致 rem 中的 key 不同，但是最后的value都是一样的。

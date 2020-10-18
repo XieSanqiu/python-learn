@@ -11,8 +11,7 @@ my_client = pymongo.MongoClient("mongodb://211.65.197.70:27017/")
 pinfo_col = my_client['pinfo']['activity']
 
 def update(yesterday):
-    # hosts = ['211.65.193.23', '211.65.197.175', '211.65.197.233']
-    hosts = ['211.65.197.175']
+    hosts = ['211.65.193.23', '211.65.197.175', '211.65.197.233']
 
     for host in hosts:
         print('-------------------------' + host + '-------------------------')
@@ -25,7 +24,7 @@ def update(yesterday):
             try:
                 proc_param = one['_source']['proc_param']
             except KeyError as e:
-                print(one)
+                proc_param = '-None'
                 print('exception:', e)
 
             proc_pid = one['_source']['pid']
@@ -62,7 +61,7 @@ def update(yesterday):
                     for socket in mg_one['sockets']:
                         if socket not in rem[key]['sockets']:
                             rem[key]['sockets'].append(socket)
-        # write_2_mg(rem)
+        write_2_mg(rem)
 
 '''
 如果是新的进程，则加入
@@ -131,5 +130,5 @@ def write_2_mg(rem):
 
 
 if __name__ == '__main__':
-    yesterday = '2020.10.16'
+    yesterday = '2020.10.17'
     update(yesterday)
