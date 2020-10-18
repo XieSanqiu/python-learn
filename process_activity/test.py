@@ -17,3 +17,4 @@ my_collection = my_client['pinfo']['activity']
 # 清空集合
 x = my_collection.delete_many({})
 print(x.deleted_count)
+

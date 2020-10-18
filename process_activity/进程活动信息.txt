@@ -2,7 +2,7 @@
 
 主机Ip
 进程名
-进程id    主机IP+进程名+进程id唯一确定一个进程
+进程id    主机IP+进程名+进程启动参数 唯一确定一个进程
 进程启动时间    进程启动时间 唯一确定一次活动  通过检查启动时间判断是否是一次新的活动
 最后更新时间（进程结束时间）    每次跟新，最后一次更新就是进程结束时间
 所属用户
@@ -10,13 +10,11 @@
 
 CPU信息
 max_cpu    最大cpu使用率
-min_cpu    最小cpu使用率
 avg_cpu    平均cpu使用率
 
 
 内存信息
 max_memory    最大memory使用率
-min_memory    最小memory使用率
 avg_memory    平均memory使用率
 
 网络信息

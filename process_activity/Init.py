@@ -67,7 +67,9 @@ def es_2_mg(es_one):
     mongo_one['proc_pid'] = es_one['_source']['pid']
     mongo_one['start_time'] = es_one['_source']['start_time'] #时间戳
     mongo_one['user_name'] = es_one['_source']['user_name']
-    mongo_one['proc_param'] = es_one['_source']['proc_param'] #进程启动参数
+    if 'proc_param' in es_one['_source']:
+        mongo_one['proc_param'] = es_one['_source']['proc_param'] #进程启动参数
+
 
     mongo_one['max_cpu'] = es_one['_source']['cpu_percent']
     mongo_one['avg_cpu'] = es_one['_source']['cpu_percent']
