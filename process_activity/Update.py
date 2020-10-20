@@ -21,11 +21,11 @@ def update(yesterday):
         for one in process_infos:
             # 主机IP+进程名+进程参数+进程id+进程启动时间 唯一确定一次进程活动
             proc_name = one['_source']['proc_name']
-            try:
+
+            if 'proc_param' in one['_source']:
                 proc_param = one['_source']['proc_param']
-            except KeyError as e:
+            else:
                 proc_param = '-None'
-                print('exception:', e)
 
             proc_pid = one['_source']['pid']
             start_time = one['_source']['start_time']
@@ -36,31 +36,29 @@ def update(yesterday):
 
             if key not in rem:
                 rem[key] = mg_one
-                rem[key]['cpu_count'] = 1
-                rem[key]['memory_count'] = 1
+                rem[key]['count'] = 1
             else:
                 rem[key]['max_cpu'] = max(rem[key]['max_cpu'], one['_source']['cpu_percent'])
-                rem[key]['avg_cpu'] = (rem[key]['avg_cpu'] * rem[key]['cpu_count'] + one['_source']['cpu_percent']) \
-                                      / (rem[key]['cpu_count'] + 1)
-                rem[key]['cpu_count'] += 1
+                rem[key]['avg_cpu'] = (rem[key]['avg_cpu'] * rem[key]['count'] + one['_source']['cpu_percent']) \
+                                      / (rem[key]['count'] + 1)
+                rem[key]['count'] += 1
 
                 rem[key]['max_memory'] = max(rem[key]['max_memory'], one['_source']['mem_percent'])
-                rem[key]['avg_memory'] = (rem[key]['avg_memory'] * rem[key]['memory_count'] + one['_source']['mem_percent']) \
-                                         / (rem[key]['memory_count'] + 1)
-                rem[key]['memory_count'] += 1
+                rem[key]['avg_memory'] = (rem[key]['avg_memory'] * rem[key]['count'] + one['_source']['mem_percent']) \
+                                         / (rem[key]['count'] + 1)
+                rem[key]['count'] += 1
 
-                if 'files' in mg_one:
-                    if 'files' not in rem:
-                        rem[key]['files'] = list()
-                    for file in mg_one['files']:
-                        if file not in rem[key]['files']:
-                            rem[key]['files'].append(file)
-                if 'sockets' in mg_one:
-                    if 'sockets' not in rem:
-                        rem[key]['sockets'] = list()
-                    for socket in mg_one['sockets']:
-                        if socket not in rem[key]['sockets']:
-                            rem[key]['sockets'].append(socket)
+                if 'files' not in rem:
+                    rem[key]['files'] = list()
+                for file in mg_one['files']:
+                    if file not in rem[key]['files']:
+                        rem[key]['files'].append(file)
+
+                if 'sockets' not in rem:
+                    rem[key]['sockets'] = list()
+                for socket in mg_one['sockets']:
+                    if socket not in rem[key]['sockets']:
+                        rem[key]['sockets'].append(socket)
         write_2_mg(rem)
 
 '''
@@ -84,35 +82,27 @@ def write_2_mg(rem):
         else:
             update_dict = dict()
             max_cpu = max(mg_one['max_cpu'], rem_one['max_cpu'])
-            cpu_count = mg_one['cpu_count'] + rem_one['cpu_count']
-            avg_cpu = (mg_one['avg_cpu'] * mg_one['cpu_count'] + rem_one['avg_cpu'] * rem_one['cpu_count']) / cpu_count
+            count = mg_one['count'] + rem_one['count']
+            avg_cpu = (mg_one['avg_cpu'] * mg_one['count'] + rem_one['avg_cpu'] * rem_one['count']) / count
             update_dict['max_cpu'] = max_cpu
             update_dict['avg_cpu'] = avg_cpu
-            update_dict['cpu_count'] = cpu_count
+            update_dict['count'] = count
 
             max_memory = max(mg_one['max_memory'], rem_one['max_memory'])
-            memory_count = mg_one['memory_count'] + rem_one['memory_count']
-            avg_memory = (mg_one['avg_memory'] * mg_one['memory_count'] + rem_one['avg_memory'] * rem_one['memory_count']) / memory_count
+            avg_memory = (mg_one['avg_memory'] * mg_one['count'] + rem_one['avg_memory'] * rem_one['count']) / count
             update_dict['max_memory'] = max_memory
             update_dict['avg_memory'] = avg_memory
-            update_dict['memory_count'] = memory_count
 
-            files = list()
-            if 'files' in mg_one:
-                files = mg_one['files']
-            if 'files' in rem_one:
-                for file in rem_one['files']:
-                    if file not in files:
-                        files.append(file)
+            files = mg_one['files']
+            for file in rem_one['files']:
+                if file not in files:
+                    files.append(file)
             update_dict['files'] = files
 
-            sockets = list()
-            if 'sockets' in mg_one:
-                sockets = mg_one['sockets']
-            if 'sockets' in rem_one:
-                for soc in rem_one['sockets']:
-                    if soc not in sockets:
-                        sockets.append(soc)
+            sockets = mg_one['sockets']
+            for soc in rem_one['sockets']:
+                if soc not in sockets:
+                    sockets.append(soc)
             update_dict['sockets'] = sockets
 
             read_count = max(mg_one['read_count'], rem_one['read_count'])
@@ -130,5 +120,5 @@ def write_2_mg(rem):
 
 
 if __name__ == '__main__':
-    yesterday = '2020.10.17'
+    yesterday = '2020.10.19'
     update(yesterday)
