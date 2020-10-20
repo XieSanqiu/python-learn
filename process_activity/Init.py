@@ -38,7 +38,6 @@ def init():
                 rem[key]['max_cpu'] = max(rem[key]['max_cpu'], one['_source']['cpu_percent'])
                 rem[key]['avg_cpu'] = (rem[key]['avg_cpu'] * rem[key]['count'] + one['_source']['cpu_percent']) \
                                       / (rem[key]['count'] + 1)
-                rem[key]['count'] += 1
 
                 rem[key]['max_memory'] = max(rem[key]['max_memory'], one['_source']['mem_percent'])
                 rem[key]['avg_memory'] = (rem[key]['avg_memory'] * rem[key]['count'] + one['_source']['mem_percent']) \

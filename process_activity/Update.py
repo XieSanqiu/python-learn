@@ -46,7 +46,6 @@ def update(yesterday):
                 rem[key]['max_memory'] = max(rem[key]['max_memory'], one['_source']['mem_percent'])
                 rem[key]['avg_memory'] = (rem[key]['avg_memory'] * rem[key]['count'] + one['_source']['mem_percent']) \
                                          / (rem[key]['count'] + 1)
-                rem[key]['count'] += 1
 
                 if 'files' not in rem:
                     rem[key]['files'] = list()
