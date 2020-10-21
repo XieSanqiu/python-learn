@@ -4,3 +4,6 @@
 但是 value 却没有，写入到 mongodb 中也是没有这个值，但是下次查询的时候却又带上了 proc_param
 所以每次查询出来的都是空，则就又插入一条。之于插入多条是因为上一个 es_one 中的 proc_param 是
 不一样的，所以导致 rem 中的 key 不同，但是最后的value都是一样的。
+
+2、将cpu_count和memory_count合为了count字段，但是Init和Update代码里却没改对，因此count多加了
+一倍，需要修改
