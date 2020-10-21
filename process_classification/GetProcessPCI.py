@@ -90,7 +90,7 @@ def get_process_pci(host_ip, proc_name, proc_param):
     pci['files_num'] = len(files)
     pci['terminal'] = terminal
     pci['record_rate'] = record_count / (5 * 24 * 12)  # 收集率
-    pci['activity_count'] = activity_count / record_count # 活动比
+    pci['activity_rate'] = activity_count / record_count # 活动比
     return pci
 
 
@@ -100,4 +100,4 @@ if __name__ == '__main__':
     for proc in processes:
         pci = get_process_pci(host_ip, proc[0], proc[1])
         if 2 not in pci['proc_ppid']:
-            print(host_ip, proc[0], proc[1], pci)
+            print(host_ip, proc[0], proc[1], pci['record_rate'], pci['activity_rate'])

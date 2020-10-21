@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/process_activity/FixCount.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/Classification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/GetAllProcess.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/GetProcessPCI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/进程分类.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/process_classification/decission_tree_demo1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/process_classification/play_tennis.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/process_classification/treePlotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_activity/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_activity/问题记录" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/问题记录" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_classification/GetProcessPCI.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/GetProcessPCI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_classification/GetAllProcess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+            <state relative-caret-position="266">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -74,20 +70,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_classification/进程分类.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="285">
               <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_classification/GetProcessPCI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1577">
-              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+            <state relative-caret-position="440">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="e#17#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/process_classification/decission_tree_demo1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1295">
+              <caret line="129" column="9" lean-forward="true" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_classification/play_tennis.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -96,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/process_classification/Classification.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -112,7 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>host</find>
       <find>start</find>
       <find>user</find>
       <find>par</find>
@@ -142,6 +158,7 @@
       <find>ping</find>
       <find>sockets_num</find>
       <find>java</find>
+      <find>kthreadd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,9 +209,11 @@
         <option value="$PROJECT_DIR$/process_activity/CountFix.py" />
         <option value="$PROJECT_DIR$/process_activity/FixCount.py" />
         <option value="$PROJECT_DIR$/process_classification/GetProcessPAI.py" />
-        <option value="$PROJECT_DIR$/process_classification/GetProcessPCI.py" />
         <option value="$PROJECT_DIR$/process_classification/Classification.py" />
         <option value="$PROJECT_DIR$/process_classification/进程分类.txt" />
+        <option value="$PROJECT_DIR$/process_classification/GetProcessPCI.py" />
+        <option value="$PROJECT_DIR$/process_classification/decission_tree_demo2.py" />
+        <option value="$PROJECT_DIR$/process_classification/decission_tree_demo1.py" />
       </list>
     </option>
   </component>
@@ -249,11 +268,15 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/process_classification" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeAarea\python\learn\process_classification" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CodeAarea\python\learn\common" />
     </key>
@@ -270,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GetProcessPCI">
+  <component name="RunManager" selected="Python.decission_tree_demo2">
     <configuration name="FixCount" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -359,7 +382,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Update" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="decission_tree_demo2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -367,12 +390,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_activity" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_classification" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_activity/Update.py" />
+      <option name="SCRIPT_NAME" value="D:\CodeAarea\python\learn\process_classification\decission_tree_demo1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -383,11 +406,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.decission_tree_demo2" />
         <item itemvalue="Python.GetProcessPCI" />
         <item itemvalue="Python.GetProcessPAI" />
         <item itemvalue="Python.GetAllProcess" />
         <item itemvalue="Python.FixCount" />
-        <item itemvalue="Python.Update" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +430,7 @@
       <workItem from="1601796866130" duration="54000" />
       <workItem from="1601797021838" duration="48964000" />
       <workItem from="1602813691308" duration="15089000" />
-      <workItem from="1602915608778" duration="47490000" />
+      <workItem from="1602915608778" duration="50056000" />
     </task>
     <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
       <created>1601790976624</created>
@@ -612,11 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1603183021220</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat:获取进程分类所需信息（可能需修改）">
+      <created>1603261635721</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1603261635721</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117948000" />
+    <option name="totallyTimeSpent" value="120514000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,12 +661,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.26956055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.26956055" />
       <window_info id="Structure" order="1" sideWeight="0.50153846" side_tool="true" weight="0.27009645" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27857935" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27857935" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -650,7 +680,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" x="-1211" y="124" width="1032" height="703" id="SciView" order="3" show_stripe_button="false" type="FLOATING" weight="0.329582" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -701,7 +731,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:python基础——python命名规范" />
     <MESSAGE value="feat:python基础——函数定义、调用、参数设计" />
     <MESSAGE value="feat:python基础——高级特性切片、迭代、列表生成式、生成器、迭代器" />
     <MESSAGE value="feat:python基础——函数式编程map、reduce、filter、sorted、lambda、装饰器、偏函数" />
@@ -726,7 +755,8 @@
     <MESSAGE value="feat:排查问题、修改bug、问题记录" />
     <MESSAGE value="feat:重新收集进程活动信息，增加ppid字段" />
     <MESSAGE value="fix:修复count多加了一次bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:修复count多加了一次bug" />
+    <MESSAGE value="feat:获取进程分类所需信息（可能需修改）" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:获取进程分类所需信息（可能需修改）" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -739,7 +769,8 @@
     <SUITE FILE_PATH="coverage/learn$Query.coverage" NAME="Query Coverage Results" MODIFIED="1601987267862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/es" />
     <SUITE FILE_PATH="coverage/learn$2_AccessRestriction.coverage" NAME="2_AccessRestriction Coverage Results" MODIFIED="1601963298894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1603175602621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
-    <SUITE FILE_PATH="coverage/learn$GetProcessPCI.coverage" NAME="GetProcessPCI Coverage Results" MODIFIED="1603260722805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$GetProcessPCI.coverage" NAME="GetProcessPCI Coverage Results" MODIFIED="1603261723407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$decission_tree_demo2.coverage" NAME="decission_tree_demo2 Coverage Results" MODIFIED="1603265362004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$2_Logging.coverage" NAME="2_Logging Coverage Results" MODIFIED="1601971981526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessInfo__1_.coverage" NAME="GetProcessInfo (1) Coverage Results" MODIFIED="1602917181823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
@@ -1042,13 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/GetAllProcess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1063,26 +1087,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/Classification.py">
+    <entry file="file://$PROJECT_DIR$/process_classification/GetAllProcess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/进程分类.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="285">
           <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/GetProcessPCI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+        <state relative-caret-position="440">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
           <folding>
             <element signature="e#17#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/treePlotter.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/play_tennis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/decission_tree_demo1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1295">
+          <caret line="129" column="9" lean-forward="true" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
