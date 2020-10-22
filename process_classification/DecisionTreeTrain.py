@@ -25,10 +25,10 @@ def get_decision_tree(host_ip):
 
     # 2、拆分训练数据与测试数据，为了进行交叉验证
     # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3,random_state=2)
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
     # 3、使用信息熵作为划分标准，对决策树进行训练
-    clf = tree.DecisionTreeClassifier(criterion='gini')
+    clf = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf=3)
     print(clf)
     clf.fit(x_train, y_train)
 

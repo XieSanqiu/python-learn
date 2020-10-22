@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/process_classification/211.65-pdt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/process_classification/211.65.197.175-pdt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assist/AddSensitiveFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assist/sensitive-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whitelist/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_classification/GetAllProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/GetAllProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_classification/GetProcessPCI.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/GetProcessPCI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,25 +18,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/process_classification/DecisionTreeTrain.py">
+        <entry file="file://$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="46" column="37" lean-forward="true" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-              <folding>
-                <element signature="e#16#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_classification/decission_tree_demo2.py">
+        <entry file="file://$PROJECT_DIR$/assist/AddSensitiveFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="74" column="32" lean-forward="true" selection-start-line="62" selection-end-line="74" selection-end-column="32" />
-              <folding>
-                <element signature="e#21#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="8" column="43" lean-forward="true" selection-start-line="5" selection-end-line="8" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -90,9 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basic/Function.py" />
-        <option value="$PROJECT_DIR$/basic/AdvancedFeatures.py" />
-        <option value="$PROJECT_DIR$/basic/FunctionalProgramming.py" />
         <option value="$PROJECT_DIR$/basic/Functional.py" />
         <option value="$PROJECT_DIR$/basic/Model.py" />
         <option value="$PROJECT_DIR$/2_oop/1_ClassInstance.py" />
@@ -141,6 +132,9 @@
         <option value="$PROJECT_DIR$/process_classification/211.65.197.233-pdt.txt" />
         <option value="$PROJECT_DIR$/process_classification/211.65-pdt.txt" />
         <option value="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" />
+        <option value="$PROJECT_DIR$/assist/sensitive-files.txt" />
+        <option value="$PROJECT_DIR$/assist/AddSensitiveFile.py" />
+        <option value="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" />
       </list>
     </option>
   </component>
@@ -168,12 +162,12 @@
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="process_activity" type="462c0819:PsiDirectoryNode" />
+              <item name="assist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="process_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="whitelist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -210,7 +204,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.DecisionTreeTrain">
+  <component name="RunManager" selected="Python.AddSensitiveFile">
+    <configuration name="AddSensitiveFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assist" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assist/AddSensitiveFile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CollectUser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -299,35 +315,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="decission_tree_demo2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="learn" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_classification" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\CodeAarea\python\learn\process_classification\decission_tree_demo1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.AddSensitiveFile" />
         <item itemvalue="Python.DecisionTreeTrain" />
         <item itemvalue="Python.GetProcessPCI" />
         <item itemvalue="Python.CollectUser" />
         <item itemvalue="Python.decission_tree_demo2 (1)" />
-        <item itemvalue="Python.decission_tree_demo2" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +342,7 @@
       <workItem from="1601797021838" duration="48964000" />
       <workItem from="1602813691308" duration="15089000" />
       <workItem from="1602915608778" duration="51369000" />
-      <workItem from="1603267222090" duration="20803000" />
+      <workItem from="1603267222090" duration="25626000" />
     </task>
     <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
       <created>1601790976624</created>
@@ -581,11 +575,18 @@
       <option name="project" value="LOCAL" />
       <updated>1603335705103</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat:初步完成进程分类与验证，正确率大约在80%">
+      <created>1603351730786</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1603351730786</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142630000" />
+    <option name="totallyTimeSpent" value="147453000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,12 +601,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.17202573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.17202573" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3118757" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3118757" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -671,7 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:python基础——模块简单定义" />
     <MESSAGE value="feat:更改项目文件命名方式" />
     <MESSAGE value="feat:Python面对对象——创建类的对象" />
     <MESSAGE value="feat:Python面对对象——属性、方法访问限制" />
@@ -696,7 +696,8 @@
     <MESSAGE value="feat:非数值型的决策树生成" />
     <MESSAGE value="feat:决策树初步生成" />
     <MESSAGE value="feat:将各个主机中的用户信息收集到mongodb中保存" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:将各个主机中的用户信息收集到mongodb中保存" />
+    <MESSAGE value="feat:初步完成进程分类与验证，正确率大约在80%" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:初步完成进程分类与验证，正确率大约在80%" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -715,7 +716,7 @@
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$2_Logging.coverage" NAME="2_Logging Coverage Results" MODIFIED="1601971981526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessInfo__1_.coverage" NAME="GetProcessInfo (1) Coverage Results" MODIFIED="1602917181823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/learn$DecisionTreeTrain.coverage" NAME="DecisionTreeTrain Coverage Results" MODIFIED="1603351663786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$DecisionTreeTrain.coverage" NAME="DecisionTreeTrain Coverage Results" MODIFIED="1603352822782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$Model.coverage" NAME="Model Coverage Results" MODIFIED="1601960085841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
     <SUITE FILE_PATH="coverage/learn$9_Enum.coverage" NAME="9_Enum Coverage Results" MODIFIED="1601969665273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$InputOutput.coverage" NAME="InputOutput Coverage Results" MODIFIED="1601790854560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -734,30 +735,10 @@
     <SUITE FILE_PATH="coverage/learn$1_Exception.coverage" NAME="1_Exception Coverage Results" MODIFIED="1601971323679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessPAI.coverage" NAME="GetProcessPAI Coverage Results" MODIFIED="1603194378599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$Functional.coverage" NAME="Functional Coverage Results" MODIFIED="1601817479679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
+    <SUITE FILE_PATH="coverage/learn$AddSensitiveFile.coverage" NAME="AddSensitiveFile Coverage Results" MODIFIED="1603368621625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assist" />
     <SUITE FILE_PATH="coverage/learn$1_ClassInstance.coverage" NAME="1_ClassInstance Coverage Results" MODIFIED="1601961405123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/2_oop/7_MultiInheritance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2_oop/9_Enum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3_others/2_Logging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3_others/logging.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -921,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/sklearn/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="746" column="8" selection-start-line="746" selection-start-column="8" selection-end-line="746" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/pdt.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -989,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/CollectUser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software/python37/Lib/site-packages/numpy/lib/npyio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1028,13 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="36" column="23" lean-forward="true" selection-end-line="46" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/211.65-pdt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="98" column="154" selection-start-line="98" selection-start-column="154" selection-end-line="98" selection-end-column="154" />
         </state>
       </provider>
     </entry>
@@ -1075,13 +1035,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/211.65-pdt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="126" lean-forward="true" selection-start-line="6" selection-start-column="126" selection-end-line="6" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/DecisionTreeTrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="46" column="37" lean-forward="true" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        <state relative-caret-position="809">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding>
             <element signature="e#16#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software/python37/Lib/site-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="640" column="23" selection-start-line="640" selection-start-column="23" selection-end-line="640" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/CollectUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="40" column="38" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/sensitive-files.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/AddSensitiveFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="43" lean-forward="true" selection-start-line="5" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
         </state>
       </provider>
     </entry>

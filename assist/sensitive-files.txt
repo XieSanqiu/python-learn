@@ -1,0 +1,17 @@
+/etc/sysconfig/network-scripts/ifcfg-eth0 file 网卡配置文件，可以通过cat查看，记录网卡的名字、mac地址、网络类型、ip地址、dns等信息。
+/etc/network/interfaces file 网卡配置文件，可以通过cat查看，记录网卡的名字、mac地址、网络类型、ip地址、dns等信息。
+/etc/resolv.conf file 客户端配置文件，配置命名服务器对应的IP。
+/etc/hostname file 主机有关的配置文件，主机名。
+/etc/hosts.allow file 主机有关的配置文件,主机允许的IP。
+/etc/hosts.deny file 主机有关的配置文件,主机不允许的IP。
+/etc/hosts file 主机有关的配置文件,内部网络解析域名的文件。
+/etc/fstab file 开机自动挂载配置文件。
+/etc/rc.local file 存放开机自启动程序命令的文件。
+/etc/rc.d/rc.local file 存放开机自启动程序命令的文件。
+/etc/sudoers file 新增一个用户，要想用户拥有sudo权限，就要将该用户添加到该文件中。
+/etc/group file 用户组配置文件，格式为：group_name:passwd:GID:user_list，但是passwd一般为x，即不显示密码。
+/etc/passwd file 系统中所有用户的信息，格式为：user_name：passwd：UID：GID：description：user_home：login_shell（可以理解为用户登录之后所拥有的权限）。
+/etc/shadow file 存储linux系统用户的密码信息，又称“影子文件”，格式为：用户名：加密密码：最后一次修改时间：最小修改时间间隔：密码有效期：密码需要变更前的警告天数：密码过期后的宽限时间：账号失效时间：保留字段。
+/etc/profile file 环境变量配置文件。
+/etc/inittab file 运行级别的配置文件。
+/var/log dir 存储日志文件的目录。
