@@ -7,6 +7,9 @@ from process_classification import GetAllProcess
 my_client = pymongo.MongoClient("mongodb://211.65.197.70:27017/")
 my_collection = my_client['pinfo']['activity']
 
+hosts_collection = my_client['pinfo']['hosts']
+
+
 def get_process_pci(host_ip, proc_name, proc_param):
     pci = dict()
     my_query = {'host_ip': host_ip, 'proc_name':proc_name, 'proc_param':proc_param}
@@ -27,7 +30,8 @@ def get_process_pci(host_ip, proc_name, proc_param):
 
     sockets = set()
     files = set()
-    threads = 0
+
+    threads_num = 0
 
     terminal = set()
 
@@ -67,7 +71,7 @@ def get_process_pci(host_ip, proc_name, proc_param):
             file_path = file.split(',')[0]
             files.add(file_path)
 
-        threads = max(threads, res['threads_num'])
+        threads_num = max(threads_num, res['threads_num'])
 
         terminal.add(res['terminal'])
 
@@ -77,7 +81,7 @@ def get_process_pci(host_ip, proc_name, proc_param):
     avg_memory = total_memory / activity_count # 进程平均内存使用率
 
     pci['proc_ppid'] = proc_ppid
-    pci['proc_user'] = convert_user_2_int(proc_user.pop())
+    pci['proc_user'] = convert_user_2_int(host_ip, proc_user.pop())
     pci['max_cpu'] = max_cpu
     pci['avg_cpu'] = avg_cpu
     pci['max_memory'] = max_memory
@@ -88,39 +92,43 @@ def get_process_pci(host_ip, proc_name, proc_param):
     pci['write_byte'] = write_byte
     pci['sockets_num'] = len(sockets)
     pci['files_num'] = len(files)
+    pci['threads_num'] = threads_num
     pci['terminal'] = terminal
     pci['collect_rate'] = record_count / (5 * 24 * 12)  # 收集率
     pci['activity_rate'] = activity_count / record_count # 活动比
     return pci
 
-def convert_user_2_int(user):
-    if user == 'root':
+def convert_user_2_int(host_ip, user):
+    query = {'host_ip':host_ip, 'user':user}
+    result = hosts_collection.find_one(query)
+    if result['type'] == 'super':
         return 0
-    elif user in ['cyli', 'jxwu', 'txiao', 'yxzhang', 'zhding']:
+    elif result['type'] == 'normal':
         return 1000
-    else:
+    elif result['type'] == 'system':
         return 100
+    else:
+        return -1
 
 if __name__ == '__main__':
-    host_ip = '211.65.197.175'
+    # host_ip = '211.65.197.175'
+    # host_ip = '211.65.193.23'
+    host_ip = '211.65.197.233'
     processes = GetAllProcess.get_all_process(host_ip)
-    # for proc in processes:
-    #     pci = get_process_pci(host_ip, proc[0], proc[1])
-    #     if 2 not in pci['proc_ppid']:
-    #         print(host_ip, proc[0], proc[1], pci['collect_rate'], pci['activity_rate'])
 
     num = 0
-    with open('pdt2.txt', 'w') as f:
+    file = host_ip + '-pdt.txt'
+    with open(file, 'w') as f:
         for proc in processes:
             pci = get_process_pci(host_ip, proc[0], proc[1])
             if 'None' in pci['terminal']:
                 pci['terminal'].remove('None')
-            if len(pci['terminal']) >= 1:
+            if len(pci['terminal']) >= 1:  # 有终端的都为交互进程
                 continue
-            if 2 not in pci['proc_ppid']:
+            if 2 not in pci['proc_ppid'] and proc[0] not in ['init', 'kthreadd']:  # 父进程id为2的都为内核进程
                 num += 1
                 print(num, proc[0], proc[1])
                 line = str([pci['proc_user'], pci['max_cpu'], pci['avg_cpu'], pci['max_memory'], pci['avg_memory'], pci['read_count'],
-                            pci['read_byte'], pci['write_count'], pci['write_byte'], pci['sockets_num'], pci['files_num'],
+                            pci['read_byte'], pci['write_count'], pci['write_byte'], pci['sockets_num'], pci['files_num'], pci['threads_num'],
                             pci['collect_rate'], pci['activity_rate']])[1:-1] + '\n'
                 f.write(line)

@@ -4,8 +4,6 @@ my_client = pymongo.MongoClient("mongodb://211.65.197.70:27017/")
 
 my_collection = my_client['pinfo']['activity']
 
-special_processes = ['python', 'python3', 'sh', '']
-
 def get_all_process(host_ip):
     # 记录所有的进程集合  进程名+进程启动参数
     process = set()
