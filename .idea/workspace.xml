@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assist/AddSensitiveFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assist/sensitive-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whitelist/CalculateProcessWeight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whitelist/DrawResult.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whitelist/GetAllProcess.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/whitelist/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assist/AddSensitiveFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/assist/AddSensitiveFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_activity/进程活动信息.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/进程活动信息.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_classification/进程分类.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process_classification/进程分类.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,20 +20,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_classification/进程分类.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state>
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/AddSensitiveFile.py">
+        <entry file="file://$PROJECT_DIR$/whitelist/CalculateProcessWeight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="43" lean-forward="true" selection-start-line="5" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="-502">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/whitelist/DrawResult.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+              <folding>
+                <element signature="e#12#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/whitelist/GetAllProcess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -46,10 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
-      <find>par</find>
-      <find>cpu</find>
-      <find>mem</find>
       <find>conn</find>
       <find>procCon</find>
       <find>connections</find>
@@ -76,6 +96,10 @@
       <find>threads</find>
       <find>it</find>
       <find>postgres</find>
+      <find>53.</find>
+      <find>hosts</find>
+      <find>su</find>
+      <find>1H</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,9 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basic/Functional.py" />
-        <option value="$PROJECT_DIR$/basic/Model.py" />
-        <option value="$PROJECT_DIR$/2_oop/1_ClassInstance.py" />
         <option value="$PROJECT_DIR$/2_oop/2_AccessRestriction.py" />
         <option value="$PROJECT_DIR$/2_oop/ExtendPolymorphic.py" />
         <option value="$PROJECT_DIR$/2_oop/3_ExtendPolymorphic.py" />
@@ -106,7 +127,6 @@
         <option value="$PROJECT_DIR$/process_activity/进程活动信息" />
         <option value="$PROJECT_DIR$/process_activity/update.py" />
         <option value="$PROJECT_DIR$/common/GetProcessInfo.py" />
-        <option value="$PROJECT_DIR$/process_activity/进程活动信息.txt" />
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/test/test1.py" />
         <option value="$PROJECT_DIR$/process_classification/AllProcess.py" />
@@ -117,7 +137,6 @@
         <option value="$PROJECT_DIR$/process_activity/CountFix.py" />
         <option value="$PROJECT_DIR$/process_activity/FixCount.py" />
         <option value="$PROJECT_DIR$/process_classification/GetProcessPAI.py" />
-        <option value="$PROJECT_DIR$/process_classification/进程分类.txt" />
         <option value="$PROJECT_DIR$/process_classification/decission_tree_demo1.py" />
         <option value="$PROJECT_DIR$/process_classification/Classification.py" />
         <option value="$PROJECT_DIR$/process_classification/decission_tree_demo2.py" />
@@ -135,6 +154,11 @@
         <option value="$PROJECT_DIR$/assist/sensitive-files.txt" />
         <option value="$PROJECT_DIR$/assist/AddSensitiveFile.py" />
         <option value="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" />
+        <option value="$PROJECT_DIR$/process_activity/进程活动信息.txt" />
+        <option value="$PROJECT_DIR$/process_classification/进程分类.txt" />
+        <option value="$PROJECT_DIR$/whitelist/CalculateProcessWeight.py" />
+        <option value="$PROJECT_DIR$/whitelist/GetAllProcess.py" />
+        <option value="$PROJECT_DIR$/whitelist/DrawResult.py" />
       </list>
     </option>
   </component>
@@ -152,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,7 +187,7 @@
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="assist" type="462c0819:PsiDirectoryNode" />
+              <item name="process_activity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
@@ -173,7 +198,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,7 +206,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/process_classification" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -204,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.AddSensitiveFile">
+  <component name="RunManager" selected="Python.DrawResult">
     <configuration name="AddSensitiveFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -227,7 +251,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CollectUser" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="CalculateProcessWeight" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -235,12 +259,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assist" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whitelist" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assist/CollectUser.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whitelist/CalculateProcessWeight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,7 +273,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="DecisionTreeTrain" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DrawResult" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,12 +281,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whitelist" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whitelist/DrawResult.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -271,7 +295,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GetProcessPCI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GetAllProcess" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,12 +303,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whitelist" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_classification/GetProcessPCI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whitelist/GetAllProcess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -293,7 +317,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="decission_tree_demo2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SensitiveResourceCheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,12 +325,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whitelist" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_classification/decission_tree_demo2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -317,11 +341,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DrawResult" />
+        <item itemvalue="Python.CalculateProcessWeight" />
+        <item itemvalue="Python.GetAllProcess" />
+        <item itemvalue="Python.SensitiveResourceCheck" />
         <item itemvalue="Python.AddSensitiveFile" />
-        <item itemvalue="Python.DecisionTreeTrain" />
-        <item itemvalue="Python.GetProcessPCI" />
-        <item itemvalue="Python.CollectUser" />
-        <item itemvalue="Python.decission_tree_demo2 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +366,8 @@
       <workItem from="1601797021838" duration="48964000" />
       <workItem from="1602813691308" duration="15089000" />
       <workItem from="1602915608778" duration="51369000" />
-      <workItem from="1603267222090" duration="25626000" />
+      <workItem from="1603267222090" duration="36949000" />
+      <workItem from="1603614338288" duration="2287000" />
     </task>
     <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
       <created>1601790976624</created>
@@ -582,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1603351730786</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat:添加敏感文件信息到mongodb">
+      <created>1603368914771</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1603368914771</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147453000" />
+    <option name="totallyTimeSpent" value="161063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +633,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.17202573" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.17416935" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -617,12 +649,12 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32963374" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32963374" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" side_tool="true" weight="0.329582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" auto_hide="true" x="-1211" y="124" width="1032" height="703" id="SciView" order="3" show_stripe_button="false" type="FLOATING" weight="0.329582" />
+      <window_info anchor="right" x="-1704" y="64" width="1355" height="841" id="SciView" order="3" show_stripe_button="false" type="FLOATING" weight="0.329582" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.329582" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +704,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:更改项目文件命名方式" />
     <MESSAGE value="feat:Python面对对象——创建类的对象" />
     <MESSAGE value="feat:Python面对对象——属性、方法访问限制" />
     <MESSAGE value="feat:Python面对对象——继承和多态，以及动态语言的鸭子类型" />
@@ -697,7 +728,8 @@
     <MESSAGE value="feat:决策树初步生成" />
     <MESSAGE value="feat:将各个主机中的用户信息收集到mongodb中保存" />
     <MESSAGE value="feat:初步完成进程分类与验证，正确率大约在80%" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:初步完成进程分类与验证，正确率大约在80%" />
+    <MESSAGE value="feat:添加敏感文件信息到mongodb" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:添加敏感文件信息到mongodb" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -712,6 +744,7 @@
     <SUITE FILE_PATH="coverage/learn$2_AccessRestriction.coverage" NAME="2_AccessRestriction Coverage Results" MODIFIED="1601963298894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1603175602621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$GetProcessPCI.coverage" NAME="GetProcessPCI Coverage Results" MODIFIED="1603348467151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$SensitiveResourceCheck.coverage" NAME="SensitiveResourceCheck Coverage Results" MODIFIED="1603370042568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
     <SUITE FILE_PATH="coverage/learn$decission_tree_demo2.coverage" NAME="decission_tree_demo2 Coverage Results" MODIFIED="1603265362004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$2_Logging.coverage" NAME="2_Logging Coverage Results" MODIFIED="1601971981526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
@@ -728,91 +761,19 @@
     <SUITE FILE_PATH="coverage/learn$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1602995057711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/learn$CollectUser.coverage" NAME="CollectUser Coverage Results" MODIFIED="1603335571922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assist" />
     <SUITE FILE_PATH="coverage/learn$GetProcessInfo.coverage" NAME="GetProcessInfo Coverage Results" MODIFIED="1602048196353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
-    <SUITE FILE_PATH="coverage/learn$GetAllProcess.coverage" NAME="GetAllProcess Coverage Results" MODIFIED="1603194350656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$GetAllProcess.coverage" NAME="GetAllProcess Coverage Results" MODIFIED="1603615103643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
     <SUITE FILE_PATH="coverage/learn$AllProcess.coverage" NAME="AllProcess Coverage Results" MODIFIED="1603172791498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
+    <SUITE FILE_PATH="coverage/learn$DrawResult.coverage" NAME="DrawResult Coverage Results" MODIFIED="1603615942438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
     <SUITE FILE_PATH="coverage/learn$Update.coverage" NAME="Update Coverage Results" MODIFIED="1603177644149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$6_Slots.coverage" NAME="6_Slots Coverage Results" MODIFIED="1601967964692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$1_Exception.coverage" NAME="1_Exception Coverage Results" MODIFIED="1601971323679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessPAI.coverage" NAME="GetProcessPAI Coverage Results" MODIFIED="1603194378599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$Functional.coverage" NAME="Functional Coverage Results" MODIFIED="1601817479679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
-    <SUITE FILE_PATH="coverage/learn$AddSensitiveFile.coverage" NAME="AddSensitiveFile Coverage Results" MODIFIED="1603368621625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assist" />
+    <SUITE FILE_PATH="coverage/learn$AddSensitiveFile.coverage" NAME="AddSensitiveFile Coverage Results" MODIFIED="1603369812725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assist" />
+    <SUITE FILE_PATH="coverage/learn$CalculateProcessWeight.coverage" NAME="CalculateProcessWeight Coverage Results" MODIFIED="1603615179310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
     <SUITE FILE_PATH="coverage/learn$1_ClassInstance.coverage" NAME="1_ClassInstance Coverage Results" MODIFIED="1601961405123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3_others/logging.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3_others/FileIO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3_others/write.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3_others/1_Exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/es/Query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="37" lean-forward="true" selection-start-line="5" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息" />
-    <entry file="file://D:/software/python37/Lib/site-packages/pymongo/collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-893">
-          <caret line="1705" column="8" selection-start-line="1705" selection-start-column="8" selection-end-line="1705" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../日志分析/process_collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-866">
-          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="e#47#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/pymongo/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="504" selection-start-line="504" selection-end-line="504" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/命名规范">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2102000064/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="310" column="4" selection-start-line="310" selection-start-column="4" selection-end-line="310" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -847,39 +808,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/问题记录">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/FixCount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/treePlotter.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
-          <folding>
-            <element signature="e#33#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/GetProcessInfo.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -926,12 +856,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/ha.dot">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/211.65.197.175-proc_class.dot">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/ha.dot" />
+    <entry file="file://$PROJECT_DIR$/process_classification/211.65.197.175-proc_class.dot" />
     <entry file="file://$PROJECT_DIR$/assist/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -967,13 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="1128" selection-start-line="1128" selection-end-line="1128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/进程分类.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1015,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/GetProcessPCI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-          <folding>
-            <element signature="e#17#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_classification/decission_tree_demo2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1032,13 +941,6 @@
           <folding>
             <element signature="e#21#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/211.65-pdt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="126" lean-forward="true" selection-start-line="6" selection-start-column="126" selection-end-line="6" selection-end-column="126" />
         </state>
       </provider>
     </entry>
@@ -1059,13 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/CollectUser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="40" column="38" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assist/sensitive-files.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1073,17 +968,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/AddSensitiveFile.py">
+    <entry file="file://D:/software/python37/Lib/site-packages/pymongo/collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="43" lean-forward="true" selection-start-line="5" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="-3395">
+          <caret line="1322" column="8" selection-start-line="1322" selection-start-column="8" selection-end-line="1322" selection-end-column="8" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assist/AddSensitiveFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/CollectUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="40" column="38" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/211.65-pdt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/GetProcessPCI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+          <folding>
+            <element signature="e#17#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/问题记录">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="65" />
+          <folding>
+            <element signature="e#33#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/FixCount.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_classification/进程分类.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/211.65.193.23-process.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1027" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/211.65.197.175-process.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/211.65.197.233-process.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="472" column="11" lean-forward="true" selection-start-line="472" selection-start-column="11" selection-end-line="472" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/all_process.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/CalculateProcessWeight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-502">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/process_weight.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/weight_result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8535">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/GetAllProcess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whitelist/DrawResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding>
+            <element signature="e#12#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

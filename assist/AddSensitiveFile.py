@@ -17,7 +17,7 @@ def add_from_file(file_name):
             file_path = params[0]
             file_type = params[1]
             file_explain = params[2]
-            add_one = {'host':'all', 'file_type':file_type, 'file_name':file_path, 'file_explain':file_explain}
+            add_one = {'host':'all', 'file_type':file_type, 'file_path':file_path, 'file_explain':file_explain}
             inserts.append(add_one)
     my_collection.insert_many(inserts)
 
