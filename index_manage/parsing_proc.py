@@ -19,6 +19,7 @@ def parsing_pinfo(host):
     idx = host + "-pinfo-" + today
     mg_query1 = {'type':'pinfo', 'host':host}
     last_utcnow_iso = col1.find_one(mg_query1, {'_id':0, 'last_time':1})['last_time']
+    print(last_utcnow_iso)
 
     if es.indices.exists(index=idx):
         es_query1 = {
@@ -198,7 +199,8 @@ def delete1(host):
     print(now, host, "delete resource before", thirty_days_date, "total", num)
 
 if __name__ == '__main__':
+    time.sleep(60)
     for host in hosts:
         parsing_pinfo(host)
-        paring_audit(host)
-        delete1(host)
+        #paring_audit(host)
+        #delete1(host)
