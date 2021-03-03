@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import psutil
 import datetime
 import time
@@ -190,6 +191,7 @@ class ProcInfoCollect(object):
 def writeIntofile(filePath,fileName,captureTime,dataName,dataValue,name,bootTime):
 
     logFile=filePath+fileName
+    print(logFile)
     if os.path.exists(logFile):
         t=os.path.getctime(logFile)
         cDate=time.strftime("%Y-%m-%d",time.localtime(t))
@@ -261,7 +263,7 @@ if __name__=="__main__":
             record_time_col = mongo['pinfo']['record_time']
             query1 = {'type': 'collect_rate', 'host': '211.65.197.175'}
             x = record_time_col.find_one(query1, {'_id': 0, 'rate': 1})['rate']  # 收集周期（秒）
-            if not x:
+            if x:
                 cycle_time = x
         except IOError:
             print(current_date_time + ' : 从mongodb中获取数据收集周期错误')
@@ -313,8 +315,8 @@ if __name__=="__main__":
                     time_diff = current_time - processes_A[proc_key][-2]
                 else:
                     time_diff = one_cycle_continued_time
-                processes_A[proc_key][30] = ((processes_B[proc_key][28] - processes_A[proc_key][28]) / time_diff) * 1024
-                processes_A[proc_key][31] = ((processes_B[proc_key][29] - processes_A[proc_key][29]) / time_diff) * 1024
+                processes_A[proc_key][30] = ((processes_B[proc_key][28] - processes_A[proc_key][28]) / time_diff) / 1024
+                processes_A[proc_key][31] = ((processes_B[proc_key][29] - processes_A[proc_key][29]) / time_diff) / 1024
 
             dataName = ["procExe", "procName", "procUser", "procPID", "procPPID", "procCPU", "procCPUUTime",
                         "procCPUSTime", "procMEM", "procRSS", "procVMS", "procTTY", "procSTAT", "procCMD",
@@ -332,5 +334,6 @@ if __name__=="__main__":
 
             #3、更新周期数据
             cycle_start_time = current_time
+            processes_A = processes_B
 
         time.sleep(30)
