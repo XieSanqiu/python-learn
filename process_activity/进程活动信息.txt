@@ -1,35 +1,52 @@
-进程活动信息包括
+进程活动信息包括（程序活动信息）
+改为针对程序，部分程序运行只有一个进程，而部分程序运行时会产生多个进程
 
 主机Ip
 进程名
-进程启动参数    主机IP+进程名+进程启动参数 = 进程唯一标识 唯一确定一个进程（进程分类和创建白名单时使用）
+进程执行文件
+进程启动参数    主机IP+进程执行文件+进程启动参数 = 进程唯一标识 唯一确定一个进程（进程分类和创建白名单时使用）
 进程id
 进程启动时间    进程唯一标识+进程启动时间+进程id = 唯一确定一次活动  通过检查启动时间判断是否是一次新的活动
-所属用户
+               进程启动时间为同一时刻 具有相同进程唯一标识的进程的最小时间
+进程启动日期
+所属用户        上述确定进程的用户
+
+更新时间        当前时间
+最大进程数
+最小进程数
+平均进程数      活动时间内进程平均值
+
+以下值都是具有相同进程唯一标识的进程的相加后的值
 
 CPU信息
 max_cpu    最大cpu使用率
+min_cpu    最小cpu使用率
 avg_cpu    平均cpu使用率
 
 
 内存信息
 max_memory    最大memory使用率
+min_memory    最小memory使用率
 avg_memory    平均memory使用率
 
 网络信息
 sockets    进程活动期间的网络连接集合
+max_sockets_num   最大网络连接数
+min_sockets_num   最小网络连接数
 
-IO信息
-read_count    读取操作数
-write_count    写操作数
-read_byte    读字节数
-write_byte    写字节数
+磁盘IO信息   由每一个进程相加获得
+read_rate    读磁盘速度
+write_rate   写磁盘速度
 
 文件信息
 files    打开文件集合
+max_files_num   最大打开文件数
+min_files_num   最小打开文件数
 
 线程信息
+avg_threads_num
 max_threads_num    最大使用线程数
+min_threads_num    最小使用线程数
 
 终端集合
 terminal    不为空则为交互进程

@@ -104,6 +104,7 @@ def paring_audit(host):
     mg_query1 = {'type': 'audit', 'host': host}
 
     last_utcnow_iso = col1.find_one(mg_query1, {'_id': 0, 'last_time': 1})['last_time']
+    print(last_utcnow_iso)
 
     if es.indices.exists(index=idx):
         es_query1 = {
@@ -144,48 +145,49 @@ def paring_audit(host):
             datas += res["hits"]["hits"]
 
         new_utcnow_iso = {'$set': {'last_time': utcnow_iso}}
-        col1.update_one(mg_query1, new_utcnow_iso)
-
-        mg_query2 = {'hostIP': host}
-        num2syscall = {}
-        res = col3.find(mg_query2, {'_id': 0, 'syscall_num': 1, 'syscall': 1})
-        for one in res:
-            num2syscall[one['syscall_num']] = one['syscall']
-
-        items = 0
-        dds = []
-        for data in datas:
-            d = dict()
-            d['hostIP'] = data['_source']['HostIP']
-            d['collect_date'] = data['_source']['collect_date']
-            d['timestamp'] = float(data['_source']['time'])
-
-            message = data['_source']['message']
-            message_fields = message.split(' ')
-
-            for field in message_fields:
-                if field.startswith('syscall'):
-                    syscall_num = field.split('=')[1]
-                    d['syscall_num'] = syscall_num
-                    try:
-                        d['syscall'] = num2syscall[syscall_num]
-                    except KeyError:
-                        d['syscall'] = 'None'
-                elif field.startswith('pid'):
-                    d['pid'] = int(field.split('=')[1])
-                elif field.startswith('exe'):
-                    d['exe'] = field.split('=')[1][1:-1]
-                elif field.startswith('ses'):
-                    d['session'] = int(field.split('=')[1])
-                elif field.startswith('uid'):
-                    uid = field.split('=')[1]
-                elif field.startswith('suid'):
-                    suid = field.split('=')[1]
-            dds.append(d)
-            items += 1
-        if len(dds) > 0:
-            col2.insert_many(dds)
-        print(now, host, "update audit", items)
+        print(new_utcnow_iso)
+        # col1.update_one(mg_query1, new_utcnow_iso)
+        #
+        # mg_query2 = {'hostIP': host}
+        # num2syscall = {}
+        # res = col3.find(mg_query2, {'_id': 0, 'syscall_num': 1, 'syscall': 1})
+        # for one in res:
+        #     num2syscall[one['syscall_num']] = one['syscall']
+        #
+        # items = 0
+        # dds = []
+        # for data in datas:
+        #     d = dict()
+        #     d['hostIP'] = data['_source']['HostIP']
+        #     d['collect_date'] = data['_source']['collect_date']
+        #     d['timestamp'] = float(data['_source']['time'])
+        #
+        #     message = data['_source']['message']
+        #     message_fields = message.split(' ')
+        #
+        #     for field in message_fields:
+        #         if field.startswith('syscall'):
+        #             syscall_num = field.split('=')[1]
+        #             d['syscall_num'] = syscall_num
+        #             try:
+        #                 d['syscall'] = num2syscall[syscall_num]
+        #             except KeyError:
+        #                 d['syscall'] = 'None'
+        #         elif field.startswith('pid'):
+        #             d['pid'] = int(field.split('=')[1])
+        #         elif field.startswith('exe'):
+        #             d['exe'] = field.split('=')[1][1:-1]
+        #         elif field.startswith('ses'):
+        #             d['session'] = int(field.split('=')[1])
+        #         elif field.startswith('uid'):
+        #             uid = field.split('=')[1]
+        #         elif field.startswith('suid'):
+        #             suid = field.split('=')[1]
+        #     dds.append(d)
+        #     items += 1
+        # if len(dds) > 0:
+        #     col2.insert_many(dds)
+        # print(now, host, "update audit", items)
     else:
         print(now, idx, "not exists")
 
@@ -199,8 +201,8 @@ def delete1(host):
     print(now, host, "delete resource before", thirty_days_date, "total", num)
 
 if __name__ == '__main__':
-    time.sleep(60)
+    # time.sleep(60)
     for host in hosts:
-        parsing_pinfo(host)
-        #paring_audit(host)
+        #parsing_pinfo(host)
+        paring_audit(host)
         #delete1(host)
