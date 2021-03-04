@@ -2,7 +2,6 @@
 import psutil
 import datetime
 import time
-import re
 import socket
 import os
 import pymongo
@@ -191,7 +190,6 @@ class ProcInfoCollect(object):
 def writeIntofile(filePath,fileName,captureTime,dataName,dataValue,name,bootTime):
 
     logFile=filePath+fileName
-    print(logFile)
     if os.path.exists(logFile):
         t=os.path.getctime(logFile)
         cDate=time.strftime("%Y-%m-%d",time.localtime(t))
@@ -240,7 +238,6 @@ def updatemongo(dataName,dataValue,captureTime):
     for i in range(len(dataName)):
         d[dataName[i]]=dataValue[i]
     col.insert_one(d)
-    print('insert sysinfo')
 
 if __name__=="__main__":
     sysInfo = SysInfoCollect()
@@ -254,86 +251,90 @@ if __name__=="__main__":
     processes_A = {}
 
     while(True):
-        current_time = time.time()
-        current_date_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(current_time))
-        one_cycle_continued_time = current_time - cycle_start_time
-        # 从mongodb中获取收集周期
         try:
-            mongo = pymongo.MongoClient("mongodb://211.65.197.70:27017")
-            record_time_col = mongo['pinfo']['record_time']
-            query1 = {'type': 'collect_rate', 'host': '211.65.197.175'}
-            x = record_time_col.find_one(query1, {'_id': 0, 'rate': 1})['rate']  # 收集周期（秒）
-            if x:
-                cycle_time = x
-        except IOError:
-            print(current_date_time + ' : 从mongodb中获取数据收集周期错误')
+            current_time = time.time()
+            current_date_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(current_time))
+            one_cycle_continued_time = current_time - cycle_start_time
+            # 从mongodb中获取收集周期
+            try:
+                mongo = pymongo.MongoClient("mongodb://211.65.197.70:27017")
+                record_time_col = mongo['pinfo']['record_time']
+                query1 = {'type': 'collect_rate', 'host': '211.65.197.175'}
+                x = record_time_col.find_one(query1, {'_id': 0, 'rate': 1})['rate']  # 收集周期（秒）
+                if x:
+                    cycle_time = x
+            except IOError:
+                print(current_date_time + ' : 从mongodb中获取数据收集周期错误')
 
-        processes_B = procInfo.getProcessInfo()
-        #将当前时刻出现的进程添加的进程集合A
-        for proc_key in processes_B:
-            if proc_key not in processes_A:
-                processes_A[proc_key] = processes_B[proc_key]
-
-        #将此前时刻出现在集合A，当前时刻没出现在集合B的进程更新其结束时间，磁盘读写速度已经无法计算
-        for proc_key in processes_A:
-            if proc_key not in processes_B:
-                processes_A[proc_key][-1] = current_time
-
-        if one_cycle_continued_time >= cycle_time:
-            # 1、写系统运行数据到文件
-            # 获取系统运行信息
-            cpuTotal, cpuUser, cpuSys, cpuIdle = sysInfo.getCPUTime()
-            cpuPercent = sysInfo.getCPUPercent()
-            ctxSwitches, interrupts, sInterrupts, syscalls = sysInfo.getCPUStats()
-            memTotal, memAva, memPercent, memUsed, memFree, memBuffers, memCaches = sysInfo.getVirtualMem()
-            swapTotal, swapUsed, swapFree, swapPercent, swapSin, swapSout = sysInfo.getSwapMem()
-            diskTotal, diskUsed, diskFree, diskPercent = sysInfo.getDiskUsage()
-            readCount, writeCount, readByte, writeByte, readTime, writeTime = sysInfo.getDiskIO()
-            byteSent, byteRecv, packetSent, packetRecv, errin, errout, dropin, dropout = sysInfo.getNetIO()
-            processNum = sysInfo.getProcessNum()
-            ports = sysInfo.getPorts()
-            dataName = ["cpuTotal", "cpuUser", "cpuSys", "cpuIdle", "cpuPercent", "ctxSwitches", "interrupts",
-                        "sInterrupts", "syscalls", "memTotal", "memAva", "memPercent", "memUsed", "memFree",
-                        "memBuffers", "memCaches", "swapTotal", "swapUsed", "swapFree", "swapPercent", "swapSin",
-                        "swapSout", "diskTotal", "diskUsed", "diskFree", "diskPercent", "readCount", "writeCount",
-                        "readByte", "writeByte", "readTime", "writeTime", "byteSent", "byteRecv", "packetSent",
-                        "packetRecv", "errin", "errout", "dropin", "dropout", "processNum", "ports"]
-            dataValue = [cpuTotal, cpuUser, cpuSys, cpuIdle, cpuPercent, ctxSwitches, interrupts, sInterrupts, syscalls,
-                         memTotal, memAva, memPercent, memUsed, memFree, memBuffers, memCaches, swapTotal, swapUsed,
-                         swapFree, swapPercent, swapSin, swapSout, diskTotal, diskUsed, diskFree, diskPercent,
-                         readCount, writeCount, readByte, writeByte, readTime, writeTime, byteSent, byteRecv,
-                         packetSent, packetRecv, errin, errout, dropin, dropout, processNum, ports]
-            updatemongo(dataName, dataValue, current_date_time)
-            sysInfoPath = "/usr/local/systemInfoMonitor/"
-            sysInfoName = "sysInfo.log"
-            writeIntofile(sysInfoPath, sysInfoName, current_date_time, dataName, dataValue, name, bootTime)
-
-            #2、写进程运行信息
-            #B集合中有的可以用来计算磁盘读写速度
+            processes_B = procInfo.getProcessInfo()
+            #将当前时刻出现的进程添加的进程集合A
             for proc_key in processes_B:
-                if processes_A[proc_key][-2] > cycle_start_time:
-                    time_diff = current_time - processes_A[proc_key][-2]
-                else:
-                    time_diff = one_cycle_continued_time
-                processes_A[proc_key][30] = ((processes_B[proc_key][28] - processes_A[proc_key][28]) / time_diff) / 1024
-                processes_A[proc_key][31] = ((processes_B[proc_key][29] - processes_A[proc_key][29]) / time_diff) / 1024
+                if proc_key not in processes_A:
+                    processes_A[proc_key] = processes_B[proc_key]
 
-            dataName = ["procExe", "procName", "procUser", "procPID", "procPPID", "procCPU", "procCPUUTime",
-                        "procCPUSTime", "procMEM", "procRSS", "procVMS", "procTTY", "procSTAT", "procCMD",
-                        "procParam", "procRUID", "procEUID", "procSUID", "procRGID", "procEGID", "procSGID",
-                        "procNice", "procCTXSWV", "procCTXSWINV", "procFDS", "procThreads", "procRCount",
-                        "procWCount", "procRBytes", "procWBytes", "procDiskRRate", "procDiskWRate", "procEnv",
-                        "procFile", "procFileNum", "procConnection", "procConnNum", "procSTART", "stopTime"]
-
-            pInfoPath = "/usr/local/systemInfoMonitor/"
-            pInfoName = "pInfo.log"
-
+            #将此前时刻出现在集合A，当前时刻没出现在集合B的进程更新其结束时间，磁盘读写速度已经无法计算
             for proc_key in processes_A:
-                dataValue = processes_A[proc_key]
-                writeIntofile(pInfoPath, pInfoName, current_date_time, dataName, dataValue, name, processes_A[proc_key][-2])
+                if proc_key not in processes_B:
+                    processes_A[proc_key][-1] = current_time
 
-            #3、更新周期数据
-            cycle_start_time = current_time
-            processes_A = processes_B
+            if one_cycle_continued_time >= cycle_time:
+                # 1、写系统运行数据到文件
+                # 获取系统运行信息
+                cpuTotal, cpuUser, cpuSys, cpuIdle = sysInfo.getCPUTime()
+                cpuPercent = sysInfo.getCPUPercent()
+                ctxSwitches, interrupts, sInterrupts, syscalls = sysInfo.getCPUStats()
+                memTotal, memAva, memPercent, memUsed, memFree, memBuffers, memCaches = sysInfo.getVirtualMem()
+                swapTotal, swapUsed, swapFree, swapPercent, swapSin, swapSout = sysInfo.getSwapMem()
+                diskTotal, diskUsed, diskFree, diskPercent = sysInfo.getDiskUsage()
+                readCount, writeCount, readByte, writeByte, readTime, writeTime = sysInfo.getDiskIO()
+                byteSent, byteRecv, packetSent, packetRecv, errin, errout, dropin, dropout = sysInfo.getNetIO()
+                processNum = sysInfo.getProcessNum()
+                ports = sysInfo.getPorts()
+                dataName = ["cpuTotal", "cpuUser", "cpuSys", "cpuIdle", "cpuPercent", "ctxSwitches", "interrupts",
+                            "sInterrupts", "syscalls", "memTotal", "memAva", "memPercent", "memUsed", "memFree",
+                            "memBuffers", "memCaches", "swapTotal", "swapUsed", "swapFree", "swapPercent", "swapSin",
+                            "swapSout", "diskTotal", "diskUsed", "diskFree", "diskPercent", "readCount", "writeCount",
+                            "readByte", "writeByte", "readTime", "writeTime", "byteSent", "byteRecv", "packetSent",
+                            "packetRecv", "errin", "errout", "dropin", "dropout", "processNum", "ports"]
+                dataValue = [cpuTotal, cpuUser, cpuSys, cpuIdle, cpuPercent, ctxSwitches, interrupts, sInterrupts, syscalls,
+                             memTotal, memAva, memPercent, memUsed, memFree, memBuffers, memCaches, swapTotal, swapUsed,
+                             swapFree, swapPercent, swapSin, swapSout, diskTotal, diskUsed, diskFree, diskPercent,
+                             readCount, writeCount, readByte, writeByte, readTime, writeTime, byteSent, byteRecv,
+                             packetSent, packetRecv, errin, errout, dropin, dropout, processNum, ports]
+                updatemongo(dataName, dataValue, current_date_time)
+                sysInfoPath = "/usr/local/systemInfoMonitor/"
+                sysInfoName = "sysInfo.log"
+                writeIntofile(sysInfoPath, sysInfoName, current_date_time, dataName, dataValue, name, bootTime)
 
-        time.sleep(30)
+                #2、写进程运行信息
+                #B集合中有的可以用来计算磁盘读写速度
+                for proc_key in processes_B:
+                    if processes_A[proc_key][-2] > cycle_start_time:
+                        time_diff = current_time - processes_A[proc_key][-2]
+                    else:
+                        time_diff = one_cycle_continued_time
+                    processes_A[proc_key][30] = ((processes_B[proc_key][28] - processes_A[proc_key][28]) / time_diff) / 1024
+                    processes_A[proc_key][31] = ((processes_B[proc_key][29] - processes_A[proc_key][29]) / time_diff) / 1024
+
+                dataName = ["procExe", "procName", "procUser", "procPID", "procPPID", "procCPU", "procCPUUTime",
+                            "procCPUSTime", "procMEM", "procRSS", "procVMS", "procTTY", "procSTAT", "procCMD",
+                            "procParam", "procRUID", "procEUID", "procSUID", "procRGID", "procEGID", "procSGID",
+                            "procNice", "procCTXSWV", "procCTXSWINV", "procFDS", "procThreads", "procRCount",
+                            "procWCount", "procRBytes", "procWBytes", "procDiskRRate", "procDiskWRate", "procEnv",
+                            "procFile", "procFileNum", "procConnection", "procConnNum", "procSTART", "stopTime"]
+
+                pInfoPath = "/usr/local/systemInfoMonitor/"
+                pInfoName = "pInfo.log"
+
+                for proc_key in processes_A:
+                    dataValue = processes_A[proc_key]
+                    writeIntofile(pInfoPath, pInfoName, current_date_time, dataName, dataValue, name, processes_A[proc_key][-2])
+
+                #3、更新周期数据
+                cycle_start_time = current_time
+                processes_A = processes_B
+            time.sleep(10)
+        except Exception as e:
+            current_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+            print(current_date, e)
+            time.sleep(10)

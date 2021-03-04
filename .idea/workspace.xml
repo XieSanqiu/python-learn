@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="add">
+    <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/process_activity/proc_activity2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/log7.conf" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/log7-175.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_activity/进程活动信息.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/进程活动信息.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,22 +26,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
+        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="75" column="41" lean-forward="true" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-              <folding>
-                <element signature="e#33#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1251">
-              <caret line="271" column="27" lean-forward="true" selection-start-line="271" selection-start-column="27" selection-end-line="271" selection-end-column="27" />
+            <state relative-caret-position="-1235">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -47,28 +38,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-23.conf">
+        <entry file="file://$PROJECT_DIR$/process_activity/FixCount.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="291" column="52" selection-start-line="291" selection-start-column="52" selection-end-line="291" selection-end-column="52" />
+            <state relative-caret-position="133">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-175.conf">
+        <entry file="file://$PROJECT_DIR$/process_activity/问题记录">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="313" column="52" selection-start-line="312" selection-start-column="12" selection-end-line="313" selection-end-column="52" />
+            <state relative-caret-position="152">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/software/python37/Lib/site-packages/pymongo/collection.py">
+        <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="1288" column="8" selection-start-line="1288" selection-start-column="8" selection-end-line="1288" selection-end-column="8" />
+            <state relative-caret-position="401">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19">
+              <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+              <folding>
+                <element signature="e#24#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_activity/Init.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="82" column="82" lean-forward="true" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="82" />
+              <folding>
+                <element signature="e#109#123#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,15 +91,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            <state relative-caret-position="-128">
+              <caret line="105" column="24" lean-forward="true" selection-start-line="103" selection-start-column="4" selection-end-line="105" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2_oop/1_ClassInstance.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/parsing_proc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3515">
+              <caret line="185" column="32" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -98,17 +123,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sshd</find>
-      <find>python</find>
-      <find>+</find>
-      <find>sh</find>
-      <find>2849</find>
       <find>23263</find>
       <find>cron</find>
       <find>rsyslogd</find>
       <find>udevd</find>
       <find>mysqld</find>
-      <find>java</find>
       <find>ping</find>
       <find>sockets_num</find>
       <find>kthreadd</find>
@@ -127,7 +146,13 @@
       <find>resources</find>
       <find>create_time</find>
       <find>procSTART</find>
+      <find>cpu_percent</find>
+      <find>java</find>
+      <find>-1</find>
+      <find>init</find>
       <find>print</find>
+      <find>sshd</find>
+      <find>211.65.197.175</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/process_activity/进程活动信息" />
         <option value="$PROJECT_DIR$/process_activity/update.py" />
         <option value="$PROJECT_DIR$/common/GetProcessInfo.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
@@ -179,14 +203,15 @@
         <option value="$PROJECT_DIR$/index_manage/233_syscall" />
         <option value="$PROJECT_DIR$/index_manage/test2.py" />
         <option value="$PROJECT_DIR$/index_manage/parsing_proc.py" />
-        <option value="$PROJECT_DIR$/process_activity/进程活动信息.txt" />
         <option value="$PROJECT_DIR$/process_activity/ProcessActivityCollect.py" />
-        <option value="$PROJECT_DIR$/SysProcInfoCollection/test.py" />
         <option value="$PROJECT_DIR$/SysProcInfoCollection/需求分析" />
-        <option value="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py" />
         <option value="$PROJECT_DIR$/SysProcInfoCollection/log6.conf" />
         <option value="$PROJECT_DIR$/SysProcInfoCollection/log7.conf" />
         <option value="$PROJECT_DIR$/SysProcInfoCollection/log5.conf" />
+        <option value="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py" />
+        <option value="$PROJECT_DIR$/process_activity/进程活动信息.txt" />
+        <option value="$PROJECT_DIR$/SysProcInfoCollection/test.py" />
+        <option value="$PROJECT_DIR$/process_activity/proc_activity2.py" />
       </list>
     </option>
   </component>
@@ -211,16 +236,6 @@
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="2_oop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="mongodb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
@@ -266,7 +281,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SysInfoCollection">
+  <component name="RunManager" selected="Python.proc_activity2">
     <configuration name="SysInfoCollection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,7 +295,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py" />
+      <option name="SCRIPT_NAME" value="D:\CodeAarea\python\learn\SysProcInfoCollection\SysInfoCollection2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -311,6 +326,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="proc_activity2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process_activity" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_activity/proc_activity2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -325,28 +362,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SysProcInfoCollection/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="learn" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/index_manage" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/index_manage/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -379,11 +394,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SysInfoCollection" />
+        <item itemvalue="Python.proc_activity2" />
         <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.SysInfoCollection" />
         <item itemvalue="Python.parsing_proc" />
         <item itemvalue="Python.test2" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -412,7 +427,7 @@
       <workItem from="1609766797045" duration="710000" />
       <workItem from="1610072270255" duration="30597000" />
       <workItem from="1610521644266" duration="1732000" />
-      <workItem from="1614683559844" duration="24772000" />
+      <workItem from="1614683559844" duration="50641000" />
     </task>
     <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
       <created>1601790976624</created>
@@ -701,11 +716,18 @@
       <option name="project" value="LOCAL" />
       <updated>1614774586342</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add">
+      <created>1614778600099</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1614778600099</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224057000" />
+    <option name="totallyTimeSpent" value="249926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -718,13 +740,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.18971062" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.18971062" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36071032" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36071032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -734,7 +757,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32963374" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32963374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -833,6 +856,7 @@
     <SUITE FILE_PATH="coverage/learn$GetProcessPCI.coverage" NAME="GetProcessPCI Coverage Results" MODIFIED="1603348467151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1610110342264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
     <SUITE FILE_PATH="coverage/learn$SensitiveResourceCheck.coverage" NAME="SensitiveResourceCheck Coverage Results" MODIFIED="1603370042568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
+    <SUITE FILE_PATH="coverage/learn$proc_activity2.coverage" NAME="proc_activity2 Coverage Results" MODIFIED="1614867056938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$decission_tree_demo2.coverage" NAME="decission_tree_demo2 Coverage Results" MODIFIED="1603265362004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$2_Logging.coverage" NAME="2_Logging Coverage Results" MODIFIED="1601971981526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
@@ -856,7 +880,7 @@
     <SUITE FILE_PATH="coverage/learn$AllProcess.coverage" NAME="AllProcess Coverage Results" MODIFIED="1603172791498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$DrawResult.coverage" NAME="DrawResult Coverage Results" MODIFIED="1609397864490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
     <SUITE FILE_PATH="coverage/learn$Update.coverage" NAME="Update Coverage Results" MODIFIED="1603177644149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
-    <SUITE FILE_PATH="coverage/learn$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1614743590352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SysProcInfoCollection" />
+    <SUITE FILE_PATH="coverage/learn$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1614864010333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SysProcInfoCollection" />
     <SUITE FILE_PATH="coverage/learn$6_Slots.coverage" NAME="6_Slots Coverage Results" MODIFIED="1601967964692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$1_Exception.coverage" NAME="1_Exception Coverage Results" MODIFIED="1601971323679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessPAI.coverage" NAME="GetProcessPAI Coverage Results" MODIFIED="1603194378599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
@@ -867,26 +891,6 @@
     <SUITE FILE_PATH="coverage/learn$parsing_proc.coverage" NAME="parsing_proc Coverage Results" MODIFIED="1610522378425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/process_classification/decission_tree_demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="74" column="32" lean-forward="true" selection-start-line="62" selection-end-line="74" selection-end-column="32" />
-          <folding>
-            <element signature="e#21#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_classification/DecisionTreeTrain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software/python37/Lib/site-packages/sklearn/tree/tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -1102,56 +1106,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/问题记录">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="22" selection-start-line="17" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/Init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="e#109#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/FixCount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2_oop/1_ClassInstance.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mongodb/Query.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1167,41 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="75" column="41" lean-forward="true" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-          <folding>
-            <element signature="e#33#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/需求分析">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software/python37/Lib/site-packages/pymongo/mongo_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11891">
           <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/pymongo/collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="1288" column="8" selection-start-line="1288" selection-start-column="8" selection-end-line="1288" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1212,26 +1141,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-175.conf">
+    <entry file="file://D:/software/python37/Lib/site-packages/pymongo/collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="313" column="52" selection-start-line="312" selection-start-column="12" selection-end-line="313" selection-end-column="52" />
+        <state relative-caret-position="1273">
+          <caret line="1288" column="8" selection-start-line="1288" selection-start-column="8" selection-end-line="1288" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_oop/1_ClassInstance.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/需求分析">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/问题记录">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/FixCount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-23.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="291" column="52" selection-start-line="291" selection-start-column="52" selection-end-line="291" selection-end-column="52" />
+        <state relative-caret-position="288">
+          <caret line="308" column="68" selection-start-line="308" selection-start-column="68" selection-end-line="308" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py">
+    <entry file="file://$PROJECT_DIR$/process_activity/Init.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1251">
-          <caret line="271" column="27" lean-forward="true" selection-start-line="271" selection-start-column="27" selection-end-line="271" selection-end-column="27" />
+        <state relative-caret-position="261">
+          <caret line="82" column="82" lean-forward="true" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="82" />
+          <folding>
+            <element signature="e#109#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/进程活动信息.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-175.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="313" column="52" selection-start-line="312" selection-start-column="12" selection-end-line="313" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="e#33#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="105" column="24" lean-forward="true" selection-start-line="103" selection-start-column="4" selection-end-line="105" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/parsing_proc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3515">
+          <caret line="185" column="32" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
