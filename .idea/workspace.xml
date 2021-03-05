@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/process_activity/proc_activity2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection.py" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_activity/进程活动信息.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/进程活动信息.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_activity/proc_activity2.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/proc_activity2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+            <state relative-caret-position="211">
+              <caret line="147" column="17" lean-forward="true" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -150,9 +147,9 @@
       <find>java</find>
       <find>-1</find>
       <find>init</find>
-      <find>print</find>
       <find>sshd</find>
       <find>211.65.197.175</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -427,7 +424,7 @@
       <workItem from="1609766797045" duration="710000" />
       <workItem from="1610072270255" duration="30597000" />
       <workItem from="1610521644266" duration="1732000" />
-      <workItem from="1614683559844" duration="50641000" />
+      <workItem from="1614683559844" duration="53733000" />
     </task>
     <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
       <created>1601790976624</created>
@@ -723,11 +720,18 @@
       <option name="project" value="LOCAL" />
       <updated>1614778600099</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat:新的进程活动收集器">
+      <created>1614867272214</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1614867272214</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249926000" />
+    <option name="totallyTimeSpent" value="253018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,12 +746,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.18971062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.18971062" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36071032" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36071032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -814,7 +818,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:Python面对对象——多重继承" />
     <MESSAGE value="feat:Python面对对象——定制类的方法" />
     <MESSAGE value="feat:Python面对对象——枚举" />
     <MESSAGE value="feat:异常处理" />
@@ -839,7 +842,8 @@
     <MESSAGE value="feat:新增系统、进程信息收集程序" />
     <MESSAGE value="fix:修复bug" />
     <MESSAGE value="add" />
-    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <MESSAGE value="feat:新的进程活动收集器" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:新的进程活动收集器" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -856,7 +860,7 @@
     <SUITE FILE_PATH="coverage/learn$GetProcessPCI.coverage" NAME="GetProcessPCI Coverage Results" MODIFIED="1603348467151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1610110342264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
     <SUITE FILE_PATH="coverage/learn$SensitiveResourceCheck.coverage" NAME="SensitiveResourceCheck Coverage Results" MODIFIED="1603370042568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/whitelist" />
-    <SUITE FILE_PATH="coverage/learn$proc_activity2.coverage" NAME="proc_activity2 Coverage Results" MODIFIED="1614867056938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
+    <SUITE FILE_PATH="coverage/learn$proc_activity2.coverage" NAME="proc_activity2 Coverage Results" MODIFIED="1614911795930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$decission_tree_demo2.coverage" NAME="decission_tree_demo2 Coverage Results" MODIFIED="1603265362004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$2_Logging.coverage" NAME="2_Logging Coverage Results" MODIFIED="1601971981526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
@@ -891,13 +895,6 @@
     <SUITE FILE_PATH="coverage/learn$parsing_proc.coverage" NAME="parsing_proc Coverage Results" MODIFIED="1610522378425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/software/python37/Lib/site-packages/sklearn/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="640" column="23" selection-start-line="640" selection-start-column="23" selection-end-line="640" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assist/sensitive-files.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1253,10 +1250,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/pa2.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+        <state relative-caret-position="211">
+          <caret line="147" column="17" lean-forward="true" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>

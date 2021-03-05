@@ -6,11 +6,6 @@ import datetime
 from multiprocessing import Pool
 
 es=Elasticsearch("211.65.197.70")
-mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
-db = mongo['pinfo']
-col = db['activity']
-
-db=mongo['pinfo']
 
 utcnow_iso = datetime.datetime.utcnow().isoformat()
 today=time.strftime('%Y.%m.%d',time.localtime(time.time()))
@@ -33,7 +28,6 @@ def detect_process(host, from_time, to_time):
             }
             esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
             total = esData['hits']['total']
-            print('total', host, total)
             return total > 0
         else:
             return False
@@ -100,6 +94,9 @@ def get_all_process(host, from_time, to_time):
         print('get_all_process', ee)
 
 def process_activity(host):
+    mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
+    db = mongo['pinfo']
+    col = db['activity']
     while (True):
         try:
             from_time = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time() - 8 * 60 * 60 - 25))
@@ -132,14 +129,21 @@ def process_activity(host):
                         res[key] = proc
                         res[key]['start_date'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(proc['start_time']))
                         res[key]['proc_num'] = 1
+
+                current_time = time.time()
+                current_date = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(current_time))
                 for app_key in res:
                     res[app_key]['open_files'] = list(res[app_key]['open_files'])
                     res[app_key]['files_num'] = len(res[app_key]['open_files'])
                     res[app_key]['connections'] = list(res[app_key]['connections'])
                     res[app_key]['connections_num'] = len(res[app_key]['connections'])
-                print(len(res), time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time())))
+                    res[app_key]['collect_time'] = current_time
+                    res[app_key]['collect_date'] = current_date
                 #插入到mongodb
                 col.insert_many(list(res.values()))
+                with open('pa2.log', 'a') as f:
+                    line = current_date + ' ' + host + ' ' + str(len(res)) +' '+ '条插入成功\n'
+                    f.write(line)
                 time.sleep(25)
             else:
                 time.sleep(20)
