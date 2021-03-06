@@ -17,13 +17,15 @@ def detect_process(host, from_time, to_time, today):
                 "query": {
                     "range": {
                         "@timestamp": {
-                            "gte": from_time,
-                            "lte": to_time
+                            "gte": "2021-03-06T11:32:12.046851",
+                            "lte": "2021-03-06T11:32:37.046851"
                         }
                     }
-                }
+                },
+                "size": 0
             }
-            esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
+            esData = es.search(index=idx, timeout='3s', body=es_query1)
+            print(esData)
             total = esData['hits']['total']
             print(host, total)
             return total > 0

@@ -5,8 +5,10 @@ import time
 import datetime
 from multiprocessing import Pool
 
+es = Elasticsearch("211.65.197.70")
+
 #探测一个时间范围 (from_time, to_time] 是否有进程信息
-def detect_process(host, from_time, to_time, today, es):
+def detect_process(host, from_time, to_time, today):
     try:
         idx = host + "-pinfo-" + today
         if es.indices.exists(index=idx):
@@ -18,19 +20,20 @@ def detect_process(host, from_time, to_time, today, es):
                             "lte": to_time
                         }
                     }
-                }
+                },
+                "size": 0
             }
-            esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
+            esData = es.search(index=idx, timeout='3s', body=es_query1)
             # print(esData)
             total = esData['hits']['total']
-            print(host, total, from_time, to_time, today, idx)
+            # print(host, total, from_time, to_time, today, idx)
             return total > 0
         else:
             return False
     except Exception as ee:
         print('detect_process', ee)
 
-def get_all_process(host, from_time, to_time, today, es):
+def get_all_process(host, from_time, to_time, today):
     try:
         idx = host + "-pinfo-" + today
         dds = []
@@ -90,7 +93,6 @@ def get_all_process(host, from_time, to_time, today, es):
         print('get_all_process', ee)
 
 def process_activity(host):
-    es = Elasticsearch("211.65.197.70")
     mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
     db = mongo['pinfo']
     col = db['activity']
@@ -100,11 +102,11 @@ def process_activity(host):
             from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=25)).isoformat()
             to_time = datetime.datetime.utcnow().isoformat()
             res = {}
-            if detect_process(host, from_time, to_time, today, es):
+            if detect_process(host, from_time, to_time, today):
                 time.sleep(5)
                 from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=35)).isoformat()
                 to_time = datetime.datetime.utcnow().isoformat()
-                all_process = get_all_process(host, from_time, to_time, today, es)
+                all_process = get_all_process(host, from_time, to_time, today)
                 if len(all_process) == 0:
                     print('get all process is None')
                     continue
@@ -155,7 +157,8 @@ def process_activity(host):
 if __name__ == '__main__':
     try:
         hosts = ["211.65.197.175", "211.65.197.233", "211.65.193.23"]
-        pool = Pool(3)
+        # hosts = ["211.65.197.233"]
+        pool = Pool(3) #线程池大小，跟主机数一致
         for host in hosts:
             pool.apply_async(process_activity, args=(host,))
         print('Waiting for all subprocesses done...')
