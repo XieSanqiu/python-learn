@@ -3,13 +3,15 @@ import pymongo
 from elasticsearch import Elasticsearch
 import time
 import datetime
-from multiprocessing import Pool
+from multiprocessing import Process
+import threading
 
-es = Elasticsearch("211.65.197.70")
+es = Elasticsearch("211.65.197.70", sniff_on_start=True)
 
 #探测一个时间范围 (from_time, to_time] 是否有进程信息
 def detect_process(host, from_time, to_time, today):
     try:
+        # es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
         if es.indices.exists(index=idx):
             es_query1 = {
@@ -24,9 +26,9 @@ def detect_process(host, from_time, to_time, today):
                 "size": 0
             }
             esData = es.search(index=idx, timeout='3s', body=es_query1)
-            # print(esData)
+            #print(esData)
             total = esData['hits']['total']
-            # print(host, total, from_time, to_time, today, idx)
+            #print(host, total, from_time, to_time, today, idx)
             return total > 0
         else:
             return False
@@ -35,6 +37,7 @@ def detect_process(host, from_time, to_time, today):
 
 def get_all_process(host, from_time, to_time, today):
     try:
+        # es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
         dds = []
         if es.indices.exists(index=idx):
@@ -93,6 +96,7 @@ def get_all_process(host, from_time, to_time, today):
         print('get_all_process', ee)
 
 def process_activity(host):
+
     mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
     db = mongo['pinfo']
     col = db['activity']
@@ -158,12 +162,16 @@ if __name__ == '__main__':
     try:
         hosts = ["211.65.197.175", "211.65.197.233", "211.65.193.23"]
         # hosts = ["211.65.197.233"]
-        pool = Pool(3) #线程池大小，跟主机数一致
+
+        #多进程
+        # for host in hosts:
+        #     p = Process(target=process_activity, args=(host,))
+        #     print(p.name, 'start...')
+        #     p.start()
+
+        #多线程
         for host in hosts:
-            pool.apply_async(process_activity, args=(host,))
-        print('Waiting for all subprocesses done...')
-        pool.close()
-        pool.join()
-        print('All subprocesses done.')
+            t = threading.Thread(target=process_activity, args=(host,))
+            t.start()
     except Exception as ee:
         print('main', ee)
