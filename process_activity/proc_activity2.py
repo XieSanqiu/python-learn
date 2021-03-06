@@ -5,12 +5,12 @@ import time
 import datetime
 from multiprocessing import Pool
 
-es=Elasticsearch("211.65.197.70")
-
 #探测一个时间范围 (from_time, to_time] 是否有进程信息
 def detect_process(host, from_time, to_time, today):
     try:
+        es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
+        # print(host, from_time, to_time, today, idx)
         if es.indices.exists(index=idx):
             es_query1 = {
                 "query": {
@@ -22,8 +22,10 @@ def detect_process(host, from_time, to_time, today):
                     }
                 }
             }
-            esData = es.search(index=idx, timeout='3s', body=es_query1)
+            esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
+            # print(esData)
             total = esData['hits']['total']
+            # print(host, total)
             return total > 0
         else:
             return False
@@ -32,6 +34,7 @@ def detect_process(host, from_time, to_time, today):
 
 def get_all_process(host, from_time, to_time, today):
     try:
+        es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
         dds = []
         if es.indices.exists(index=idx):
@@ -46,13 +49,13 @@ def get_all_process(host, from_time, to_time, today):
                 },
                 "size": 100
             }
-            esData = es.search(index=idx, scroll='1m', timeout='5s', body=es_query1)
+            esData = es.search(index=idx, scroll='5m', timeout='5s', body=es_query1)
             scroll_id = esData["_scroll_id"]
             total = esData['hits']['total']
             datas = esData['hits']['hits']
 
             for i in range((int)(total / 100)):
-                res = es.scroll(scroll_id=scroll_id, scroll='1m')
+                res = es.scroll(scroll_id=scroll_id, scroll='5m')
                 datas += res["hits"]["hits"]
             for data in datas:
                 d = dict()
