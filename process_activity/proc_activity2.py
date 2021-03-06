@@ -7,12 +7,8 @@ from multiprocessing import Pool
 
 es=Elasticsearch("211.65.197.70")
 
-utcnow_iso = datetime.datetime.utcnow().isoformat()
-today=time.strftime('%Y.%m.%d',time.localtime(time.time()))
-now=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-
 #探测一个时间范围 (from_time, to_time] 是否有进程信息
-def detect_process(host, from_time, to_time):
+def detect_process(host, from_time, to_time, today):
     try:
         idx = host + "-pinfo-" + today
         if es.indices.exists(index=idx):
@@ -20,13 +16,13 @@ def detect_process(host, from_time, to_time):
                 "query": {
                     "range": {
                         "@timestamp": {
-                            "gt": from_time,
+                            "gte": from_time,
                             "lte": to_time
                         }
                     }
                 }
             }
-            esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
+            esData = es.search(index=idx, timeout='3s', body=es_query1)
             total = esData['hits']['total']
             return total > 0
         else:
@@ -34,30 +30,30 @@ def detect_process(host, from_time, to_time):
     except Exception as ee:
         print('detect_process', ee)
 
-def get_all_process(host, from_time, to_time):
+def get_all_process(host, from_time, to_time, today):
     try:
         idx = host + "-pinfo-" + today
+        dds = []
         if es.indices.exists(index=idx):
             es_query1 = {
                 "query": {
                     "range": {
                         "@timestamp": {
-                            "gt": from_time,
+                            "gte": from_time,
                             "lte": to_time
                         }
                     }
                 },
                 "size": 100
             }
-            esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
+            esData = es.search(index=idx, scroll='1m', timeout='5s', body=es_query1)
             scroll_id = esData["_scroll_id"]
             total = esData['hits']['total']
             datas = esData['hits']['hits']
 
             for i in range((int)(total / 100)):
-                res = es.scroll(scroll_id=scroll_id, scroll='5m')
+                res = es.scroll(scroll_id=scroll_id, scroll='1m')
                 datas += res["hits"]["hits"]
-            dds = []
             for data in datas:
                 d = dict()
                 d['HostIP'] = data['_source']['HostIP']
@@ -99,17 +95,18 @@ def process_activity(host):
     col = db['activity']
     while (True):
         try:
-            from_time = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time() - 8 * 60 * 60 - 25))
-            to_time = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time() - 8 * 60 * 60))
+            today = time.strftime('%Y.%m.%d', time.localtime(time.time()))
+            from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=25)).isoformat()
+            to_time = datetime.datetime.utcnow().isoformat()
             res = {}
-            if detect_process(host, from_time, to_time):
+            if detect_process(host, from_time, to_time, today):
                 time.sleep(5)
-                from_time = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time() - 8 * 60 * 60 - 30))
-                to_time = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time() - 8 * 60 * 60))
-                all_process = get_all_process(host, from_time, to_time)
-                if all_process is None:
-                    print('get all process is none')
-                    break
+                from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=35)).isoformat()
+                to_time = datetime.datetime.utcnow().isoformat()
+                all_process = get_all_process(host, from_time, to_time, today)
+                if len(all_process) == 0:
+                    print('get all process is None')
+                    continue
                 for proc in all_process:
                     key = (proc['HostIP'], proc['proc_exe'], proc['proc_param'])
                     if key in res:
@@ -140,6 +137,9 @@ def process_activity(host):
                     res[app_key]['collect_time'] = current_time
                     res[app_key]['collect_date'] = current_date
                 #插入到mongodb
+                if len(res.values()) == 0:
+                    print('res.values is none')
+                    continue
                 col.insert_many(list(res.values()))
                 with open('pa2.log', 'a') as f:
                     line = current_date + ' ' + host + ' ' + str(len(res)) +' '+ '条插入成功\n'
