@@ -6,11 +6,9 @@ import datetime
 from multiprocessing import Pool
 
 #探测一个时间范围 (from_time, to_time] 是否有进程信息
-def detect_process(host, from_time, to_time, today):
+def detect_process(host, from_time, to_time, today, es):
     try:
-        es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
-        # print(host, from_time, to_time, today, idx)
         if es.indices.exists(index=idx):
             es_query1 = {
                 "query": {
@@ -25,16 +23,15 @@ def detect_process(host, from_time, to_time, today):
             esData = es.search(index=idx, scroll='5m', timeout='3s', body=es_query1)
             # print(esData)
             total = esData['hits']['total']
-            # print(host, total)
+            print(host, total, from_time, to_time, today, idx)
             return total > 0
         else:
             return False
     except Exception as ee:
         print('detect_process', ee)
 
-def get_all_process(host, from_time, to_time, today):
+def get_all_process(host, from_time, to_time, today, es):
     try:
-        es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
         dds = []
         if es.indices.exists(index=idx):
@@ -93,6 +90,7 @@ def get_all_process(host, from_time, to_time, today):
         print('get_all_process', ee)
 
 def process_activity(host):
+    es = Elasticsearch("211.65.197.70")
     mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
     db = mongo['pinfo']
     col = db['activity']
@@ -102,11 +100,11 @@ def process_activity(host):
             from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=25)).isoformat()
             to_time = datetime.datetime.utcnow().isoformat()
             res = {}
-            if detect_process(host, from_time, to_time, today):
+            if detect_process(host, from_time, to_time, today, es):
                 time.sleep(5)
                 from_time = (datetime.datetime.utcnow() - datetime.timedelta(seconds=35)).isoformat()
                 to_time = datetime.datetime.utcnow().isoformat()
-                all_process = get_all_process(host, from_time, to_time, today)
+                all_process = get_all_process(host, from_time, to_time, today, es)
                 if len(all_process) == 0:
                     print('get all process is None')
                     continue
