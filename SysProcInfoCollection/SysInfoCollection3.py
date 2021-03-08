@@ -6,6 +6,18 @@ import socket
 import os
 import pymongo
 
+def get_host_ip():
+    """
+    查询本机ip地址
+    """
+    try:
+        s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8',80))
+        ip=s.getsockname()[0]
+    finally:
+        s.close()
+    return ip
+
 class SysInfoCollect(object):
     def getName(self):
         hostname = socket.gethostname()
@@ -133,7 +145,7 @@ class ProcInfoCollect(object):
                 procCPUUTime = pinfo['cpu_times'].user
                 procCPUSTime = pinfo['cpu_times'].system
 
-                procMEM = pinfo['memory_percent']
+                procMEM = '{:.3f}'.format(pinfo['memory_percent'])
                 procRSS = pinfo['memory_info'].rss
                 procVMS = pinfo['memory_info'].vms
 
@@ -176,7 +188,7 @@ class ProcInfoCollect(object):
                 procConnection = pinfo['connections']
                 procConnNum = len(procConnection)
             stopTime = -1
-            procDiskRRate , procDiskWRate = -1, -1
+            procDiskRRate , procDiskWRate = 0, 0
             key = (procExe, procParam, procSTART, procPID)
             dataValue = [procExe, procName, procUser, procPID, procPPID, procCPU, procCPUUTime, procCPUSTime,
                          procMEM, procRSS, procVMS, procTTY, procSTAT, procCMD, procParam, procRUID, procEUID,
@@ -239,9 +251,57 @@ def updatemongo(dataName,dataValue,captureTime):
         d[dataName[i]]=dataValue[i]
     col.insert_one(d)
 
+def update_proc_activity(host_ip, all_process):
+    mongo=pymongo.MongoClient("mongodb://211.65.197.70:27017")
+    db = mongo['pinfo']
+    col = db['activity']
+    res = {}
+    for proc in all_process:
+        proc_exe = proc[0]
+        #print(proc_exe)
+        if proc_exe is None or proc_exe == "":
+            proc[0] = 'kernel'
+        key = (proc[0], proc[14])
+        if key in res:
+            if proc[37] < res[key]['start_time']:
+                res[key]['start_time'] = proc[37]
+                res[key]['start_date'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(proc[37]))
+                res[key]['user_name'] = proc[2]
+            res[key]['cpu_percent'] += proc[5]
+            res[key]['mem_percent'] += proc[8]
+            res[key]['disk_read_rate'] += proc[30]
+            res[key]['disk_write_rate'] += proc[31]
+            res[key]['open_files'] |= set(proc[33])
+            res[key]['connections'] |= set(proc[35])
+            res[key]['threads'] += proc[25]
+            res[key]['proc_num'] += 1
+        else:
+            res[key] = {'HostIP':host_ip, 'start_time':proc[37], 'proc_name':proc[1], 'user_name':proc[2], 'proc_param':proc[14],
+                        'proc_exe':proc[0], 'cpu_percent':proc[5], 'mem_percent':proc[8], 'disk_read_rate':proc[30], 'disk_write_rate':proc[31],
+                        'open_files':set(proc[33]), 'connections':set(proc[35]), 'threads':proc[25]}
+            res[key]['start_date'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(proc[37]))
+            res[key]['proc_num'] = 1
+
+    current_time = time.time()
+    current_date = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(current_time))
+    for app_key in res:
+        res[app_key]['open_files'] = list(res[app_key]['open_files'])
+        res[app_key]['files_num'] = len(res[app_key]['open_files'])
+        res[app_key]['connections'] = list(res[app_key]['connections'])
+        res[app_key]['connections_num'] = len(res[app_key]['connections'])
+        res[app_key]['collect_time'] = current_time
+        res[app_key]['collect_date'] = current_date
+    # 插入到mongodb
+    count = len(res.values())
+    if count != 0:
+        col.insert_many(list(res.values()))
+    return count
+
+
 if __name__=="__main__":
     sysInfo = SysInfoCollect()
     procInfo = ProcInfoCollect()
+    host_ip = get_host_ip()
 
     name = sysInfo.getName().strip()
     bootTime = sysInfo.getStartTime()
@@ -259,7 +319,7 @@ if __name__=="__main__":
             try:
                 mongo = pymongo.MongoClient("mongodb://211.65.197.70:27017")
                 record_time_col = mongo['pinfo']['record_time']
-                query1 = {'type': 'collect_rate', 'host': '211.65.197.175'}
+                query1 = {'type': 'collect_rate', 'host': host_ip}
                 x = record_time_col.find_one(query1, {'_id': 0, 'rate': 1})['rate']  # 收集周期（秒）
                 if x:
                     cycle_time = x
@@ -330,7 +390,11 @@ if __name__=="__main__":
                     dataValue = processes_A[proc_key]
                     writeIntofile(pInfoPath, pInfoName, current_date_time, dataName, dataValue, name, processes_A[proc_key][-2])
 
-                #3、更新周期数据
+                #3、将进程活动信息写入mongodb
+                insert_count = update_proc_activity(host_ip, processes_A.values())
+                # print(current_date_time, host_ip, insert_count, 'application activities')
+
+                #4、更新周期数据
                 cycle_start_time = current_time
                 processes_A = processes_B
             time.sleep(10)

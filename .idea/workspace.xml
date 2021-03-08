@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/iforest/mytest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_activity/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_activity/proc_activity2.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_activity/proc_activity2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iforest/plot_anomalies.py" beforeDir="false" afterPath="$PROJECT_DIR$/iforest/plot_anomalies.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iforest/iForest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1715">
-              <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="2489">
+              <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iforest/plot_anomalies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="69" column="11" lean-forward="true" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+            <state relative-caret-position="1330">
+              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -38,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2749">
-              <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            <state relative-caret-position="267">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="42" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -50,23 +51,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_activity/pa2.log">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="216">
+              <caret line="376" column="54" selection-start-line="376" selection-start-column="54" selection-end-line="376" selection-end-column="54" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_activity/Test.py">
+        <entry file="file://$PROJECT_DIR$/iforest/mytest.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-              <folding>
-                <element signature="e#15#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="133">
+              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/iforest/cancer.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="494" selection-start-column="485" selection-end-column="494" />
             </state>
           </provider>
         </entry>
@@ -82,8 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rsyslogd</find>
-      <find>udevd</find>
       <find>mysqld</find>
       <find>ping</find>
       <find>sockets_num</find>
@@ -112,6 +120,8 @@
       <find>print</find>
       <find>lolviz</find>
       <find>index_date</find>
+      <find>diagnosis</find>
+      <find>kerne</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,9 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/process_classification/AllProcess.py" />
-        <option value="$PROJECT_DIR$/process_activity/test.py" />
-        <option value="$PROJECT_DIR$/process_activity/Init.py" />
         <option value="$PROJECT_DIR$/process_activity/Update.py" />
         <option value="$PROJECT_DIR$/process_activity/问题记录" />
         <option value="$PROJECT_DIR$/process_activity/CountFix.py" />
@@ -167,10 +174,13 @@
         <option value="$PROJECT_DIR$/process_activity/进程活动信息.txt" />
         <option value="$PROJECT_DIR$/SysProcInfoCollection/test.py" />
         <option value="$PROJECT_DIR$/iforest/iForest.py" />
-        <option value="$PROJECT_DIR$/iforest/plot_anomalies.py" />
         <option value="$PROJECT_DIR$/process_activity/Test.py" />
         <option value="$PROJECT_DIR$/process_activity/pa2.log" />
         <option value="$PROJECT_DIR$/process_activity/proc_activity2.py" />
+        <option value="$PROJECT_DIR$/iforest/plot_anomalies.py" />
+        <option value="$PROJECT_DIR$/iforest/mytest.csv" />
+        <option value="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py" />
+        <option value="$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py" />
       </list>
     </option>
   </component>
@@ -188,7 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +224,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.proc_activity2">
+  <component name="RunManager" selected="Python.plot_anomalies">
     <configuration name="SysInfoCollection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,7 +269,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\CodeAarea\python\learn\SysProcInfoCollection\SysInfoCollection2.py" />
+      <option name="SCRIPT_NAME" value="D:\CodeAarea\python\learn\SysProcInfoCollection\SysInfoCollection3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -358,9 +368,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.plot_anomalies" />
         <item itemvalue="Python.proc_activity2" />
         <item itemvalue="Python.Test" />
-        <item itemvalue="Python.plot_anomalies" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.SysInfoCollection" />
       </list>
@@ -391,14 +401,8 @@
       <workItem from="1609766797045" duration="710000" />
       <workItem from="1610072270255" duration="30597000" />
       <workItem from="1610521644266" duration="1732000" />
-      <workItem from="1614683559844" duration="84298000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat:python基础——控制台输出输出">
-      <created>1601790976624</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1601790976624</updated>
+      <workItem from="1614683559844" duration="86510000" />
+      <workItem from="1615171653193" duration="8893000" />
     </task>
     <task id="LOCAL-00002" summary="feat:python基础——基础语法">
       <created>1601798238334</created>
@@ -736,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1615032399037</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="bugfix：进程活动收集器，希望是最后一次改">
+      <created>1615037212916</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1615037212918</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283583000" />
+    <option name="totallyTimeSpent" value="294688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,12 +766,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.18971062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.19239014" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4017758" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4017758" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -827,7 +838,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:logging日志记录" />
     <MESSAGE value="feat:文件读写" />
     <MESSAGE value="feat:es、mongodb查询" />
     <MESSAGE value="feat:初始化进程活动信息" />
@@ -852,7 +862,8 @@
     <MESSAGE value="bugfix:进程活动收集器修复部门问题" />
     <MESSAGE value="bugfix:进程活动收集器修复部分问题" />
     <MESSAGE value="feat:孤立森林算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:孤立森林算法" />
+    <MESSAGE value="bugfix：进程活动收集器，希望是最后一次改" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix：进程活动收集器，希望是最后一次改" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -878,7 +889,7 @@
     <SUITE FILE_PATH="coverage/learn$Update.coverage" NAME="Update Coverage Results" MODIFIED="1603177644149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$1_Exception.coverage" NAME="1_Exception Coverage Results" MODIFIED="1601971323679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3_others" />
     <SUITE FILE_PATH="coverage/learn$GetProcessPAI.coverage" NAME="GetProcessPAI Coverage Results" MODIFIED="1603194378599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
-    <SUITE FILE_PATH="coverage/learn$plot_anomalies.coverage" NAME="plot_anomalies Coverage Results" MODIFIED="1615021876537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/iforest" />
+    <SUITE FILE_PATH="coverage/learn$plot_anomalies.coverage" NAME="plot_anomalies Coverage Results" MODIFIED="1615038639052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/iforest" />
     <SUITE FILE_PATH="coverage/learn$1_ClassInstance.coverage" NAME="1_ClassInstance Coverage Results" MODIFIED="1601961405123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$4_ObjectInfo.coverage" NAME="4_ObjectInfo Coverage Results" MODIFIED="1601966801233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$decission_tree_demo2__1_.coverage" NAME="decission_tree_demo2 (1) Coverage Results" MODIFIED="1603284791282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
@@ -906,11 +917,6 @@
     <SUITE FILE_PATH="coverage/learn$parsing_proc.coverage" NAME="parsing_proc Coverage Results" MODIFIED="1610522378425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/whitelist/211.65.197.175-process.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-742" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/whitelist/211.65.197.233-process.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
@@ -1120,16 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-23.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1191,16 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="330" column="52" selection-start-line="330" selection-start-column="52" selection-end-line="330" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2102000064/numpy/core/_multiarray_umath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1229,35 +1215,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/iForest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1715">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/cancer.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10277" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/plot_anomalies.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="69" column="11" lean-forward="true" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software/python37/Lib/site-packages/elasticsearch/client/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
           <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="190" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/pa2.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -1271,19 +1239,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/pa2.log">
+    <entry file="file://$PROJECT_DIR$/iforest/iForest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="2489">
+          <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iforest/plot_anomalies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1330">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iforest/mytest.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iforest/cancer.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="494" selection-start-column="485" selection-end-column="494" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2749">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state relative-caret-position="267">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="42" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="376" column="54" selection-start-line="376" selection-start-column="54" selection-end-line="376" selection-end-column="54" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
