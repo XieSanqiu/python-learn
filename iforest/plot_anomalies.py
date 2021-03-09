@@ -27,6 +27,7 @@ def plot_anomalies(X, y, sample_size=256, n_trees = 100, desired_TPR=None, perce
 
     score_start = time.time()
     scores = it.anomaly_score(X)
+    print('scores', scores)
     score_stop = time.time()
     score_time = score_stop - score_start
     print(f"score time {score_time:3.2f}s")
@@ -38,7 +39,7 @@ def plot_anomalies(X, y, sample_size=256, n_trees = 100, desired_TPR=None, perce
 
     y_pred = it.predict_from_anomaly_scores(scores, threshold=threshold)
     confusion = confusion_matrix(y, y_pred)
-    print(confusion)
+    print('confusion', confusion)
 
     TN, FP, FN, TP = confusion.flat
     TPR = TP / (TP + FN)
@@ -77,4 +78,9 @@ def test():
     df.to_csv("cancer.csv", index=False)
 
 if __name__ == '__main__':
-    test()
+    df = pd.read_csv("mytest.csv")
+    # print(df,type(df))
+    X, y = df.drop('diagnosis', axis=1), df['diagnosis']
+    # print(X)
+    # print(y)
+    plot_anomalies(X, y, sample_size=5, n_trees=1000, desired_TPR=0.95, improved=True)
