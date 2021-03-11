@@ -1,0 +1,19 @@
+Jun 18 04:07:05 combo su(pam_unix)[31791]: session opened for user cyrus by (uid=0)
+Jun 18 04:12:42 combo su(pam_unix)[32164]: session opened for user news by (uid=0)
+Jun 19 04:15:18 combo su(pam_unix)[3676]: session opened for user news by (uid=0)
+Jun 20 04:02:54 combo su(pam_unix)[9187]: session opened for user cyrus by (uid=0)
+Jul  7 08:09:11 combo udev[12754]: removing device node '/udev/vcsa2'
+Jul  7 08:09:11 combo udev[12753]: removing device node '/udev/vcs2'
+Jul 24 04:20:21 combo cups: cupsd shutdown succeeded
+Jul 24 04:20:21 combo cups: ddd ttt
+Jul 24 04:20:21 combo cups: ddd ttt
+Jul 24 04:20:26 combo cups: cupsd startup succeeded
+Jul 24 02:38:22 combo ftpd[16791]: connection from 84.102.20.2 () at Sun Jul 24 02:38:22 2005
+Jul 24 02:38:22 combo ftpd[16793]: connection from 84.102.20.2 () at Sun Jul 24 02:38:22 2005
+Jul 24 04:20:21 combo test: haha just for test
+Jul 24 04:20:26 combo test: lala just for test
+Jul 24 04:20:26 combo test: xixi just for test
+Jul 24 04:20:26 combo test: xixi just for another test
+Jul 24 04:20:21 combo test: haha just for ceshi
+Jul 24 04:20:26 combo test: lala just for ceshi
+Jul 24 04:20:26 combo test: xixi just for ceshi

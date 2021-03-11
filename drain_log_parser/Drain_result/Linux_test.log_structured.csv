@@ -1,0 +1,20 @@
+LineId,Month,Date,Time,Level,Component,PID,Content,EventId,EventTemplate,ParameterList
+1,Jun,18,04:07:05,combo,su(pam_unix),31791,session opened for user cyrus by (uid=0),788ad22d,session opened for user <*> by (uid=0),['cyrus']
+2,Jun,18,04:12:42,combo,su(pam_unix),32164,session opened for user news by (uid=0),788ad22d,session opened for user <*> by (uid=0),['news']
+3,Jun,19,04:15:18,combo,su(pam_unix),3676,session opened for user news by (uid=0),788ad22d,session opened for user <*> by (uid=0),['news']
+4,Jun,20,04:02:54,combo,su(pam_unix),9187,session opened for user cyrus by (uid=0),788ad22d,session opened for user <*> by (uid=0),['cyrus']
+5,Jul,7,08:09:11,combo,udev,12754,removing device node '/udev/vcsa2',3d002f62,removing device node <*>,"[""'/udev/vcsa2'""]"
+6,Jul,7,08:09:11,combo,udev,12753,removing device node '/udev/vcs2',3d002f62,removing device node <*>,"[""'/udev/vcs2'""]"
+7,Jul,24,04:20:21,combo,cups,,cupsd shutdown succeeded,e05fcc23,cupsd shutdown succeeded,[]
+8,Jul,24,04:20:21,combo,cups,,ddd ttt,6c7d1368,ddd ttt,[]
+9,Jul,24,04:20:21,combo,cups,,ddd ttt,6c7d1368,ddd ttt,[]
+10,Jul,24,04:20:26,combo,cups,,cupsd startup succeeded,adc372d2,cupsd startup succeeded,[]
+11,Jul,24,02:38:22,combo,ftpd,16791,connection from 84.102.20.2 () at Sun Jul 24 02:38:22 2005,9ce802ab,connection from <*> () at Sun Jul 24 <*> 2005,"['84.102.20.2', '02:38:22']"
+12,Jul,24,02:38:22,combo,ftpd,16793,connection from 84.102.20.2 () at Sun Jul 24 02:38:22 2005,9ce802ab,connection from <*> () at Sun Jul 24 <*> 2005,"['84.102.20.2', '02:38:22']"
+13,Jul,24,04:20:21,combo,test,,haha just for test,049bd478,haha just for <*>,['test']
+14,Jul,24,04:20:26,combo,test,,lala just for test,8b6751d9,lala just for <*>,['test']
+15,Jul,24,04:20:26,combo,test,,xixi just for test,45a7132a,xixi just for <*>,['test']
+16,Jul,24,04:20:26,combo,test,,xixi just for another test,06bfa429,xixi just for another test,[]
+17,Jul,24,04:20:21,combo,test,,haha just for ceshi,049bd478,haha just for <*>,['ceshi']
+18,Jul,24,04:20:26,combo,test,,lala just for ceshi,8b6751d9,lala just for <*>,['ceshi']
+19,Jul,24,04:20:26,combo,test,,xixi just for ceshi,45a7132a,xixi just for <*>,['ceshi']

@@ -1,0 +1,11 @@
+EventId,EventTemplate,Occurrences
+788ad22d,session opened for user <*> by (uid=0),4
+3d002f62,removing device node <*>,2
+e05fcc23,cupsd shutdown succeeded,1
+6c7d1368,ddd ttt,2
+adc372d2,cupsd startup succeeded,1
+9ce802ab,connection from <*> () at Sun Jul 24 <*> 2005,2
+049bd478,haha just for <*>,2
+8b6751d9,lala just for <*>,2
+45a7132a,xixi just for <*>,2
+06bfa429,xixi just for another test,1
