@@ -54,6 +54,8 @@ class LogParser:
         self.rex = rex
         self.keep_para = keep_para
 
+        self.root = None
+
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
 
@@ -240,16 +242,106 @@ class LogParser:
         print(pStr)
 
         if node.depth == self.depth:
+            pStr2 = ''
+            for i in range(dep+1):
+                pStr2 += '\t'
+            for tmp in node.childD:
+                print(pStr2 + ' '.join(tmp.logTemplate))
             return 1
         for child in node.childD:
             self.printTree(node.childD[child], dep+1)
 
+    def write_tree(self, file, node, dep):
+        pStr = ''
+        for i in range(dep):
+            pStr += '\t'
+
+        if node.depth == 0:
+            pStr += 'Root'
+        elif node.depth == 1:
+            pStr += '<' + str(node.digitOrtoken) + '>'
+        else:
+            pStr += node.digitOrtoken
+
+        file.write(pStr+'\n')
+
+        if node.depth == self.depth:
+            pStr2 = ''
+            for i in range(dep + 1):
+                pStr2 += '\t'
+            for tmp in node.childD:
+                pStr2 += ' '.join(tmp.logTemplate) + '\n'
+                file.write(pStr2)
+            return 1
+        for child in node.childD:
+            self.write_tree(file, node.childD[child], dep + 1)
+
+    def serialize(self, root):
+        ls = list()
+        self.serialize_helper(root, ls, 0)
+        return ','.join(ls)
+
+    def serialize_helper(self, root, ls, depth):
+        if root == None:
+            return
+        if depth == 0:
+            ls.append('root')
+        elif depth == 1:
+            ls.append(str(root.digitOrtoken))
+        else:
+            ls.append(root.digitOrtoken)
+        ls.append(str(len(root.childD)))
+        if root.depth == self.depth:
+            return 1
+
+        for child in root.childD:
+            self.serialize_helper(root.childD[child], ls, depth+1)
+
+    def deserialize(self, data):
+        if data == None or len(data) == 0:
+            return None
+        que = data.split(',')
+        print(que)
+        return self.deserialize_helper(que, 0)
+
+    def deserialize_helper(self, que, dep):
+        val = que.pop(0)
+        size = int(que.pop(0))
+        # print(val, size)
+        if dep == 0:
+            node = Node()
+        elif dep == 1:
+            node = Node(depth=1, digitOrtoken=int(val))
+        else:
+            node = Node(depth=dep, digitOrtoken=val)
+        if size == 1 and dep == self.depth:
+            return node
+        for i in range(size):
+            re_node = self.deserialize_helper(que, dep+1)
+            node.childD[re_node.digitOrtoken] = re_node
+        return node
+
+    def read_tree(self, file):
+        lines = []
+        with open(file) as f:
+            for line in f.readlines():
+                lines.append(line)
+        root = Node()
+        self.read_tree_helper(root, lines, 1, 1)
+
+    def read_tree_helper(self, parent_node, lines,  current_depth, current_line):
+        t_count = lines[current_line].count('\t')
+        if current_depth == 1:
+            digit = int(lines[current_line].strip()[1:-1])
+            node = Node(depth=1, digitOrtoken=digit)
+            parent_node.childD[digit] = node
 
     def parse(self, logName):
         print('Parsing file: ' + os.path.join(self.path, logName))
         start_time = datetime.now()
         self.logName = logName
         rootNode = Node()
+        self.root = rootNode
         logCluL = []
 
         self.load_data()  #根据log_format将原始日志文件解析成 字段 并写入 self.df_log
@@ -258,14 +350,14 @@ class LogParser:
         for idx, line in self.df_log.iterrows(): #遍历行数据
             logID = line['LineId']
             logmessageL = self.preprocess(line['Content']).strip().split() #预处理日志内容，根据self.reg将部分字段替换为 '<*>'
-            print(logmessageL)
+            # print(logmessageL)
             # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
             matchCluster = self.treeSearch(rootNode, logmessageL)
 
             #Match no existing log cluster
             if matchCluster is None:
                 newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
-                print('newCluster', newCluster.logTemplate, newCluster.logIDL)
+                # print('newCluster', newCluster.logTemplate, newCluster.logIDL)
                 logCluL.append(newCluster)
                 self.addSeqToPrefixTree(rootNode, newCluster)
 
@@ -289,6 +381,27 @@ class LogParser:
 
         print('Parsing done. [Time taken: {!s}]'.format(datetime.now() - start_time))
 
+    def parse_log(self, logs):
+        log_messages = []
+        headers, regex = self.generate_logformat_regex(self.log_format)
+        for line in logs:
+            try:
+                match = regex.search(line.strip())
+                # print('match', match)
+                message = [match.group(header) for header in headers]
+                # print('message', message)
+                log_messages.append(message)
+            except Exception as e:
+                pass
+        logdf = pd.DataFrame(log_messages, columns=headers)
+        print(logdf)
+        for idx, line in logdf.iterrows(): #遍历行数据
+            logmessageL = self.preprocess(line['Content']).strip().split() #预处理日志内容，根据self.reg将部分字段替换为 '<*>'
+            # print(logmessageL)
+            # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
+            matchCluster = self.treeSearch(self.root, logmessageL)
+            print(matchCluster.logTemplate)
+
     def load_data(self):
         headers, regex = self.generate_logformat_regex(self.log_format)
         self.df_log = self.log_to_dataframe(os.path.join(self.path, self.logName), regex, headers, self.log_format)
@@ -307,9 +420,9 @@ class LogParser:
             for line in fin.readlines():
                 try:
                     match = regex.search(line.strip())
-                    print('match', match)
+                    # print('match', match)
                     message = [match.group(header) for header in headers]
-                    print('message', message)
+                    # print('message', message)
                     log_messages.append(message)
                     linecount += 1
                 except Exception as e:
@@ -325,34 +438,34 @@ class LogParser:
         """
         headers = []
         splitters = re.split(r'(<[^<>]+>)', logformat)  #(<>)匹配<>并获取这一匹配，[^<>]+：除 '<' '>' 以外的所有字符 + 一次或多次
-        print(logformat)
-        print(splitters)
+        # print(logformat)
+        # print(splitters)
         regex = ''
         for k in range(len(splitters)):
             if k % 2 == 0:
                 splitter = re.sub(' +', '\\\s+', splitters[k])  #将连续的空格替换为 '\s+'
-                print(splitter)
+                # print(splitter)
                 regex += splitter
             else:
                 header = splitters[k].strip('<').strip('>')
                 regex += '(?P<%s>.*?)' % header  #header 替换 %s
                 headers.append(header)
-            print(k, regex)
-        print(regex)
+            # print(k, regex)
+        # print(regex)
         regex = re.compile('^' + regex + '$')
-        print(regex)
-        print(headers)
+        # print(regex)
+        # print(headers)
         return headers, regex
 
     def get_parameter_list(self, row):
         template_regex = re.sub(r"<.{1,5}>", "<*>", row["EventTemplate"])
-        print('row', row["EventTemplate"])
-        print('template_regex', template_regex)
+        # print('row', row["EventTemplate"])
+        # print('template_regex', template_regex)
         if "<*>" not in template_regex: return []
         template_regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template_regex)
         template_regex = re.sub(r'\\ +', r'\\s+', template_regex)
         template_regex = "^" + template_regex.replace("\<\*\>", "(.*?)") + "$"
-        print('template_regex2', template_regex)
+        # print('template_regex2', template_regex)
         parameter_list = re.findall(template_regex, row["Content"])
         parameter_list = parameter_list[0] if parameter_list else ()
         parameter_list = list(parameter_list) if isinstance(parameter_list, tuple) else [parameter_list]
