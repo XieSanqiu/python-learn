@@ -276,10 +276,19 @@ class LogParser:
         for child in node.childD:
             self.write_tree(file, node.childD[child], dep + 1)
 
-    def serialize(self, root):
-        ls = list()
-        self.serialize_helper(root, ls, 0)
-        return ','.join(ls)
+    def serialize(self, file_name):
+        try:
+            ls = list()
+            self.serialize_helper(self.root, ls, 0)
+            str = ','.join(ls)
+
+            file = open(file_name, 'w')
+            file.write(str + '\n')
+            self.serialize_helper2(file, self.root, 0)
+        except Exception as e:
+            print(e)
+            return False
+        return True
 
     def serialize_helper(self, root, ls, depth):
         if root == None:
@@ -297,12 +306,32 @@ class LogParser:
         for child in root.childD:
             self.serialize_helper(root.childD[child], ls, depth+1)
 
-    def deserialize(self, data):
-        if data == None or len(data) == 0:
-            return None
-        que = data.split(',')
+    def serialize_helper2(self, file, node, dep):
+        if node.depth == self.depth:
+            pStr2 = ''
+            for tmp in node.childD:
+                pStr2 += '-|-'.join(tmp.logTemplate) + '\n'
+                file.write(pStr2)
+            return 1
+        for child in node.childD:
+            self.serialize_helper2(file, node.childD[child], dep + 1)
+
+    def deserialize(self, file_name):
+        lines = []
+        with open(file_name, 'r') as file:
+            for line in file.readlines():
+                lines.append(line.strip())
+        tree_data = lines[0]
+        if tree_data == None or len(tree_data) == 0:
+            return False
+        que = tree_data.split(',')
         print(que)
-        return self.deserialize_helper(que, 0)
+        root =  self.deserialize_helper(que, 0)
+        for line in lines[1:]:
+            logmessageL = line.split('-|-')
+            logClust = Logcluster(logTemplate=logmessageL, logIDL=[])
+            self.addSeqToPrefixTree(root, logClust)
+        return root
 
     def deserialize_helper(self, que, dep):
         val = que.pop(0)
@@ -394,13 +423,15 @@ class LogParser:
             except Exception as e:
                 pass
         logdf = pd.DataFrame(log_messages, columns=headers)
-        print(logdf)
         for idx, line in logdf.iterrows(): #遍历行数据
             logmessageL = self.preprocess(line['Content']).strip().split() #预处理日志内容，根据self.reg将部分字段替换为 '<*>'
             # print(logmessageL)
             # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
             matchCluster = self.treeSearch(self.root, logmessageL)
-            print(matchCluster.logTemplate)
+            if matchCluster is None:
+                return None
+            else:
+                return matchCluster.logTemplate
 
     def load_data(self):
         headers, regex = self.generate_logformat_regex(self.log_format)
