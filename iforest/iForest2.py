@@ -55,32 +55,38 @@ class IsolationTreeEnsemble:
             mean_c = np.mean(self.X, axis=0) #对每一列求均值
             # std = np.sqrt(((a - np.mean(a)) ** 2).sum() / a.size)  标准差表示自平均值分散开的程度，越大表示分散的越狠
             std_c = np.std(self.X, axis=0) #对每一列求标准差
-            result = 100 * (abs(median_c - mean_c) / std_c)
-            thresh = np.mean(result, axis=0)
-            #print('result', result)
-            #print('thresh', thresh)
-            # self.good_features = np.where(result > thresh)[0]
+            # result = 100 * (abs(median_c - mean_c) / std_c)
+            median_c_list = median_c.tolist()
+            mean_c_list = mean_c.tolist()
+            std_c_list = std_c.tolist()
+            result_list = []
+            for i in range(self.X.shape[1]):
+                if std_c_list[i] == 0:
+                    r = 0
+                else:
+                    r = 100 * (abs(median_c_list[i] - mean_c_list[i]) / std_c_list[i])
+                result_list.append(r)
+            result = np.array(result_list)
 
             #good_features计算方法2，离散值越大，概率越大，包含所有特征
             gof = []
             ind = np.argsort(result)
-            print('ind', ind)
+            # print('ind', ind)
             for i in range(1, len(result)+1):
                 for j in range(i):
                     gof.append(ind[i-1])
-            print('result', result)
-            print('gof', gof)
+            # print('result', result)
+            # print('gof', gof)
 
             self.good_features = np.array(gof)
-
 
             with Pool(5) as p:
                 self.trees = p.map(self.make_tree, range(self.n_trees))  #创建 n_trees 颗树，传入的是array，返回的也是array
 
         else:
-            X_sample = X[np.random.choice(X.shape[0], self.sample_size, replace=False)]
-            self.trees.append(IsolationTree(X_sample, self.height_limit))
-
+            for i in range(self.n_trees):
+                X_sample = X[np.random.choice(X.shape[0], self.sample_size, replace=False)]
+                self.trees.append(IsolationTree(X_sample, self.height_limit))
 
         return self
 
@@ -97,15 +103,16 @@ class IsolationTreeEnsemble:
 
         for x_i in X:  #计算每一个实例在森林上的
             x_len = []
+            # print('x_i', x_i)
             for tree in self.trees:
                 # print('tree', tree.root.num, tree.root.pre_attr)
                 l, split_attr, num = tree.root.path_length(x_i)
-                # print(num)
                 x_len.append(l)
                 if split_attr != -1:
                     self.attr_weight[split_attr] += (1/num)
             avg_len = np.array(x_len).mean()
-            length.append([avg_len])
+            # print('x_len', x_len)
+            length.append(avg_len)
         return np.array(length)
 
     #计算 X 中每一个实例的异常分数
@@ -189,7 +196,10 @@ class IsolationTree:
 
                 if minv == maxv: #该个节点不再往下分
                     c_factor = CFactor.compute(X.shape[0])
-                    return Node(None, None, -1, None, c_factor)
+                    r_node = Node(None, None, -1, None, c_factor)
+                    r_node.num = X.shape[0]
+                    r_node.pre_attr = q
+                    return r_node
 
                 p = float(np.random.uniform(minv, maxv)) #随机从[minv, maxv)中取值
 
@@ -217,7 +227,10 @@ class IsolationTree:
 
             if minv == maxv: #找到的特征发现不能分了
                 c_factor = CFactor.compute(X.shape[0])
-                return Node(None, None, -1, None, c_factor)
+                r_node = Node(None, None, -1, None, c_factor)
+                r_node.num = X.shape[0]
+                r_node.pre_attr = node.split_attr
+                return r_node
 
             node.split_point = float(np.random.uniform(minv, maxv))
 

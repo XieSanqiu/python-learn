@@ -18,15 +18,16 @@ if __name__ == '__main__':
     it.fit(X, improved=True)
     scores = it.anomaly_score(X)
     print('scores', scores)
-    train_attr_weight = np.array(it.attr_weight)
-    print('attr_weight', it.attr_weight)
-    attr_weight = np.array(it.attr_weight)
-    print(np.argsort(-attr_weight))
+    # train_attr_weight = np.array(it.attr_weight)
+    # print('attr_weight', it.attr_weight)
+    # attr_weight = np.array(it.attr_weight)
+    # print(np.argsort(-attr_weight))
 
-    it.clear_attr_weight()
-    x = np.array([[4.3, 0.4, 6.1]])
+    # it.clear_attr_weight()
+
+    x = np.array([[4.3, 0.4, 1.1]])
     anomaly_score = np.array(it.anomaly_score(x))
-    detect_attr_weight = it.attr_weight
+    # detect_attr_weight = it.attr_weight
     print(anomaly_score)
-    print('attr_weight', it.attr_weight)
-    print(detect_attr_weight / train_attr_weight)
+    # print('attr_weight', it.attr_weight)
+    # print(detect_attr_weight / train_attr_weight)
