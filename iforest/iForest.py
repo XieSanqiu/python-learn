@@ -33,6 +33,7 @@ class IsolationTreeEnsemble:
 
     #得到一棵树
     def make_tree(self, i):
+        print(i)
         # 随机从[0, X.shape[0]) 中不重复的抽取 sample_size 个值，组成 sample_size 个随机实例
         X_sample = self.X[np.random.choice(self.X.shape[0], self.sample_size, replace=False)]
         return IsolationTree(X_sample, self.height_limit, self.good_features, self.improved)
@@ -54,13 +55,27 @@ class IsolationTreeEnsemble:
             mean_c = np.mean(self.X, axis=0) #对每一列求均值
             # std = np.sqrt(((a - np.mean(a)) ** 2).sum() / a.size)  标准差表示自平均值分散开的程度，越大表示分散的越狠
             std_c = np.std(self.X, axis=0) #对每一列求标准差
-            result = 100 * (abs(median_c - mean_c) / std_c)
+            # result = 100 * (abs(median_c - mean_c) / std_c)
+            median_c_list = median_c.tolist()
+            mean_c_list = mean_c.tolist()
+            std_c_list = std_c.tolist()
+            result_list = []
+            for i in range(self.X.shape[1]):
+                if std_c_list[i] == 0:
+                    r = 0
+                else:
+                    r = 100 * (abs(median_c_list[i] - mean_c_list[i]) / std_c_list[i])
+                result_list.append(r)
+            result = np.array(result_list)
+
             thresh = np.mean(result, axis=0)
             print('result', result)
             print('thresh', thresh)
             self.good_features = np.where(result > thresh)[0]
+            print(self.good_features)
 
             with Pool(5) as p:
+                print(self.n_trees)
                 self.trees = p.map(self.make_tree, range(self.n_trees))  #创建 n_trees 颗树，传入的是array，返回的也是array
 
         else:
@@ -179,6 +194,7 @@ class IsolationTree:
                 rs = X_r.shape[0]
 
                 diff = float(abs(ls - rs)/total)
+                # print('diff', diff)
 
                 if diff >= 0.25 or total == 2: #总共只有两个实例或者q特征区分度很大停止循环
                     tooBalanced = False

@@ -10,9 +10,12 @@
 '''
 
 import pymongo, time
-from iforest import iForest2
+from iforest.iForest import IsolationTreeEnsemble
 import numpy as np
 import pandas as pd
+from sklearn.ensemble import IsolationForest
+from sklearn.neighbors import LocalOutlierFactor
+
 
 class ResourceDetection:
     def __init__(self):
@@ -64,15 +67,17 @@ class ResourceDetection:
     def built_iForest_for_one_process(self, key, num):
         #step1：根据进程key从activity库中找到 最近的 100条 正常 的活动信息作为训练信息构建孤立森林
         recent_normal_activities = self.get_recent_normal_activities(key, num)
+        recent_normal_activities.append([1, 52.9, 25.313, 0.0, 0.509, 5, 46])
         data_num = len(recent_normal_activities)
         train_data = np.array(recent_normal_activities)
         if data_num >= num:
-            it = iForest2.IsolationTreeEnsemble(10, 1000)
-            it.fit(train_data, False)
+            it = IsolationTreeEnsemble(100, 1000)
+            it.fit(train_data, True)
             scores = it.anomaly_score(train_data)
+            print(scores)
             max_score = np.max(scores)
-            train_attr_weight = np.array(it.attr_weight)
-            return it, max_score, train_attr_weight
+            # train_attr_weight = np.array(it.attr_weight)
+            return it, max_score
         else:
             print('数量过少，不足以构建孤立森林')
             return None
@@ -94,13 +99,34 @@ if __name__ == '__main__':
     resource = ResourceDetection()
     # resource.get_processes_activities(1615636469, 1615636769, 2)
     # resource.built_iForest_for_all_processes(200)
-    key = ('211.65.197.233', 'kernel', '-None')
-    it, max_score, train_attr_weight = resource.built_iForest_for_one_process(key, 200)
-    print(max_score)
-    print(train_attr_weight)
-    it.clear_attr_weight()
-    det_score = it.anomaly_score(np.array([[398, 12.4, 10.0, 0.0, 0.937, 0, 0]]))
-    detect_attr_weight = np.array(it.attr_weight)
-    print(detect_attr_weight)
-    print(detect_attr_weight / train_attr_weight)
-    print(det_score)
+    key = ('211.65.197.175', '/usr/lib/jvm/jdk1.8.0_131/bin/java', '-XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djruby.compile.invokedynamic=true -Djruby.jit.threshold=0 -XX:+HeapDumpOnOutOfMemoryError -Djava.security.egd=file:/dev/urandom -Xmx1g -Xms1g -Xss2048k -Djffi.boot.library.path=/usr/local/logstash-6.1.1/vendor/jruby/lib/jni -Xbootclasspath/a:/usr/local/logstash-6.1.1/vendor/jruby/lib/jruby.jar -classpath :.:/usr/lib/jvm/jdk1.8.0_131/jre/lib/rt.jar:/usr/lib/jvm/jdk1.8.0_131/lib/dt.jar:/usr/lib/jvm/jdk1.8.0_131/lib/tools.jar -Djruby.home=/usr/local/logstash-6.1.1/vendor/jruby -Djruby.lib=/usr/local/logstash-6.1.1/vendor/jruby/lib -Djruby.script=jruby -Djruby.shell=/bin/sh org.jruby.Main /usr/local/logstash-6.1.1/lib/bootstrap/environment.rb logstash/runner.rb -f etc/log7.conf')
+    # it, max_score = resource.built_iForest_for_one_process(key, 400)
+    # print(max_score)
+    # print(train_attr_weight)
+    # it.clear_attr_weight()
+    # det_score = it.anomaly_score(np.array([[1, 62.9, 35.313, 0.0, 0.509, 5, 46]]))
+    # detect_attr_weight = np.array(it.attr_weight)
+    # print(detect_attr_weight)
+    # print(detect_attr_weight / train_attr_weight)
+    # print(det_score)
+
+    # X_train = np.array(resource.get_recent_normal_activities(key, 400))
+    # rng = np.random.RandomState(42)  # 随机数生成器
+    # clf = IsolationForest(max_samples=200, random_state=rng)
+    # clf.fit(X_train)
+    # y_pred_train = clf.predict(X_train)
+    # print(y_pred_train)
+    # X_train_scores = clf.decision_function(X_train)
+    # print('X_train_scores', X_train_scores)
+    # print(np.min(X_train_scores))
+    # X_test = np.array([[1, 62.9, 25.313, 0.0, 0.509, 5, 46]])
+    # y_pred_test = clf.predict(X_test)
+    # print(y_pred_test)
+    # X_test_scores = clf.decision_function(X_test)
+    # print('X_test_scores', X_test_scores)
+
+    data = resource.get_recent_normal_activities(key, 300)
+    clf = LocalOutlierFactor(n_neighbors=20, algorithm='auto', contamination=0, n_jobs=-1)
+    res = clf.fit_predict(data)
+    print(res)
+    print(clf.negative_outlier_factor_)

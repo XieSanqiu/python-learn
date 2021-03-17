@@ -34,6 +34,7 @@ class IsolationTreeEnsemble:
 
     #得到一棵树
     def make_tree(self, i):
+        print(i)
         # 随机从[0, X.shape[0]) 中不重复的抽取 sample_size 个值，组成 sample_size 个随机实例
         X_sample = self.X[np.random.choice(self.X.shape[0], self.sample_size, replace=False)]
         return IsolationTree(X_sample, self.height_limit, self.good_features, self.improved)
