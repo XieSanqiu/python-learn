@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaafcdbb-3d24-49a4-b98a-206866225851" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/iforest/iForest_sklearn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lof/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lof/lof_numpy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lof/lof_sklearn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile/profile_activity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detection/resource_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/anomaly_detection/resource_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iforest/iForest.py" beforeDir="false" afterPath="$PROJECT_DIR$/iforest/iForest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iforest/iForest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/iforest/iForest2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iforest/mytest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/iforest/mytest.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iforest/mytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/iforest/mytest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,79 +16,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/anomaly_detection/resource_detection.py">
+        <entry file="file://$PROJECT_DIR$/profile/profile_activity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+            <state relative-caret-position="395">
+              <caret line="276" column="18" lean-forward="true" selection-start-line="276" selection-start-column="18" selection-end-line="276" selection-end-column="18" />
               <folding>
-                <element signature="e#229#249#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iforest/iForest_sklearn.py">
+        <entry file="file://$PROJECT_DIR$/profile/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="19" selection-start-line="2" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iforest/iForest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+            <state relative-caret-position="-342">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-end-line="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lof/lof_sklearn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="40" column="39" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="40" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iforest/iForest2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1463">
-              <caret line="81" column="30" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iforest/mytest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iforest/mytest.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -102,20 +42,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1824">
-              <caret line="101" column="7" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="7" />
+            <state relative-caret-position="152">
+              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-end-line="9" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/anomaly_detection/white_list.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
         </entry>
@@ -169,8 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/process_classification/DecisionTreeTrain.py" />
-        <option value="$PROJECT_DIR$/assist/sensitive-files.txt" />
         <option value="$PROJECT_DIR$/assist/AddSensitiveFile.py" />
         <option value="$PROJECT_DIR$/whitelist/SensitiveResourceCheck.py" />
         <option value="$PROJECT_DIR$/process_classification/进程分类.txt" />
@@ -220,12 +149,14 @@
         <option value="$PROJECT_DIR$/lof/lof_numpy.py" />
         <option value="$PROJECT_DIR$/lof/lof_sklearn.py" />
         <option value="$PROJECT_DIR$/anomaly_detection/resource_detection.py" />
+        <option value="$PROJECT_DIR$/profile/test.py" />
+        <option value="$PROJECT_DIR$/profile/profile_activity.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-23" />
+    <option name="y" value="89" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -247,7 +178,12 @@
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="lof" type="462c0819:PsiDirectoryNode" />
+              <item name="anomaly_detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,29 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.resource_detection">
-    <configuration name="iForest_sklearn" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="learn" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iforest" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iforest/iForest_sklearn.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.profile_activity">
     <configuration name="lof_numpy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -354,7 +268,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mytest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="profile_activity" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -362,12 +276,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iforest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/profile" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iforest/mytest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/profile/profile_activity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -398,13 +312,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/profile" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/profile/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.profile_activity" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.resource_detection" />
         <item itemvalue="Python.lof_sklearn" />
         <item itemvalue="Python.lof_numpy" />
-        <item itemvalue="Python.mytest" />
-        <item itemvalue="Python.iForest_sklearn" />
       </list>
     </recent_temporary>
   </component>
@@ -437,21 +373,7 @@
       <workItem from="1615171653193" duration="72695000" />
       <workItem from="1615513827785" duration="1656000" />
       <workItem from="1615531168959" duration="61340000" />
-      <workItem from="1615971293836" duration="598000" />
-    </task>
-    <task id="LOCAL-00009" summary="feat:更改项目文件命名方式">
-      <created>1601960719168</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1601960719168</updated>
-    </task>
-    <task id="LOCAL-00010" summary="feat:Python面对对象——创建类的对象">
-      <created>1601961536837</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1601961536837</updated>
+      <workItem from="1615971293836" duration="22333000" />
     </task>
     <task id="LOCAL-00011" summary="feat:Python面对对象——属性、方法访问限制">
       <created>1601962375241</created>
@@ -782,11 +704,25 @@
       <option name="project" value="LOCAL" />
       <updated>1615776900895</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="feat：孤立森林一些改动">
+      <created>1615980428139</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1615980428141</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat：添加lof算法">
+      <created>1615980443004</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1615980443004</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422084000" />
+    <option name="totallyTimeSpent" value="443819000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -799,14 +735,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.20042872" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.27277598" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994641" visible="true" weight="0.3917869" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994641" visible="true" weight="0.3917869" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -820,7 +755,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="-1704" y="64" width="1355" height="841" id="SciView" order="3" weight="0.33118972" />
+      <window_info active="true" anchor="right" x="-1704" y="64" width="1355" height="841" id="SciView" order="3" visible="true" weight="0.33118972" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.329582" />
     </layout>
@@ -874,8 +809,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix:修复count多加了一次bug" />
-    <MESSAGE value="feat:获取进程分类所需信息（可能需修改）" />
     <MESSAGE value="feat:非数值型的决策树生成" />
     <MESSAGE value="feat:决策树初步生成" />
     <MESSAGE value="feat:将各个主机中的用户信息收集到mongodb中保存" />
@@ -899,7 +832,9 @@
     <MESSAGE value="feat：改进序列化和反序列化" />
     <MESSAGE value="feat：进程异常检测模块" />
     <MESSAGE value="feat：修复孤立森林问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat：修复孤立森林问题" />
+    <MESSAGE value="feat：孤立森林一些改动" />
+    <MESSAGE value="feat：添加lof算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat：添加lof算法" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/learn$DateType.coverage" NAME="DateType Coverage Results" MODIFIED="1601797478424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basic" />
@@ -909,11 +844,12 @@
     <SUITE FILE_PATH="coverage/learn$3_ExtendPolymorphic.coverage" NAME="3_ExtendPolymorphic Coverage Results" MODIFIED="1601963904354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$8_CustomClass.coverage" NAME="8_CustomClass Coverage Results" MODIFIED="1601969063956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$Query.coverage" NAME="Query Coverage Results" MODIFIED="1601987267862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/es" />
-    <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1610110342264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index_manage" />
+    <SUITE FILE_PATH="coverage/learn$test.coverage" NAME="test Coverage Results" MODIFIED="1615988822019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profile" />
     <SUITE FILE_PATH="coverage/learn$proc_activity2.coverage" NAME="proc_activity2 Coverage Results" MODIFIED="1615035316988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_activity" />
     <SUITE FILE_PATH="coverage/learn$decission_tree_demo2.coverage" NAME="decission_tree_demo2 Coverage Results" MODIFIED="1603265362004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$5_ClassAttribute.coverage" NAME="5_ClassAttribute Coverage Results" MODIFIED="1601966907544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$GetProcessInfo__1_.coverage" NAME="GetProcessInfo (1) Coverage Results" MODIFIED="1602917181823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/learn$profile_activity.coverage" NAME="profile_activity Coverage Results" MODIFIED="1616067802524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profile" />
     <SUITE FILE_PATH="coverage/learn$DecisionTreeTrain.coverage" NAME="DecisionTreeTrain Coverage Results" MODIFIED="1603352822782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process_classification" />
     <SUITE FILE_PATH="coverage/learn$9_Enum.coverage" NAME="9_Enum Coverage Results" MODIFIED="1601969665273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_oop" />
     <SUITE FILE_PATH="coverage/learn$Drain_benchmark.coverage" NAME="Drain_benchmark Coverage Results" MODIFIED="1615377145287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/drain_log_parser" />
@@ -962,116 +898,6 @@
     <SUITE FILE_PATH="coverage/learn$iForest_sklearn.coverage" NAME="iForest_sklearn Coverage Results" MODIFIED="1615784303834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/iforest" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/parsing_proc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3515">
-          <caret line="185" column="32" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-233.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="264" column="151" lean-forward="true" selection-start-line="264" selection-end-line="265" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/log7-175.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="334" column="5" lean-forward="true" selection-start-line="334" selection-start-column="5" selection-end-line="334" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2102000064/numpy/random/mtrand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/elasticsearch/client/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="190" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/pa2.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-          <folding>
-            <element signature="e#15#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4434">
-          <caret line="376" column="54" selection-start-line="376" selection-start-column="54" selection-end-line="376" selection-end-column="54" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/sklearn/metrics/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="949" column="4" selection-start-line="949" selection-start-column="4" selection-end-line="949" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/site-packages/sklearn/metrics/ranking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1826">
-          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/multiprocessing/__init__.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python37/Lib/multiprocessing/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="262" column="28" lean-forward="true" selection-start-line="262" selection-start-column="28" selection-end-line="262" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2102000064/numpy/core/_multiarray_umath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="9819" column="23" selection-start-line="9819" selection-start-column="18" selection-end-line="9819" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/numpy_learn/QuickStart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -1248,16 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/plot_anomalies.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="53" column="47" lean-forward="true" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/software/python37/Lib/site-packages/cryptography/x509/extensions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1269,26 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lof/lof_numpy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="190" column="42" lean-forward="true" selection-start-line="190" selection-start-column="42" selection-end-line="190" selection-end-column="42" />
-          <folding>
-            <element signature="e#220#235#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anomaly_detection/resource_detection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
-          <folding>
-            <element signature="e#229#249#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1309,9 +1105,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/iforest/mytest.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anomaly_detection/white_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lof/lof_sklearn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
+        <state relative-caret-position="760">
           <caret line="40" column="39" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="40" selection-end-column="39" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -1319,10 +1129,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/iForest2.py">
+    <entry file="file://$PROJECT_DIR$/lof/lof_numpy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="81" column="30" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="30" />
+        <state relative-caret-position="114">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="14" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="e#220#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software/python37/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="2433" column="4" selection-start-line="2433" selection-start-column="4" selection-end-line="2433" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/例1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/test2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/test1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/例5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/test4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/2102000064/numpy/core/_multiarray_umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="9304" column="8" selection-start-line="9304" selection-start-column="8" selection-end-line="9304" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iforest/plot_anomalies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="53" column="47" lean-forward="true" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -1331,35 +1183,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/iforest/mytest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="361">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iforest/mytest.csv">
+    <entry file="file://$PROJECT_DIR$/iforest/iForest2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="-969">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SysProcInfoCollection/SysInfoCollection3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2280" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anomaly_detection/resource_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_activity/proc_activity2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="101" column="7" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="7" />
+        <state relative-caret-position="152">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-end-line="9" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anomaly_detection/white_list.py">
+    <entry file="file://$PROJECT_DIR$/process_activity/ProcessActivityCollect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="508">
+          <caret line="35" column="61" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-423" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_activity/Update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1639" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/profile_activity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="276" column="18" lean-forward="true" selection-start-line="276" selection-start-column="18" selection-end-line="276" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
