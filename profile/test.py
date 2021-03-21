@@ -93,6 +93,20 @@ def test6():
     plt.scatter(x, y, s=area, c=colors, alpha=0.5)
     plt.show()
 
+def test7():
+    a = np.arange(10)
+    # x轴不能省
+    # plt.plot(a, a * 1.5, a, a * 2.5, a, a * 3.5, a, a * 4.5) #自动分配颜色
+    # 自定义样式
+    plt.plot(a, a * 1.5, 'go:', a, a * 2.5, 'rx', a, a * 3.5, '^', a, a * 4.5, 'bd-.')
+
+    plt.vlines(6, 0, 40, color='red')
+    plt.text(6, 35, 'DDoS攻击', fontsize=12)
+
+    plt.vlines(8, 0, 40, color='green')
+    plt.text(8, 35, '攻击结束', fontsize=12)
+
+    plt.show()
 
 if __name__ == '__main__':
     # test1()
@@ -100,4 +114,5 @@ if __name__ == '__main__':
     # test3()
     # test4()
     # test5()
-    test6()
+    # test6()
+    test7()

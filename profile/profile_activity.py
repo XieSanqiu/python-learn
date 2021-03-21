@@ -16,7 +16,7 @@ es = Elasticsearch("211.65.197.70")
 
 
 # 还是根据 ip+进程exe+进程参数确定一个进程
-def get_all_process(host, today, proc_name, pid):
+def get_all_process_from_es(host, today, proc_name, pid):
     try:
         # es = Elasticsearch("211.65.197.70")
         idx = host + "-pinfo-" + today
@@ -40,8 +40,8 @@ def get_all_process(host, today, proc_name, pid):
                         "filter": {
                             "range": {
                                 "collect_date": {
-                                    "gte": "2021-03-16T01:32:12.046851",
-                                    "lte": "2021-03-16T23:32:37.046851"
+                                    "gte": "2021-03-20T00:00:00.000000",
+                                    "lte": "2021-03-20T23:59:59.046851"
                                 }
                             }
                         }
@@ -264,7 +264,7 @@ def profile8(data_x, data_y1, data_y2):
     plt.show()
 
 if __name__ == '__main__':
-    dds = get_all_process('211.65.197.233', '2021.03.16', 'mysqld', 833)
+    dds = get_all_process_from_es('211.65.197.175', '2021.03.20', 'apache2', 2597)
     collect_time = []
     cpu_percent = []
     memory_percent = []
