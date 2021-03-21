@@ -1,4 +1,5 @@
 from elasticsearch import Elasticsearch
+import pymongo
 import time
 import datetime
 import numpy as np
@@ -114,6 +115,25 @@ def get_all_process_from_es(host, today, proc_name, pid):
     except Exception as ee:
         print('get_all_process', ee)
 
+def get_all_process_from_mongodb(host_ip, proc_exe, proc_param):
+    mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
+    db = mongo['pinfo']
+    activity_col = db['activity']
+    fields_type_3 = {'_id': 0, 'start_time': 0, 'collect_time': 0, 'connections': 0, 'open_files': 0, 'start_date': 0,
+                     'user_name': 0, 'proc_exe': 0, 'HostIP': 0, 'proc_param': 0, 'proc_name': 0}
+    query = {'HostIP': host_ip, 'proc_exe': proc_exe, 'proc_param': proc_param, 'collect_time':{'$gte': 1616169600, '$lt': 1616256000}}
+    res = activity_col.find(query, fields_type_3).sort([('collect_time', 1)])
+    recent_activities = []
+    for one in res:
+        # print(one)
+        activity = [one['proc_num'], round(one['cpu_percent'], 3), round(one['mem_percent'], 3), round(one['disk_read_rate'], 3),
+                    round(one['disk_write_rate'], 3), one['connections_num'], one['files_num'], one['threads'], one['collect_date']]
+        recent_activities.append(activity)
+        print(activity)
+    return recent_activities
+
+
+
 #对进程CPU、内存使用画像
 def profile1(data_x, data_y1, data_y2):
     # plt.figure(figsize=(8, 4), dpi=80)  # 设置图形大小，分辨率
@@ -123,12 +143,19 @@ def profile1(data_x, data_y1, data_y2):
     # plt.ylim(0, 100)
     # plt.show()
 
-    fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots(figsize=(10, 5), dpi=80)
     ax2 = ax1.twinx()  # 做镜像处理
     ax1.plot(data_x, data_y1, 'g-', label='cpu_percent(%)')
     ax1.legend(loc='upper left')
+
+    plt.vlines(20, 0, 15, color='red')
+    plt.text(20, 15, 'DDoS攻击', fontsize=12)
+
+    plt.vlines(20.35, 0, 15, color='red')
+    plt.text(20.38, 13, '攻击结束', fontsize=12)
+
     ax2.plot(data_x, data_y2, 'b-', label='memory_percent(%)')
-    ax2.legend(loc='upper right')
+    ax2.legend(loc='center left')
 
     ax1.tick_params(axis='y', labelcolor='g')
     ax2.tick_params(axis='y', labelcolor='b')
@@ -139,6 +166,7 @@ def profile1(data_x, data_y1, data_y2):
     ax1.set_xlabel('time(hour)')  # 设置x轴标题
     ax1.set_ylabel('cpu_percent(%)', color='g')  # 设置Y1轴标题
     ax2.set_ylabel('memory_percent(%)', color='b')  # 设置Y2轴标题
+
     plt.show()
 
 #对CPU使用时间画像（用户模式、内核模式）
@@ -223,24 +251,41 @@ def profile5(data_x, data_y1, data_y2):
 
 #对磁盘读写速度画像
 def profile6(data_x, data_y1, data_y2):
-    # plt.figure(figsize=(8, 4), dpi=80)  # 设置图形大小，分辨率
+    plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
     plt.plot(data_x, data_y1, 'b-', label='disk read rate(kb/s)')
     plt.plot(data_x, data_y2, 'g-', label='disk write rate(kb/s)')
     plt.ylabel('kb/s')
     plt.xlabel('time(hour)')
     # plt.ylim(0, 50)
-    plt.legend(loc='best')
+    plt.legend(loc='upper left')
+
+    plt.vlines(20.00, 0, 180, color='red')
+    plt.text(20.38, 170, 'DDoS攻击', fontsize=12)
+
+    plt.vlines(20.35, 0, 180, color='red')
+    plt.text(20.38, 160, '攻击结束', fontsize=12)
+
     plt.show()
 
-#对磁盘读写速度画像
-def profile7(data_x, data_y1, data_y2, data_y3, data_y4):
-    # plt.figure(figsize=(8, 4), dpi=80)  # 设置图形大小，分辨率
+#对其他测度画像
+def profile7(data_x, data_y1, data_y2, data_y3, fds = None, proc_num=None):
+    plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
     plt.plot(data_x, data_y1, 'b-', label='connection num')
     plt.plot(data_x, data_y2, 'g-', label='file num')
-    plt.plot(data_x, data_y3, 'r-', label='fds num')
-    plt.plot(data_x, data_y4, 'y-', label='threads num')
+    plt.plot(data_x, data_y3, 'y-', label='threads num')
+    if fds != None:
+        plt.plot(data_x, fds, 'r-', label='fds num')
+    if proc_num != None:
+        plt.plot(data_x, proc_num, 'c--', label='process num')
     plt.xlabel('time(hour)')
-    plt.legend(loc='upper right')
+    plt.legend(loc='upper left')
+
+    plt.vlines(20.00, 0, 40, color='red')
+    plt.text(20.00, 35, 'DDoS攻击', fontsize=12)
+
+    plt.vlines(20.38, 0, 40, color='red')
+    plt.text(20.38, 30, '攻击结束', fontsize=12)
+
     plt.show()
 
 #对磁盘读写字节数画像
@@ -263,7 +308,7 @@ def profile8(data_x, data_y1, data_y2):
     ax2.set_ylabel('ctx_sw_involuntary', color='b')  # 设置Y2轴标题
     plt.show()
 
-if __name__ == '__main__':
+def profile_main1():
     dds = get_all_process_from_es('211.65.197.175', '2021.03.20', 'apache2', 2597)
     collect_time = []
     cpu_percent = []
@@ -286,7 +331,7 @@ if __name__ == '__main__':
     ctx_sw_involuntary = []
     for dd in dds:
         time = dd['collect_date'].split('T')[1].split(':')
-        time = int(time[0]) + (int(time[1]) * 1/60)
+        time = int(time[0]) + (int(time[1]) * 1 / 60)
         collect_time.append(time)
 
         cpu_percent.append(dd['cpu_percent'])
@@ -315,7 +360,6 @@ if __name__ == '__main__':
         ctx_sw_voluntary.append(dd['ctx_sw_voluntary'])
         ctx_sw_involuntary.append(dd['ctx_sw_involuntary'])
 
-
     profile1(collect_time, cpu_percent, memory_percent)
     profile2(collect_time, cpu_user_time, cpu_sys_time)
     profile3(collect_time, mem_rss, mem_vms)
@@ -324,3 +368,34 @@ if __name__ == '__main__':
     profile6(collect_time, disk_read_rate, disk_write_rate)
     profile7(collect_time, connection_num, file_num, fds, threads)
     profile8(collect_time, ctx_sw_voluntary, ctx_sw_involuntary)
+
+def profile_main2():
+    activities = get_all_process_from_mongodb('211.65.197.175', '/usr/sbin/apache2', '-k start')
+    collect_time_hour = []
+    proc_num = []
+    cpu_percent = []
+    memory_percent = []
+    disk_read_rate = []
+    disk_write_rate = []
+    connection_num = []
+    file_num = []
+    threads = []
+    for one in activities:
+        collect_time = one[-1].split(' ')[1].split(':')
+        hour = int(collect_time[0]) + (int(collect_time[1]) / 60)
+        collect_time_hour.append(hour)
+        proc_num.append(one[0])
+        cpu_percent.append(one[1])
+        memory_percent.append(one[2])
+        disk_read_rate.append(one[3])
+        disk_write_rate.append(one[4])
+        connection_num.append(one[5])
+        file_num.append(one[6])
+        threads.append(one[7])
+    profile1(collect_time_hour, cpu_percent, memory_percent)
+    profile6(collect_time_hour, disk_read_rate, disk_write_rate)
+    profile7(collect_time_hour, connection_num, file_num, threads, proc_num=proc_num)
+
+if __name__ == '__main__':
+    # profile_main1()
+    profile_main2()
