@@ -30,10 +30,10 @@ class ResourceDetection:
         self.fields_type_2 = {'_id': 0, 'start_time': 0, 'collect_time': 0, 'collect_date': 0, 'start_date': 0}
         #类型3：用于 离群点异常检测 训练阶段
         self.fields_type_3 = {'_id': 0, 'start_time': 0, 'collect_time': 0, 'connections': 0, 'open_files': 0,
-                              'collect_date': 0, 'start_date': 0, 'user_name': 0, 'proc_exe':0, 'HostIP':0,
+                               'start_date': 0, 'user_name': 0, 'proc_exe':0, 'HostIP':0,
                               'proc_param':0, 'proc_name':0}
         self.fields_type_4 = {'_id':0, 'proc_name':0, 'user_name':0, 'cpu_percent':0, 'mem_percent':0, 'disk_read_rate':0,
-                              'disk_write_rate':0, 'connections_set':0, 'open_files_set':0}
+                              'disk_write_rate_result':0, 'connections_set':0, 'open_files_set':0}
 
     #获取所有主机所有应用的活动信息
     def get_processes_activities(self, last_current_time:float, current_time:float, wanted_fields):
@@ -67,14 +67,14 @@ class ResourceDetection:
     def built_iForest_for_one_process(self, key, num):
         #step1：根据进程key从activity库中找到 最近的 100条 正常 的活动信息作为训练信息构建孤立森林
         recent_normal_activities = self.get_recent_normal_activities(key, num)
-        recent_normal_activities.append([1, 52.9, 25.313, 0.0, 0.509, 5, 46])
+        # recent_normal_activities.append([1, 52.9, 25.313, 0.0, 0.509, 5, 46])
         data_num = len(recent_normal_activities)
         train_data = np.array(recent_normal_activities)
         if data_num >= num:
             it = IsolationTreeEnsemble(100, 1000)
-            it.fit(train_data, True)
+            it.fit(train_data, False)
             scores = it.anomaly_score(train_data)
-            print(scores)
+            print('scores', scores)
             max_score = np.max(scores)
             # train_attr_weight = np.array(it.attr_weight)
             return it, max_score
@@ -88,10 +88,11 @@ class ResourceDetection:
         recent_activities = []
         for one in res:
             # print(one)
-            activity = [one['proc_num'], round(one['cpu_percent'], 3), round(one['mem_percent'], 3), round(one['disk_read_rate'], 3),
-                        round(one['disk_write_rate'], 3), one['connections_num'], one['files_num']]
+            collect_date = one['collect_date']
+            activity = [round(one['cpu_percent'], 3), round(one['mem_percent'], 3), round(one['disk_read_rate'], 3),
+                        round(one['disk_write_rate'], 3), one['connections_num'], one['files_num'], one['threads']]
             recent_activities.append(activity)
-            print(activity)
+            print(collect_date, activity)
         return recent_activities
 
 
@@ -99,8 +100,8 @@ if __name__ == '__main__':
     resource = ResourceDetection()
     # resource.get_processes_activities(1615636469, 1615636769, 2)
     # resource.built_iForest_for_all_processes(200)
-    key = ('211.65.197.175', '/usr/lib/jvm/jdk1.8.0_131/bin/java', '-XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djruby.compile.invokedynamic=true -Djruby.jit.threshold=0 -XX:+HeapDumpOnOutOfMemoryError -Djava.security.egd=file:/dev/urandom -Xmx1g -Xms1g -Xss2048k -Djffi.boot.library.path=/usr/local/logstash-6.1.1/vendor/jruby/lib/jni -Xbootclasspath/a:/usr/local/logstash-6.1.1/vendor/jruby/lib/jruby.jar -classpath :.:/usr/lib/jvm/jdk1.8.0_131/jre/lib/rt.jar:/usr/lib/jvm/jdk1.8.0_131/lib/dt.jar:/usr/lib/jvm/jdk1.8.0_131/lib/tools.jar -Djruby.home=/usr/local/logstash-6.1.1/vendor/jruby -Djruby.lib=/usr/local/logstash-6.1.1/vendor/jruby/lib -Djruby.script=jruby -Djruby.shell=/bin/sh org.jruby.Main /usr/local/logstash-6.1.1/lib/bootstrap/environment.rb logstash/runner.rb -f etc/log7.conf')
-    # it, max_score = resource.built_iForest_for_one_process(key, 400)
+    key = ('211.65.197.233', '/usr/local/mongodb/bin/mongod', '--config /etc/mongod.conf')
+    it, max_score = resource.built_iForest_for_one_process(key, 864)
     # print(max_score)
     # print(train_attr_weight)
     # it.clear_attr_weight()
@@ -125,8 +126,8 @@ if __name__ == '__main__':
     # X_test_scores = clf.decision_function(X_test)
     # print('X_test_scores', X_test_scores)
 
-    data = resource.get_recent_normal_activities(key, 300)
-    clf = LocalOutlierFactor(n_neighbors=20, algorithm='auto', contamination=0, n_jobs=-1)
-    res = clf.fit_predict(data)
-    print(res)
-    print(clf.negative_outlier_factor_)
+    # data = resource.get_recent_normal_activities(key, 300)
+    # clf = LocalOutlierFactor(n_neighbors=20, algorithm='auto', contamination=0, n_jobs=-1)
+    # res = clf.fit_predict(data)
+    # print(res)
+    # print(clf.negative_outlier_factor_)

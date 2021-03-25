@@ -270,14 +270,14 @@ def update_proc_activity(host_ip, all_process):
             res[key]['cpu_percent'] += proc[5]
             res[key]['mem_percent'] += proc[8]
             res[key]['disk_read_rate'] += proc[30]
-            res[key]['disk_write_rate'] += proc[31]
+            res[key]['disk_write_rate_result'] += proc[31]
             res[key]['open_files'] |= set(proc[33])
             res[key]['connections'] |= set(proc[35])
             res[key]['threads'] += proc[25]
             res[key]['proc_num'] += 1
         else:
             res[key] = {'HostIP':host_ip, 'start_time':proc[37], 'proc_name':proc[1], 'user_name':proc[2], 'proc_param':proc[14],
-                        'proc_exe':proc[0], 'cpu_percent':proc[5], 'mem_percent':proc[8], 'disk_read_rate':proc[30], 'disk_write_rate':proc[31],
+                        'proc_exe':proc[0], 'cpu_percent':proc[5], 'mem_percent':proc[8], 'disk_read_rate':proc[30], 'disk_write_rate_result':proc[31],
                         'open_files':set(proc[33]), 'connections':set(proc[35]), 'threads':proc[25]}
             res[key]['start_date'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(proc[37]))
             res[key]['proc_num'] = 1

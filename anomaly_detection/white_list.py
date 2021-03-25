@@ -33,7 +33,7 @@ class Whitelist:
             cpu_percent = one['cpu_percent']
             mem_percent = one['mem_percent']
             disk_read_rate = one['disk_read_rate']
-            disk_write_rate = one['disk_write_rate']
+            disk_write_rate = one['disk_write_rate_result']
             connections = one['connections']
             connections_set = set()
             if len(connections) > 0:
@@ -84,7 +84,7 @@ class Whitelist:
             insert_one['cpu_percent'] = all_processes_dict[key][5]
             insert_one['mem_percent'] = all_processes_dict[key][6]
             insert_one['disk_read_rate'] = all_processes_dict[key][7]
-            insert_one['disk_write_rate'] = all_processes_dict[key][8]
+            insert_one['disk_write_rate_result'] = all_processes_dict[key][8]
             insert_one['connections_set'] = list(all_processes_dict[key][9])
             insert_one['open_files_set'] = list(all_processes_dict[key][10])
             insert_one['activity_num'] = all_processes_dict[key][11]

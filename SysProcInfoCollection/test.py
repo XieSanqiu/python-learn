@@ -83,7 +83,7 @@ def get_all_process(host, from_time, to_time):
             d['cpu_percent'] = data['_source']['cpu_percent']
             d['mem_percent'] = data['_source']['mem_percent']
             d['disk_read_rate'] = data['_source']['disk_read_rate']
-            d['disk_write_rate'] = data['_source']['disk_write_rate']
+            d['disk_write_rate_result'] = data['_source']['disk_write_rate_result']
             if 'open_files' in data['_source'].keys():
                 d['open_files'] = set(data['_source']['open_files'].split('popenfile')[1:])
             else:
@@ -124,7 +124,7 @@ if __name__ == '__main__':
                     res[key]['cpu_percent'] += proc['cpu_percent']
                     res[key]['mem_percent'] += proc['mem_percent']
                     res[key]['disk_read_rate'] += proc['disk_read_rate']
-                    res[key]['disk_write_rate'] += proc['disk_write_rate']
+                    res[key]['disk_write_rate_result'] += proc['disk_write_rate_result']
                     res[key]['open_files'] |= proc['open_files']
                     res[key]['connections'] |= proc['connections']
                     res[key]['threads'] |= proc['threads']

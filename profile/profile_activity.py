@@ -41,8 +41,8 @@ def get_all_process_from_es(host, today, proc_name, pid):
                         "filter": {
                             "range": {
                                 "collect_date": {
-                                    "gte": "2021-03-20T00:00:00.000000",
-                                    "lte": "2021-03-20T23:59:59.046851"
+                                    "gte": "2021-03-23T00:00:00.000000",
+                                    "lte": "2021-03-23T23:59:59.046851"
                                 }
                             }
                         }
@@ -96,7 +96,7 @@ def get_all_process_from_es(host, today, proc_name, pid):
                 d['read_byte'] = data['_source']['read_byte']
                 d['write_byte'] = data['_source']['write_byte']
                 d['disk_read_rate'] = data['_source']['disk_read_rate']
-                d['disk_write_rate'] = data['_source']['disk_write_rate']
+                d['disk_write_rate_result'] = data['_source']['disk_write_rate_result']
 
                 d['connection_num'] = data['_source']['connection_num']
                 d['file_num'] = data['_source']['file_num']
@@ -121,7 +121,7 @@ def get_all_process_from_mongodb(host_ip, proc_exe, proc_param):
     activity_col = db['activity']
     fields_type_3 = {'_id': 0, 'start_time': 0, 'collect_time': 0, 'connections': 0, 'open_files': 0, 'start_date': 0,
                      'user_name': 0, 'proc_exe': 0, 'HostIP': 0, 'proc_param': 0, 'proc_name': 0}
-    query = {'HostIP': host_ip, 'proc_exe': proc_exe, 'proc_param': proc_param, 'collect_time':{'$gte': 1616169600, '$lt': 1616256000}}
+    query = {'HostIP': host_ip, 'proc_exe': proc_exe, 'proc_param': proc_param, 'collect_time':{'$gte': 1616342400 , '$lt': 1616428800}}
     res = activity_col.find(query, fields_type_3).sort([('collect_time', 1)])
     recent_activities = []
     for one in res:
@@ -308,6 +308,17 @@ def profile8(data_x, data_y1, data_y2):
     ax2.set_ylabel('ctx_sw_involuntary', color='b')  # 设置Y2轴标题
     plt.show()
 
+#对异常分数进行画像
+def profile9(data_x, data_y1):
+    plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
+    plt.ylim(0,1)
+    plt.xlim(0,24)
+    plt.plot(data_x, data_y1, 'b-', label='anomaly score')
+    plt.xlabel('time(hour)')
+    plt.legend(loc='upper left')
+    plt.hlines(0.5, 0, 24, color='green')
+    plt.show()
+
 def profile_main1():
     dds = get_all_process_from_es('211.65.197.175', '2021.03.20', 'apache2', 2597)
     collect_time = []
@@ -370,7 +381,7 @@ def profile_main1():
     profile8(collect_time, ctx_sw_voluntary, ctx_sw_involuntary)
 
 def profile_main2():
-    activities = get_all_process_from_mongodb('211.65.197.175', '/usr/sbin/apache2', '-k start')
+    activities = get_all_process_from_mongodb('211.65.197.233', '/usr/lib/jvm/oracle-java8-jdk-amd64/jre/bin/java', '-cp /data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/druid-1.1.9.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.bak:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.gettxt:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.pre:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/gson-2.8.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/jna-4.2.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-api-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-core-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-slf4j-impl-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/mongo-java-driver-3.9.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/mysql-connector-java-5.1.10.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/pcap4j-core-1.7.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/pcap4j-packetfactory-static-1.7.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/slf4j-api-1.7.21.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/snakeyaml-1.17.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../conf/ cn.edu.jslab6.autoresponse.analysis.monster_process.StartProcess')
     collect_time_hour = []
     proc_num = []
     cpu_percent = []
@@ -396,6 +407,16 @@ def profile_main2():
     profile6(collect_time_hour, disk_read_rate, disk_write_rate)
     profile7(collect_time_hour, connection_num, file_num, threads, proc_num=proc_num)
 
+def main3():
+    scores = []
+    with open('anomaly_scores_result') as f:
+        for line in f.readlines():
+            score = float(line.strip()[1:-1])
+            scores.append(score)
+    hours = np.arange(0, 24, 1/12)
+    profile9(hours, scores)
+
 if __name__ == '__main__':
     # profile_main1()
-    profile_main2()
+    # profile_main2()
+    main3()
