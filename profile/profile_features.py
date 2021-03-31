@@ -120,7 +120,7 @@ def analysis_syscall(proc_exe):
             syscalls_dict[key].append(syscall)
         else:
             syscalls_dict[key].append(syscall)
-    print(len(syscalls_dict))
+
     call_dict = dict()
     count = 0
     for key in syscalls_dict:
@@ -132,14 +132,26 @@ def analysis_syscall(proc_exe):
                 call_dict[call] = 1
             else:
                 call_dict[call] += 1
-    prob = []
-    for call in call_dict:
-        print(call, call_dict[call], call_dict[call]/count)
-        prob.append(call_dict[call]/count)
-    prob.sort(reverse=True)
+    syscalls_order = sorted(call_dict.items(), key=lambda x:x[1], reverse=True)
+    print(len(syscalls_dict), count, len(syscalls_order))
+    syscall_list = []
+    prob_list = []
+    prob_count = 0
+    for call in syscalls_order:
+        print(call)
+        syscall_list.append(call[0])
+        call_prob = call[1]/count
+        prob_list.append(call_prob)
+        if call_prob > 0.01:
+            prob_count += 1
+    print(prob_count)
     plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
-    plt.plot(prob, 'b-', label='syscall ')
-    plt.legend(loc='upper left')
+    # plt.xticks([])
+    plt.bar([i for i in range(len(prob_list))], prob_list, width=0.5)
+    # plt.plot(prob_list, 'b-', label='syscall ')
+    # plt.legend(loc='upper left')
+    plt.xlabel('syscall')
+    plt.ylabel('proportion')
     plt.show()
 
 
