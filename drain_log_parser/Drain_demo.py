@@ -5,7 +5,7 @@ from drain_log_parser import Drain
 
 input_dir  = 'logs/'  # The input directory of log file
 output_dir = 'Drain_result/'  # The output directory of parsing results
-log_file   = '233-auth.log'  # The input log file name
+log_file   = '233-log'  # The input log file name
 log_format = '<Date> <Time> <Host> <Component>(\[<PID>\])?: <Content>'  # HDFS log format
 # Regular expression list for optional preprocessing (default: [])
 regex      = [r'(\d+\.){3}\d+', r'\d{2}:\d{2}:\d{2}', r'0x[a-fA-F0-9]{8}']  #匹配IP、时间、16进制数字

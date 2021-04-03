@@ -121,7 +121,7 @@ def get_all_process_from_mongodb(host_ip, proc_exe, proc_param):
     activity_col = db['activity']
     fields_type_3 = {'_id': 0, 'start_time': 0, 'collect_time': 0, 'connections': 0, 'open_files': 0, 'start_date': 0,
                      'user_name': 0, 'proc_exe': 0, 'HostIP': 0, 'proc_param': 0, 'proc_name': 0}
-    query = {'HostIP': host_ip, 'proc_exe': proc_exe, 'proc_param': proc_param, 'collect_time':{'$gte': 1616342400 , '$lt': 1616428800}}
+    query = {'HostIP': host_ip, 'proc_exe': proc_exe, 'proc_param': proc_param, 'collect_time':{'$gte': 1617206400 , '$lt': 1617292800}}
     res = activity_col.find(query, fields_type_3).sort([('collect_time', 1)])
     recent_activities = []
     for one in res:
@@ -135,7 +135,7 @@ def get_all_process_from_mongodb(host_ip, proc_exe, proc_param):
 
 
 #对进程CPU、内存使用画像
-def profile1(data_x, data_y1, data_y2):
+def profile1(data_x, data_y1, data_y2, proc_name):
     # plt.figure(figsize=(8, 4), dpi=80)  # 设置图形大小，分辨率
     # plt.plot(data_x, data_y1,data_x, data_y2)
     # plt.ylabel('cpu_percent')
@@ -148,11 +148,11 @@ def profile1(data_x, data_y1, data_y2):
     ax1.plot(data_x, data_y1, 'g-', label='cpu_percent(%)')
     ax1.legend(loc='upper left')
 
-    plt.vlines(20, 0, 15, color='red')
-    plt.text(20, 15, 'DDoS攻击', fontsize=12)
-
-    plt.vlines(20.35, 0, 15, color='red')
-    plt.text(20.38, 13, '攻击结束', fontsize=12)
+    # plt.vlines(20, 0, 15, color='red')
+    # plt.text(20, 15, 'DDoS攻击', fontsize=12)
+    #
+    # plt.vlines(20.35, 0, 15, color='red')
+    # plt.text(20.38, 13, '攻击结束', fontsize=12)
 
     ax2.plot(data_x, data_y2, 'b-', label='memory_percent(%)')
     ax2.legend(loc='center left')
@@ -161,12 +161,13 @@ def profile1(data_x, data_y1, data_y2):
     ax2.tick_params(axis='y', labelcolor='b')
 
     # ax1.set_ylim(50, 120)
-    # ax2.set_ylim(0, 10)
+    ax2.set_ylim(0, 100)
 
     ax1.set_xlabel('time(hour)')  # 设置x轴标题
     ax1.set_ylabel('cpu_percent(%)', color='g')  # 设置Y1轴标题
     ax2.set_ylabel('memory_percent(%)', color='b')  # 设置Y2轴标题
 
+    plt.title(proc_name)
     plt.show()
 
 #对CPU使用时间画像（用户模式、内核模式）
@@ -250,7 +251,7 @@ def profile5(data_x, data_y1, data_y2):
     plt.show()
 
 #对磁盘读写速度画像
-def profile6(data_x, data_y1, data_y2):
+def profile6(data_x, data_y1, data_y2, proc_name):
     plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
     plt.plot(data_x, data_y1, 'b-', label='disk read rate(kb/s)')
     plt.plot(data_x, data_y2, 'g-', label='disk write rate(kb/s)')
@@ -259,16 +260,16 @@ def profile6(data_x, data_y1, data_y2):
     # plt.ylim(0, 50)
     plt.legend(loc='upper left')
 
-    plt.vlines(20.00, 0, 180, color='red')
-    plt.text(20.38, 170, 'DDoS攻击', fontsize=12)
-
-    plt.vlines(20.35, 0, 180, color='red')
-    plt.text(20.38, 160, '攻击结束', fontsize=12)
-
+    # plt.vlines(20.00, 0, 180, color='red')
+    # plt.text(20.38, 170, 'DDoS攻击', fontsize=12)
+    #
+    # plt.vlines(20.35, 0, 180, color='red')
+    # plt.text(20.38, 160, '攻击结束', fontsize=12)
+    plt.title(proc_name)
     plt.show()
 
 #对其他测度画像
-def profile7(data_x, data_y1, data_y2, data_y3, fds = None, proc_num=None):
+def profile7(data_x, data_y1, data_y2, data_y3, fds = None, proc_num=None, proc_name=None):
     plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
     plt.plot(data_x, data_y1, 'b-', label='connection num')
     plt.plot(data_x, data_y2, 'g-', label='file num')
@@ -280,12 +281,12 @@ def profile7(data_x, data_y1, data_y2, data_y3, fds = None, proc_num=None):
     plt.xlabel('time(hour)')
     plt.legend(loc='upper left')
 
-    plt.vlines(20.00, 0, 40, color='red')
-    plt.text(20.00, 35, 'DDoS攻击', fontsize=12)
-
-    plt.vlines(20.38, 0, 40, color='red')
-    plt.text(20.38, 30, '攻击结束', fontsize=12)
-
+    # plt.vlines(20.00, 0, 40, color='red')
+    # plt.text(20.00, 35, 'DDoS攻击', fontsize=12)
+    #
+    # plt.vlines(20.38, 0, 40, color='red')
+    # plt.text(20.38, 30, '攻击结束', fontsize=12)
+    plt.title(proc_name)
     plt.show()
 
 #对磁盘读写字节数画像
@@ -380,8 +381,8 @@ def profile_main1():
     profile7(collect_time, connection_num, file_num, fds, threads)
     profile8(collect_time, ctx_sw_voluntary, ctx_sw_involuntary)
 
-def profile_main2():
-    activities = get_all_process_from_mongodb('211.65.197.233', '/usr/lib/jvm/oracle-java8-jdk-amd64/jre/bin/java', '-cp /data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/druid-1.1.9.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.bak:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.gettxt:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/forensictask-1.0-SNAPSHOT.jar.pre:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/gson-2.8.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/jna-4.2.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-api-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-core-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/log4j-slf4j-impl-2.7.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/mongo-java-driver-3.9.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/mysql-connector-java-5.1.10.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/pcap4j-core-1.7.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/pcap4j-packetfactory-static-1.7.0.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/slf4j-api-1.7.21.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../lib/snakeyaml-1.17.jar:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin:/data/shuang-experience/code/scripts/analysisTest/forensictask-1.0-SNAPSHOT/bin/../conf/ cn.edu.jslab6.autoresponse.analysis.monster_process.StartProcess')
+def profile_main2(proc_exe, proc_param, proc_name):
+    activities = get_all_process_from_mongodb('211.65.197.233', proc_exe, proc_param)
     collect_time_hour = []
     proc_num = []
     cpu_percent = []
@@ -403,9 +404,9 @@ def profile_main2():
         connection_num.append(one[5])
         file_num.append(one[6])
         threads.append(one[7])
-    profile1(collect_time_hour, cpu_percent, memory_percent)
-    profile6(collect_time_hour, disk_read_rate, disk_write_rate)
-    profile7(collect_time_hour, connection_num, file_num, threads, proc_num=proc_num)
+    profile1(collect_time_hour, cpu_percent, memory_percent, proc_name)
+    profile6(collect_time_hour, disk_read_rate, disk_write_rate, proc_name)
+    profile7(collect_time_hour, connection_num, file_num, threads, proc_num=proc_num, proc_name=proc_name)
 
 def main3():
     scores = []
@@ -418,5 +419,15 @@ def main3():
 
 if __name__ == '__main__':
     # profile_main1()
-    # profile_main2()
-    main3()
+    # proc_exe = '/usr/local/mongodb/bin/mongod'
+    # proc_param = '--config /etc/mongod.conf'
+    proc_exe = '/usr/sbin/mysqld'
+    proc_param = '--daemonize --pid-file=/var/run/mysqld/mysqld.pid'
+    # proc_exe = 'kernel'
+    # proc_param = '-None'
+    # proc_exe = '/bin/bash'
+    # proc_param = './testport.sh'
+    # proc_exe = '/usr/sbin/mysqld'
+    # proc_param = '--daemonize --pid-file=/var/run/mysqld/mysqld.pid'
+    profile_main2(proc_exe, proc_param, 'mysqld')
+    # main3()
