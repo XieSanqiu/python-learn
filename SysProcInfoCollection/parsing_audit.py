@@ -22,6 +22,7 @@ def paring_audit(host):
 
     last_utcnow_iso = col1.find_one(mg_query1, {'_id': 0, 'last_time': 1})['last_time']
     # print(last_utcnow_iso)
+    last_utcnow_iso = '2021-04-01T03:50:02.114230'
 
     if es.indices.exists(index=idx):
         es_query1 = {
@@ -62,7 +63,7 @@ def paring_audit(host):
             datas += res["hits"]["hits"]
 
         new_utcnow_iso = {'$set': {'last_time': utcnow_iso}}
-        col1.update_one(mg_query1, new_utcnow_iso)
+        # col1.update_one(mg_query1, new_utcnow_iso)
 
         mg_query2 = {'hostIP': host}
         num2syscall = {}
@@ -100,11 +101,14 @@ def paring_audit(host):
                 elif field.startswith('suid'):
                     suid = field.split('=')[1]
                 elif field.startswith('msg'):
-                    event_id = field.split(':')[1]
+                    print(field)
+                    event_id = int(field.split(':')[1][:-1])
+                    print(event_id)
                     d['event_id'] = event_id
             dds.append(d)
             items += 1
         if len(dds) > 0:
+            pass
             col2.insert_many(dds)
         print(now, host, "update audit", items)
     else:

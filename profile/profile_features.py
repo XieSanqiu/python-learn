@@ -107,7 +107,7 @@ def analysis_syscall(proc_exe):
     mongo = pymongo.MongoClient('mongodb://211.65.197.70:27017')
     db = mongo['pinfo']
     syscall_col = db['syscall']
-    query = {'exe':proc_exe}
+    query = {'exe':proc_exe, 'hostIP':'211.65.197.175', 'timestamp':{'$gt':1617510758}}
     res = syscall_col.find(query)
     syscalls_dict = dict()
     for one in res:
@@ -134,25 +134,28 @@ def analysis_syscall(proc_exe):
                 call_dict[call] += 1
     syscalls_order = sorted(call_dict.items(), key=lambda x:x[1], reverse=True)
     print(len(syscalls_dict), count, len(syscalls_order))
-    syscall_list = []
-    prob_list = []
-    prob_count = 0
-    for call in syscalls_order:
-        print(call)
-        syscall_list.append(call[0])
-        call_prob = call[1]/count
-        prob_list.append(call_prob)
-        if call_prob > 0.01:
-            prob_count += 1
-    print(prob_count)
-    plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
-    # plt.xticks([])
-    plt.bar([i for i in range(len(prob_list))], prob_list, width=0.5)
-    # plt.plot(prob_list, 'b-', label='syscall ')
-    # plt.legend(loc='upper left')
-    plt.xlabel('syscall')
-    plt.ylabel('proportion')
-    plt.show()
+    print(syscalls_order)
+    for pair in syscalls_order:
+        print(pair[0], pair[1] / count)
+    # syscall_list = []
+    # prob_list = []
+    # prob_count = 0
+    # for call in syscalls_order:
+    #     print(call)
+    #     syscall_list.append(call[0])
+    #     call_prob = call[1]/count
+    #     prob_list.append(call_prob)
+    #     if call_prob > 0.01:
+    #         prob_count += 1
+    # print(prob_count)
+    # plt.figure(figsize=(10, 5), dpi=80)  # 设置图形大小，分辨率
+    # # plt.xticks([])
+    # plt.bar([i for i in range(len(prob_list))], prob_list, width=0.5)
+    # # plt.plot(prob_list, 'b-', label='syscall ')
+    # # plt.legend(loc='upper left')
+    # plt.xlabel('syscall')
+    # plt.ylabel('proportion')
+    # plt.show()
 
 
 

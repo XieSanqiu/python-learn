@@ -1,0 +1,62 @@
+EventId,EventTemplate,Occurrences
+c1256636,<*> session closed for user <*>,2304
+8fbc6c52,<*> session opened for user <*> by <*>,2296
+5290983b,DIGEST-MD5 common mech free,1025
+a0801c02,Accepted password for monster from <*> port <*> ssh2,124
+aee117f1,New session <*> of user monster.,124
+552908a1,<*> su for <*> by monster,34
+30a3d658,+ <*> monster:root,30
+7b6022fa,pam_systemd(su:session): Cannot create session: Already running in a session,31
+c9cfd6b2,Removed session <*>,127
+eca00467,error: Received disconnect from <*> port <*>,4
+aeebac42,Disconnected from <*> port <*>,33
+5191b22f,monster : <*> ; PWD=/home/monster ; USER=root ; COMMAND=/bin/bash,3
+c8f0f792,error: listen: Address already in use,1
+e35a70fe,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*> <*>,138
+f831cb6d,Failed password for <*> from <*> port <*> ssh2,142
+422afdc1,Connection closed by <*> port <*> [preauth],15
+750ca014,PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*> user=root,4
+84de70e2,error: connect_to <*> port 3306: failed.,2
+a1dadfd0,error: Received disconnect from <*> port 5660:0: [preauth],1
+0054e5e2,Disconnected from <*> port <*> [preauth],562
+b8763d76,(root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 <*> <*>,1420
+7f28379d,(root) CMD ( [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi),471
+c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly),235
+cad13ea2,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report <*> )),11
+e67d3ae2,<*> Clean php session <*>,942
+3048d32a,PHP Warning: PHP Startup: Unable to load dynamic library <*> - <*> cannot open shared object file: No such file or directory in Unknown on line 0,1413
+e3b41418,<*> Daily apt download <*>,40
+8cabb1a7,apt-daily.timer: Adding <*> <*> <*> random time.,36
+f112843c,Started Session <*> of user monster.,124
+2915d2d5,<*> Cleanup of Temporary <*>,18
+bb20fa7d,<*> The Apache HTTP Server.,18
+11536750,<*> Daily apt upgrade and clean <*>,18
+640a7d30,apt-daily-upgrade.timer: Adding <*> <*> random time.,18
+fac4355b,apt-daily.timer: Adding <*> <*> random time.,4
+f3176e34,"[origin software=""rsyslogd"" swVersion=""8.24.0"" x-pid=""33371"" x-info=""http://www.rsyslog.com""] rsyslogd was HUPed",1
+60051406,pam_unix(su:auth): authentication failure; logname=monster uid=1001 euid=0 <*> ruser=monster rhost= user=root,3
+aa3144ac,pam_authenticate: Authentication failure,3
+0ee76cc5,- <*> monster:root,3
+6befeee0,monster : TTY=pts/5 ; PWD=/data/shuang-experience/code/profile/scripts ; USER=root ; COMMAND=/bin/cp ServiceTimeFeatureAction.class.php ServiceInfoFeatureAction.class.php,1
+cf94a865,Did not receive identification string from <*> port <*>,2
+38dda80a,Invalid user <*> from <*> port <*>,429
+6b674ff1,input_userauth_request: invalid user <*> [preauth],429
+0849a7d0,pam_unix(sshd:auth): check pass; user unknown,429
+e2315f39,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*>,429
+21bb6d0e,Failed password for invalid user <*> from <*> port <*> ssh2,429
+77b097c2,"Received disconnect from <*> port <*> Normal Shutdown, Thank you for playing [preauth]",561
+407ac7be,"new group: name=pxu, GID=1004",1
+f81ed3f0,"new user: name=pxu, UID=1003, GID=1004, home=/home/pxu/, shell=",1
+d5520a30,pam_unix(passwd:chauthtok): password changed for pxu,1
+8bc9dc51,+ /dev/pts/14 monster:pxu,1
+26bd336f,delete user 'pxu',1
+7d1653e0,removed group 'pxu' owned by 'pxu',1
+d2840340,removed shadow group 'pxu' owned by 'pxu',1
+67ba990f,Received disconnect from <*> port <*> disconnected by user,29
+5c38abbc,(monster) LIST (monster),1
+b3d2742d,(root) LIST (root),1
+22a66b64,Audit daemon rotating log files,1
+bcb4de0d,[47780486.818900] bash (28760): drop_caches: 1,1
+c94fb092,[monster] <*> got ZSKIP,2
+2cabe06f,"[monster] total.pcap/ZMODEM: 18011 Bytes, 6363 BPS",1
+210e2aa1,"[monster] local.pcap/ZMODEM: 333116 Bytes, 155226 BPS",1

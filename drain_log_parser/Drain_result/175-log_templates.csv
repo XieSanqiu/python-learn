@@ -1,0 +1,178 @@
+EventId,EventTemplate,Occurrences
+ba07081a,pam_unix(cron:session): session closed for user <*>,44
+4eecf6fb,pam_unix(cron:session): session opened for user <*> by (uid=0),50
+e03a8e7d,Successful su for nobody by root,3
+bd19aa4f,+ ??? root:nobody,3
+d60e390d,pam_unix(su:session): session opened for user nobody by (uid=0),3
+13567231,pam_unix(su:session): session closed for user nobody,3
+9302fad4,Invalid user <*> from <*>,255
+6b674ff1,input_userauth_request: invalid user <*> [preauth],255
+0849a7d0,pam_unix(sshd:auth): check pass; user unknown,255
+e2315f39,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*>,255
+21bb6d0e,Failed password for invalid user <*> from <*> port <*> ssh2,255
+c5704dd9,Received disconnect from <*>: 11: Bye Bye [preauth],446
+e35a70fe,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*> <*>,192
+f831cb6d,Failed password for <*> from <*> port <*> ssh2,192
+00691bb1,refused connect from <*>,145
+6a9d784a,"ALERT: exim paniclog /var/log/exim4/paniclog has non-zero size, mail system possibly broken",29
+c9fb89f4,test info,4
+6dfb7d8d,cyli : user NOT in sudoers ; TTY=pts/1 ; <*> ; USER=root ; <*>,3
+78315e1f,pam_unix(sudo:auth): auth could not identify password for [cyli],2
+45f19df3,cyli : user NOT in sudoers ; TTY=pts/3 ; PWD=/var/log ; USER=root ; COMMAND=/usr/sbin/logcheck -m,2
+acdea6d6,zhding : user NOT in sudoers ; TTY=pts/1 ; PWD=/var/log/audit ; USER=root ; COMMAND=/bin/ls,1
+5947eee3,(root) CMD <*> <*>,239
+721037cd,(root) CMD (python3 /var/www/shell_script/stat.py > /var/www/shell_script/stat.log),164
+d536d1c7,(root) CMD (/var/www/shell_script/topology.sh),176
+3f4752a0,(logcheck) CMD ( if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi),19
+05e74fcb,(root) CMD ( [ -x /usr/lib/php5/sessionclean ] && /usr/lib/php5/sessionclean),29
+c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly),14
+20def3fb,(root) BEGIN EDIT (root),2
+f06799b4,(root) END EDIT (root),2
+36556646,<*> <*> [Warning] IP address '<*>' could not be resolved: Name or service not known,16
+50473008,Host <*> is not allowed to talk to us!,2
+7d830fe3,This is a test log './a.out',3
+5c79548f,191110 <*> [Note] /usr/sbin/mysqld: <*> <*>,2
+445297dc,<*> <*> [Note] Event Scheduler: Purging the queue. 0 events,2
+647a6b88,<*> <*> InnoDB: Starting shutdown...,2
+e716fdaf,<*> <*> InnoDB: <*> <*> log sequence number <*>,5
+b0c737c1,mysqld from pid file /var/run/mysqld/mysqld.pid ended,2
+b7070b59,Starting mysqld daemon with databases from /var/lib/mysql,3
+921c159c,<*> <*> [Warning] Using unique option prefix <*> instead of <*> is deprecated and will be removed in a future release. Please use the full name instead.,6
+821d9c15,<*> <*> [Note] /usr/sbin/mysqld (mysqld 5.5.50-0+deb7u2) starting as process <*> ...,3
+4a60d2e3,<*> <*> [Note] Plugin 'FEDERATED' is disabled.,3
+9b67c77b,<*> <*> InnoDB: The InnoDB memory heap is disabled,3
+b06f3e30,<*> <*> InnoDB: Mutexes and rw_locks use GCC atomic builtins,3
+abb4b987,<*> <*> InnoDB: Compressed tables use zlib 1.2.7,3
+f6e5c7df,<*> <*> InnoDB: Using Linux native AIO,3
+406b7bb5,"<*> <*> InnoDB: Initializing buffer pool, size = 128.0M",3
+0da12857,<*> <*> InnoDB: Completed initialization of buffer pool,3
+4b7ee4a0,<*> <*> InnoDB: highest supported file format is Barracuda.,3
+9178e133,<*> <*> InnoDB: Waiting for the background threads to start,3
+bbd911a4,<*> <*> [Note] Server hostname (bind-address): '<*>'; port: 3306,3
+7c78d70e,<*> <*> [Note] - '<*>' resolves to '<*>';,3
+949cc72d,<*> <*> [Note] Server socket created on IP: '<*>'.,3
+dd9e20c1,<*> <*> [Note] Event Scheduler: Loaded 0 events,3
+d3376fc3,<*> <*> [Note] /usr/sbin/mysqld: ready for connections.,3
+3adfc547,Version: '5.5.50-0+deb7u2' socket: '/var/run/mysqld/mysqld.sock' port: 3306 (Debian),3
+92351439,Upgrading MySQL tables if necessary.,3
+f918619d,/usr/bin/mysql_upgrade: the '--basedir' option is always ignored,3
+d2618b18,Looking for <*> as: <*>,6
+ba8d0bb1,"This installation of MySQL is already upgraded to 5.5.50, use --force if you still need to run mysql_upgrade",3
+6adf7881,Checking for insecure root accounts.,3
+9240fe10,Triggering myisam-recover for all MyISAM tables,3
+777b3b33,Trying to re-exec init,1
+a087a263,Status information:,1
+8a20a62e,Current dir: /var/lib/mysql/,1
+64127a38,Running threads: 1 Stack size: 196608,1
+f18b84fa,Current locks:,1
+3e0a365b,lock: <*>:,94
+df4a7d90,Key caches:,1
+c21f969b,default,1
+58b26a65,Buffer_size: 16777216,1
+1540ee61,Block_size: 1024,1
+513ef622,Division_limit: 100,1
+fc65b950,Started dispatcher: /sbin/audispd pid: <*>,3
+9481fc00,"Init complete, auditd 2.6.7 listening for events (startup state enable)",3
+3612d5a3,Switching to runlevel: <*>,6
+e2d2583f,Caught SIGTERM - shutting down...,6
+67909553,Daemon shutdown,6
+b05754fa,Exiting...,6
+17b54006,exiting,6
+214273cc,InnoDB: The log sequence number in ibdata files does not match,1
+b534cac2,InnoDB: the log sequence number in the ib_logfiles!,1
+8704aab3,200827 <*> InnoDB: Database was not shut down normally!,1
+532682cd,InnoDB: Starting crash recovery.,1
+2435bc6e,InnoDB: Reading tablespace information from the .ibd files...,1
+5503f70e,InnoDB: Restoring possible half-written data pages from the doublewrite,1
+cdcc47bd,InnoDB: buffer...,1
+2e87be9e,The audit daemon is exiting.,2
+22a66b64,Audit daemon rotating log files,101
+47610918,201230 <*> [Note] /usr/sbin/mysqld: <*> <*>,2
+64183b45,"imklog 5.8.11, log source = /proc/kmsg started.",6
+b7faae67,"[7902563.341860] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)",2
+e0195927,"[7902655.281153] The scan_unevictable_pages sysctl/node-interface has been disabled for lack of a legitimate use case. If you have one, please send an email to linux-mm@kvack.org.",2
+045335e1,[8994285.756519] catch[28501] general protection ip:b7762425 sp:b77ba41c error:0 in libc-2.21.so[b7603000+1b4000],1
+31f47148,<*> type=1305 <*> <*> <*> auid=4294967295 ses=4294967295 res=1,6
+fe45e8c8,[ <*> EXT4-fs (vda1): re-mounted. Opts: <*>,8
+02722d9d,<*> Process accounting paused,3
+bb13e68e,<*> Bluetooth: Core ver 2.16,2
+12d2d002,<*> NET: Registered protocol family 31,2
+31252dc4,<*> Bluetooth: HCI device and connection manager initialized,2
+30591723,<*> Bluetooth: <*> socket layer initialized,6
+e76aeac5,<*> Netfilter messages via NETLINK v0.30.,2
+67f06fef,<*> device eth0 <*> promiscuous mode,106
+e3ccc840,<*> audit: error converting sid to string,2
+a5e9350c,<*> TCP: Possible SYN flooding on port <*> Sending cookies. Check SNMP counters.,3
+08ba536d,"[10797228.954019] vim invoked oom-killer: gfp_mask=0x280da, order=0, oom_adj=0, oom_score_adj=0",1
+11bf76da,[10797228.954026] vim cpuset=/ mems_allowed=0,1
+dfa34267,"[10797228.954031] Pid: 27975, comm: vim Not tainted 3.2.0-4-686-pae #1 Debian 3.2.81-1",1
+793ae9a8,[10797228.954034] Call Trace:,1
+1e076a4c,[10797228.954048] [<c109979c>] ? dump_header.isra.6+0x5c/0x170,1
+cca56f33,[10797228.954057] [<c1124738>] ? security_real_capable_noaudit+0x2c/0x35,1
+7a7be832,[10797228.954067] [<c12c7d96>] ? _raw_spin_unlock_irqrestore+0xb/0xc,1
+65618ade,[10797228.954072] [<c1099a26>] ? oom_kill_process+0x30/0x1fe,1
+eafbdcc5,[10797228.954077] [<c1099c9f>] ? select_bad_process.constprop.12+0xab/0xff,1
+ad617194,[10797228.954081] [<c1099f70>] ? out_of_memory+0xf8/0x135,1
+f34b5f7b,[10797228.954088] [<c109cafa>] ? __alloc_pages_nodemask+0x50a/0x654,1
+84e25b89,[10797228.954097] [<c1152340>] ? get_request_wait+0x25/0x157,1
+acf4584b,[10797228.954105] [<c10af408>] ? handle_pte_fault+0x1c1/0x8fd,1
+88181469,<*> [<c10294bb>] ? kmap_atomic_prot+0x2f/0xe0,2
+23121938,[10797228.954121] [<c10afda8>] ? handle_mm_fault+0x1e8/0x1fe,1
+26895583,[10797228.954127] [<c12cacd2>] ? do_page_fault+0x342/0x35e,1
+bef8f24e,[10797228.954131] [<c114e5bb>] ? __blk_run_queue+0x11/0x12,1
+6bbde135,[10797228.954137] [<c1152882>] ? queue_unplugged+0x74/0x82,1
+2ef1d928,[10797228.954143] [<c1152fa4>] ? blk_flush_plug_list+0x15a/0x162,1
+0f80c2ca,[10797228.954147] [<c12ca80e>] ? arch_trampoline_kprobe+0x3/0x3,1
+36206046,[10797228.954151] [<c12c8b53>] ? error_code+0x67/0x6c,1
+dde0bc91,[10797228.954155] [<c1097300>] ? file_read_actor+0x3d/0xbd,1
+d1d0a0ed,[10797228.954160] [<c1098aed>] ? generic_file_aio_read+0x399/0x5a0,1
+d0e5c655,[10797228.954164] [<c109f3eb>] ? __lru_cache_add+0x22/0x3e,1
+c00fb797,[10797228.954178] [<c10ce881>] ? do_sync_write+0xdc/0xdc,1
+d8a4ebd8,[10797228.954182] [<c10ce929>] ? do_sync_read+0xa8/0xdc,1
+e15d6fdf,[10797228.954191] [<c10ced67>] ? rw_verify_area+0xc6/0xe7,1
+61261ab4,[10797228.954195] [<c10cf0d8>] ? vfs_read+0x80/0xd1,1
+47ef0af0,[10797228.954199] [<c10cf166>] ? sys_read+0x3d/0x61,1
+8cd4c8aa,[10797228.954204] [<c12cc61f>] ? sysenter_do_call+0x12/0x12,1
+61e11a27,[10797228.954207] Mem-Info:,1
+b0f7216d,[10797228.954209] DMA per-cpu:,1
+f437f693,<*> CPU <*> hi: <*> btch: <*> usd: <*>,6
+4a30763a,[10797228.954217] Normal per-cpu:,1
+7ce7d20d,[10797228.954224] HighMem per-cpu:,1
+e2cadfa9,[10797228.954237] active_anon:472534 inactive_anon:1156 isolated_anon:0,1
+064f7361,[10797228.954238] active_file:67 inactive_file:182 isolated_file:0,1
+cb912226,[10797228.954239] unevictable:0 dirty:21 writeback:0 unstable:0,1
+29289975,[10797228.954241] free:22518 slab_reclaimable:1656 slab_unreclaimable:14854,1
+61b858bf,[10797228.954242] mapped:1776 shmem:1847 pagetables:2687 bounce:0,1
+6e5a4650,[10797228.954252] DMA free:8812kB min:784kB low:980kB high:1176kB active_anon:6744kB inactive_anon:0kB active_file:40kB inactive_file:144kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15804kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:8kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:12kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:817 all_unreclaimable? yes,1
+c02a20cd,[10797228.954259] lowmem_reserve[]: 0 867 2016 2016,1
+e603007b,[10797228.954271] Normal free:80768kB min:44116kB low:55144kB high:66172kB active_anon:712808kB inactive_anon:0kB active_file:216kB inactive_file:548kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:887976kB mlocked:0kB dirty:28kB writeback:0kB mapped:180kB shmem:0kB slab_reclaimable:6616kB slab_unreclaimable:59416kB kernel_stack:2792kB pagetables:2748kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:1243 all_unreclaimable? yes,1
+0a29add8,<*> lowmem_reserve[]: 0 0 <*> <*>,2
+6fe541d9,[10797228.954288] HighMem free:492kB min:512kB low:15124kB high:29736kB active_anon:1170584kB inactive_anon:4624kB active_file:12kB inactive_file:36kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:1176408kB mlocked:0kB dirty:56kB writeback:0kB mapped:6924kB shmem:7388kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:7988kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:73 all_unreclaimable? yes,1
+c7be1dc5,[10797228.954298] DMA: 23*4kB 1*8kB 63*16kB 31*32kB 8*64kB 7*128kB 3*256kB 1*512kB 2*1024kB 1*2048kB 0*4096kB = 8884kB,1
+0475d5b3,[10797228.954309] Normal: 4132*4kB 3094*8kB 632*16kB 238*32kB 120*64kB 54*128kB 12*256kB 0*512kB 0*1024kB 2*2048kB 0*4096kB = 80768kB,1
+c57c7f8e,[10797228.954320] HighMem: 10*4kB 19*8kB 9*16kB 5*32kB 1*64kB 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 560kB,1
+8d8596ff,[10797228.954331] 2114 total pagecache pages,1
+615c5983,[10797228.954333] 0 pages in swap cache,1
+49fbc18c,"[10797228.954336] Swap cache stats: add 0, delete 0, find 0/0",1
+4ab38117,[10797228.954338] Free swap = 0kB,1
+38592264,[10797228.954340] Total swap = 0kB,1
+79f06cab,[10797228.962029] 524240 pages RAM,1
+3abfe124,[10797228.962032] 296418 pages HighMem,1
+d544a2bf,[10797228.962034] 5641 pages reserved,1
+8ed0b494,[10797228.962035] 14884 pages shared,1
+8f801fac,[10797228.962037] 492513 pages non-shared,1
+5b129690,[10797228.962864] Out of memory: Kill process 27975 (vim) score 374 or sacrifice child,1
+0468cd0c,"[10797228.963168] Killed process 27975 (vim) total-vm:806000kB, anon-rss:797476kB, file-rss:148kB",1
+7c2a23f8,[501879.845724] ip_tables: (C) 2000-2006 Netfilter Core Team,1
+8bc109fb,"[origin software=""rsyslogd"" swVersion=""5.8.11"" <*> x-info=""http://www.rsyslog.com""] start",4
+c1d3a2bd,[root] output.txt/ZMODEM: got ZSKIP,2
+09d6da63,"[root] output.txt/ZMODEM: 4117560 Bytes, <*> BPS",2
+d05d290d,"[root] aptopo.jar/ZMODEM: <*> Bytes, <*> BPS",16
+37c81f2e,[root] aptopo.jar/ZMODEM: procheader error,1
+2e31312b,[root] aptopo.jar/ZMODEM: <*>,3
+2b47a171,[root] aptopo.jar/ZMODEM: zrdata returned ERROR,2
+961de9f2,[root] no.name/ZMODEM: got error,4
+4d5ba71a,imuxsock begins to drop messages from pid 10070 due to rate-limiting,1
+4c9758ae,imuxsock lost 28 messages from pid 10070 due to rate-limiting,1
+02d7169a,[root] SysInfoCollection.py/ZMODEM: got ZSKIP,2
+1dacb148,"[root] SysInfoCollection.py/ZMODEM: 10688 Bytes, <*> BPS",2

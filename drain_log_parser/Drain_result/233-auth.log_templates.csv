@@ -1,0 +1,24 @@
+EventId,EventTemplate,Occurrences,normal
+c1256636,<*> session closed for user <*>,1732,0
+8fbc6c52,<*> session opened for user <*> by <*>,1706,0
+5290983b,DIGEST-MD5 common mech free,762,0
+eca00467,error: Received disconnect from <*> port <*>,5,0
+aeebac42,Disconnected from <*> port <*>,5,0
+a0801c02,Accepted password for monster from <*> port <*> ssh2,82,0
+aee117f1,New session <*> of user monster.,82,0
+23239cfb,<*> su for root by monster,19,0
+30a3d658,+ <*> monster:root,18,0
+7b6022fa,pam_systemd(su:session): Cannot create session: Already running in a session,18,0
+c9cfd6b2,Removed session <*>,101,0
+fafa72cb,Received disconnect from <*> port <*> Bye Bye [preauth],5,0
+0054e5e2,Disconnected from <*> port <*> [preauth],5,0
+29f200fa,pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=<*> user=root,592,1
+0af355cc,Failed password for root from <*> port <*> ssh2,3529,1
+cc5fc443,error: maximum authentication attempts exceeded for root from <*> port <*> ssh2 [preauth],583,1
+bf9c63d7,Disconnecting: Too many authentication failures [preauth],583,1
+54a90e3c,PAM <*> more authentication <*> logname= uid=0 euid=0 tty=ssh ruser= rhost=<*> user=root,592,0
+00a684b8,PAM service(sshd) ignoring max retries; <*> > 3,588,1
+422afdc1,Connection closed by <*> port <*> [preauth],9,0
+c15f4a0d,pam_unix(su:auth): authentication failure; logname=monster uid=1001 euid=0 tty=/dev/pts/10 ruser=monster rhost= user=root,1,1
+aa3144ac,pam_authenticate: Authentication failure,1,1
+1abb29ad,- /dev/pts/10 monster:root,1,0
